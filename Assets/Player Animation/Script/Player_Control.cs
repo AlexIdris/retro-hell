@@ -3,7 +3,7 @@ using UnityEngine;
 public class Player_Control : MonoBehaviour
 {
     public float speed;
-    public float turnSpeed;
+
     public float jump;
 
     private string Ground = "Ground";
@@ -54,8 +54,7 @@ public class Player_Control : MonoBehaviour
         {
             anim.SetBool("run", false);
         }
-        float rotationX = Input.GetAxis("Mouse X");
-        transform.Rotate(rotationX * Vector3.up, turnSpeed * Time.deltaTime);
+
 
 
 
