@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -13,7 +11,7 @@ public class Shooting : MonoBehaviour
     {
         invincibilityFrame += Time.deltaTime;
 
-        if (Input.GetKey("z"))
+        if (Input.GetKey("p"))
         {
             if (invincibilityFrame > 0.1)
             {
@@ -23,7 +21,7 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown("x"))
+        if (Input.GetKeyDown("o"))
         {
             if (invincibilityFrame > 0.1)
             {
