@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    public int health;
     public float invincibilityFrame;
 
     private void Update()
@@ -20,8 +19,8 @@ public class HealthSystem : MonoBehaviour
             if (invincibilityFrame > 1)
             {
                 Debug.Log("Hit!");
-                health -= 1;
-                Debug.Log(health);
+                HealthDisplay.health -= 1;
+                Debug.Log(HealthDisplay.health);
                 invincibilityFrame = 0;
             }
         }
