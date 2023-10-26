@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class HealthDisplay : MonoBehaviour
 {
-    public static int health;
+    public static int health = 100;
     Text healthCounter;
 
     void Start()

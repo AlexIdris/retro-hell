@@ -14,7 +14,7 @@ public class HealthSystem : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Bullets"))
         {
             if (invincibilityFrame > 1)
             {
