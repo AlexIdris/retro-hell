@@ -2486,7 +2486,7 @@ GameObject:
   - component: {fileID: 1797116978}
   - component: {fileID: 1797116977}
   m_Layer: 5
-  m_Name: HeartIcon
+  m_Name: Heart Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
