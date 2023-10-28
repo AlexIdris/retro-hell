@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletPhysics : MonoBehaviour
@@ -10,7 +8,7 @@ public class BulletPhysics : MonoBehaviour
     {
         timeAwake += Time.deltaTime;
 
-        if (timeAwake >= 0.5)
+        if (timeAwake >= 3)
         {
             Destroy(gameObject);
         }
