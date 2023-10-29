@@ -29,4 +29,12 @@ public class BulletPhysics : MonoBehaviour
 
         Destroy(gameObject);
     }
+
+    public void OnTriggerEnter(Collision other)
+    {
+        if (other.gameObject.name == "bullets 1")
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }
