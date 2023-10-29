@@ -2,18 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthDisplay : MonoBehaviour
 {
-    public static int health = 100;
+    public static int health;
     Text healthCounter;
 
-    void Start()
+    private void Start()
     {
+        health = 100;
         healthCounter = GetComponent<Text>();
     }
 
-    void Update()
+    private void Update()
     {
         healthCounter.text = health.ToString();
     }

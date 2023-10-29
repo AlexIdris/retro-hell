@@ -17,7 +17,7 @@ public class HealthSystem : MonoBehaviour
             if (invincibilityFrame > 1)
             {
                 Debug.Log("Hit!");
-                HealthDisplay.health -= 1;
+                HealthDisplay.health -= BulletPhysics.bulletDamage;
                 Debug.Log(HealthDisplay.health);
                 invincibilityFrame = 0;
             }

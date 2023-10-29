@@ -3,6 +3,12 @@ using UnityEngine;
 public class BulletPhysics : MonoBehaviour
 {
     public float timeAwake;
+    public static int bulletDamage;
+
+    private void Start()
+    {
+        bulletDamage = 5;
+    }
 
     private void FixedUpdate()
     {
@@ -16,6 +22,11 @@ public class BulletPhysics : MonoBehaviour
 
     public void OnCollisionEnter(Collision other)
     {
+        if (other.gameObject.tag == "Breakable Wall")
+        {
+            Destroy(other.gameObject);
+        }
+
         Destroy(gameObject);
     }
 }
