@@ -3,7 +3,7 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public GameObject bullet;
-    public Transform bulletSpawner;
+    [SerializeField] Transform bulletSpawner;
     public float bulletSpeed;
     public float invincibilityFrame;
 

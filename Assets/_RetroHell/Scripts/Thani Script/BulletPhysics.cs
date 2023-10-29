@@ -27,6 +27,17 @@ public class BulletPhysics : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            turretRotation playerHealth = other.gameObject.GetComponent<turretRotation>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(10);
+            }
+        }
         Destroy(gameObject);
+
     }
+
+
 }
