@@ -27,14 +27,17 @@ public class BulletPhysics : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            turretRotation playerHealth = other.gameObject.GetComponent<turretRotation>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(10);
+            }
+        }
         Destroy(gameObject);
+
     }
 
-    public void OnTriggerEnter(Collision other)
-    {
-        if (other.gameObject.name == "bullets 1")
-        {
-            Destroy(other.gameObject);
-        }
-    }
+
 }

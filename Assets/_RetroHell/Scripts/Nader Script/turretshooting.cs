@@ -1,13 +1,12 @@
-using System.Collections;
 using UnityEngine;
 
 public class turretshooting : MonoBehaviour
 {
-    public GameObject bulletPrefab;
-    public Transform firePoint;    
-    public float fireRate = 1.0f;  
-    public float bulletSpeed = 10f;
-    public float nextFireTime = 0f;
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Transform firePoint;
+    [SerializeField] float fireRate = 1.0f;
+    [SerializeField] float bulletSpeed = 10f;
+    [SerializeField] float nextFireTime = 0f;
 
     private void Update()
     {
