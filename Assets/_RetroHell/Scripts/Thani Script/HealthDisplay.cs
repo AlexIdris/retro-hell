@@ -2,21 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class HealthDisplay : MonoBehaviour
 {
-    public static int health;
-    Text healthCounter;
+    public Slider slider;
 
-    private void Start()
+    public void ResetHealth(int health)
     {
-        health = 100;
-        healthCounter = GetComponent<Text>();
+        slider.maxValue = health;
+        slider.value = health;
     }
 
-    private void Update()
+    public void SetHealth(int health)
     {
-        healthCounter.text = health.ToString();
+        slider.value = health;
     }
 }
