@@ -29,7 +29,7 @@ public class BulletPhysics : MonoBehaviour
 
         if (other.gameObject.CompareTag("Enemy"))
         {
-            turretRotation playerHealth = other.gameObject.GetComponent<turretRotation>();
+            Boss_DamageUI playerHealth = other.gameObject.GetComponent<Boss_DamageUI>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(10);

@@ -25,37 +25,21 @@ public class Player_Control : MonoBehaviour
     {
 
 
-        if (Input.GetKey(KeyCode.D))
+        float horizontalInput = Input.GetAxis("Horizontal");
+        float verticalInput = Input.GetAxis("Vertical");
+
+        Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
+
+        rb.velocity = moveDirection * speed;
+        float velocityMagnitude = rb.velocity.magnitude;
+        if (velocityMagnitude > 0)
         {
             anim.SetBool("run", true);
-            rb.velocity = new Vector3(x: speed, y: 0, z: 0);
-
-
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            anim.SetBool("run", true);
-            rb.velocity = new Vector3(x: -speed, y: 0, z: 0);
-
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            anim.SetBool("run", true);
-            rb.velocity = new Vector3(x: 0, y: 0, z: speed);
-
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            anim.SetBool("run", true);
-            rb.velocity = new Vector3(x: 0, y: 0, z: -speed);
-
         }
         else
         {
             anim.SetBool("run", false);
         }
-
-
 
 
         if (Input.GetButton("Jump") && isGrounded)
