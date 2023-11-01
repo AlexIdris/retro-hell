@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Boss_DamageUI : MonoBehaviour
 {
-    public int maxHealth = 500;
-    public int currentHealth;
+    [SerializeField] int maxHealth = 500;
+    [SerializeField] int currentHealth;
 
     public Enemy_Health health;
     void Start()
