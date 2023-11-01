@@ -2,10 +2,22 @@ using UnityEngine;
 
 public class Enemy_Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    public float timeAwake;
+    public static int bulletDamage;
 
+    private void Start()
+    {
+        bulletDamage = 5;
+    }
+
+    private void FixedUpdate()
+    {
+        timeAwake += Time.deltaTime;
+
+        if (timeAwake >= 3)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
