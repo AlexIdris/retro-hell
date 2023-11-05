@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 0}
   firePoint: {fileID: 0}
-  fireRate: 7
+  fireRate: 53
   bulletSpeed: 7
   nextFireTime: 0
