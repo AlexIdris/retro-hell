@@ -12,13 +12,13 @@ public class Player_Control : MonoBehaviour
     private bool isGrounded = true;
 
     [SerializeField] int maxHealth = 500;
-    [SerializeField] int currentHealth;
-    public Player_Health health;
+    public int currentHealth;
+    public HealthDisplay health;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         currentHealth = maxHealth;
-        health.SetMaxHealth(maxHealth);
+        health.MaxHealth(maxHealth);
     }
 
     void Update()
@@ -84,7 +84,7 @@ public class Player_Control : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        health.SetHealth(currentHealth);
+        health.ChangeHealth(currentHealth);
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -11,7 +11,7 @@ public class HealthSystem : MonoBehaviour
     private void Start()
     {
         health = fullHealth;
-        healthDisplay.ResetHealth(fullHealth);
+        healthDisplay.MaxHealth(fullHealth);
     }
 
     private void Update()
@@ -29,7 +29,7 @@ public class HealthSystem : MonoBehaviour
                 Debug.Log("Hit!");
                 health -= BulletPhysics.bulletDamage;
                 Debug.Log(health);
-                healthDisplay.SetHealth(health);
+                healthDisplay.ChangeHealth(health);
                 invincibilityFrame = 0;
             }
         }

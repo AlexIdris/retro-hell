@@ -6,20 +6,12 @@ public class Shooting : MonoBehaviour
     [SerializeField] Transform bulletSpawner;
     public float bulletSpeed;
     public float invincibilityFrame;
+    public int machineGunBullets;
+    public bool machineGunObtained;
 
     private void Update()
     {
         invincibilityFrame += Time.deltaTime;
-
-        if (Input.GetKey("p"))
-        {
-            if (invincibilityFrame > 0.1)
-            {
-                Shoot();
-                Debug.Log("Shot a bullet!");
-                invincibilityFrame = 0;
-            }
-        }
 
         if (Input.GetKeyDown("o"))
         {
@@ -29,6 +21,22 @@ public class Shooting : MonoBehaviour
                 Debug.Log("Shot a bullet!");
                 invincibilityFrame = 0;
             }
+        }
+
+        if (Input.GetKey("p") && machineGunObtained == true && machineGunBullets > 0)
+        {
+            if (invincibilityFrame > 0.1)
+            {
+                Shoot();
+                Debug.Log("Shot a bullet!");
+                invincibilityFrame = 0;
+                machineGunBullets -= 1;
+            }
+        }
+
+        if (machineGunBullets == 0)
+        {
+            machineGunObtained = false;
         }
     }
 
