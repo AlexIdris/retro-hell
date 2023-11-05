@@ -1,25 +1,18 @@
 using UnityEngine;
 
-public class BulletPhysics : MonoBehaviour
+public class Enemy_Bullet : MonoBehaviour
 {
-    public float timeAwake;
-    public static int bulletDamage;
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        bulletDamage = 5;
+
     }
 
-    private void FixedUpdate()
+    // Update is called once per frame
+    void Update()
     {
-        timeAwake += Time.deltaTime;
 
-        if (timeAwake >= 3)
-        {
-            Destroy(gameObject);
-        }
     }
-
     public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Breakable Wall")
@@ -27,7 +20,7 @@ public class BulletPhysics : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Player"))
         {
             Boss_DamageUI playerHealth = other.gameObject.GetComponent<Boss_DamageUI>();
             if (playerHealth != null)
@@ -38,6 +31,4 @@ public class BulletPhysics : MonoBehaviour
         Destroy(gameObject);
 
     }
-
-
 }

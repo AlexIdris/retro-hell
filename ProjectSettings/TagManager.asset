@@ -9,7 +9,7 @@ TagManager:
   - Breakable
   - Breakable Wall
   - Enemy
-  - Enemy Bullets
+  - Enemy Bullet
   layers:
   - Default
   - TransparentFX

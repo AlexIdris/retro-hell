@@ -1,9 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-
-public class Enemy_Health : MonoBehaviour
+public class Player_Health : MonoBehaviour
 {
-
     [SerializeField] Slider slider;
 
     public void SetMaxHealth(int health)
@@ -16,4 +14,6 @@ public class Enemy_Health : MonoBehaviour
     {
         slider.value = health;
     }
+
 }
+
