@@ -7,10 +7,18 @@ public class turretshooting : MonoBehaviour
     [SerializeField] float fireRate = 1.0f;
     [SerializeField] float bulletSpeed = 10f;
     [SerializeField] float nextFireTime = 0f;
+    [SerializeField] GameObject boss;
+    [SerializeField] Boss_DamageUI bossHealth;
+
+    private void Start()
+    {
+        boss = GameObject.FindGameObjectWithTag("Boss");
+        bossHealth = boss.GetComponent<Boss_DamageUI>();
+    }
 
     private void Update()
     {
-        if (Time.time > nextFireTime)
+        if (bossHealth.currentHealth > 250 && Time.time > nextFireTime)
         {
             Shoot();
             nextFireTime = Time.time + 1f / fireRate;

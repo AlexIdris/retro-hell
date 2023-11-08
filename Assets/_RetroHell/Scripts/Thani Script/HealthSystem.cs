@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class HealthSystem : MonoBehaviour
 {
-    public int health = 100;
+    public Player_Control player;
     public int fullHealth = 100;
     public float invincibilityFrame;
 
@@ -10,7 +10,7 @@ public class HealthSystem : MonoBehaviour
 
     private void Start()
     {
-        health = fullHealth;
+        player.currentHealth = fullHealth;
         healthDisplay.MaxHealth(fullHealth);
     }
 
@@ -27,9 +27,9 @@ public class HealthSystem : MonoBehaviour
             if (invincibilityFrame > 1)
             {
                 Debug.Log("Hit!");
-                health -= BulletPhysics.bulletDamage;
-                Debug.Log(health);
-                healthDisplay.ChangeHealth(health);
+                player.currentHealth -= BulletPhysics.bulletDamage;
+                Debug.Log(player.health);
+                healthDisplay.ChangeHealth(player.currentHealth);
                 invincibilityFrame = 0;
             }
         }

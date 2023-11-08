@@ -7,12 +7,19 @@ public class EnemyMovement : MonoBehaviour
     public float speed = 0.1f;
     public float currentDistance;
     public bool shooting;
-    public Transform target;
+    [SerializeField] GameObject target;
 
     public GameObject bullet;
-    [SerializeField] Transform bulletSpawner;
+    [SerializeField] GameObject bulletSpawner;
     public float bulletSpeed;
     public float invincibilityFrame;
+
+    public void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player");
+        bullet = GameObject.FindGameObjectWithTag("Enemy Bullet");
+        bulletSpawner = GameObject.FindGameObjectWithTag("Enemy Bullet Spawner");
+    }
 
     public void Update()
     {
@@ -23,11 +30,11 @@ public class EnemyMovement : MonoBehaviour
         shooting = true;
         invincibilityFrame += Time.deltaTime;
 
-        transform.rotation = Quaternion.LookRotation(target.position - transform.position, transform.up);
+        transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.up);
 
         if (currentDistance > 10)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, movement);
+            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, movement);
             shooting = false;
         }
 
@@ -41,7 +48,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void Shoot()
     {
-        var bulletSample = Instantiate(bullet, bulletSpawner.position, bulletSpawner.rotation);
-        bulletSample.GetComponent<Rigidbody>().velocity = bulletSpawner.forward * bulletSpeed;
+        var bulletSample = Instantiate(bullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
+        bulletSample.GetComponent<Rigidbody>().velocity = bulletSpawner.transform.forward * bulletSpeed;
     }
 }

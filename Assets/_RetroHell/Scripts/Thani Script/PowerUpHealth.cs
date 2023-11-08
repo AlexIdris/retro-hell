@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class PowerUpHealth : MonoBehaviour
 {
-    public Player_Control player;
+    public GameObject player;
+    public Player_Control playerHealth;
     public int extraHealth;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<Player_Control>();
+    }
 
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Player")
         {
-            player.currentHealth += extraHealth;
+            playerHealth.currentHealth += extraHealth;
             Destroy(gameObject);
         }
     }
