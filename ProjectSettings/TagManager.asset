@@ -10,6 +10,9 @@ TagManager:
   - Breakable Wall
   - Enemy
   - Enemy Bullet
+  - Bullet Spawner
+  - Enemy Bullet Spawner
+  - Boss
   layers:
   - Default
   - TransparentFX
