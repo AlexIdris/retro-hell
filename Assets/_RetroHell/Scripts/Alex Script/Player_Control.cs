@@ -48,7 +48,7 @@ public class Player_Control : MonoBehaviour
         }
 
     }
-
+    vfdccd
     void Jump()
     {
         if (Input.GetButton("Jump") && isGrounded)

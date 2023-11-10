@@ -11,7 +11,7 @@ public class Shooting : MonoBehaviour
     {
         invincibilityFrame += Time.deltaTime;
 
-        if (Input.GetKey("p"))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             if (invincibilityFrame > 0.1)
             {
@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown("o"))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             if (invincibilityFrame > 0.1)
             {

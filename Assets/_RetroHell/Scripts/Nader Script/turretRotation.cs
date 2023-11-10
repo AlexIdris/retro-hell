@@ -6,6 +6,7 @@ public class turretRotation : MonoBehaviour
 
     public float rotationDelay = 1f;
     private bool rotating = false;
+    [SerializeField] private float speed = 10;
 
     void Update()
     {
@@ -16,7 +17,7 @@ public class turretRotation : MonoBehaviour
     }
     public void RotateTurret()
     {
-        transform.Rotate(0, 1, 0);
+        transform.Rotate(0, speed * Time.deltaTime, 0);
     }
 
 
