@@ -3,7 +3,7 @@ using UnityEngine;
 public class turretRotation : MonoBehaviour
 {
 
-
+    public float speed;
     public float rotationDelay = 1f;
     private bool rotating = false;
     [SerializeField] private float speed = 10;
@@ -17,7 +17,7 @@ public class turretRotation : MonoBehaviour
     }
     public void RotateTurret()
     {
-        transform.Rotate(0, speed * Time.deltaTime, 0);
+        transform.Rotate(0, speed, 0);
     }
 
 

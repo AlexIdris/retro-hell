@@ -1,22 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class HealthDisplay : MonoBehaviour
 {
-    public static int health;
-    Text healthCounter;
+    [SerializeField] Slider bar;
 
-    private void Start()
+    public void MaxHealth(int playerHealth)
     {
-        health = 100;
-        healthCounter = GetComponent<Text>();
+        bar.maxValue = playerHealth;
     }
 
-    private void Update()
+    public void ChangeHealth(int playerHealth)
     {
-        healthCounter.text = health.ToString();
+        bar.value = playerHealth;
     }
 }
