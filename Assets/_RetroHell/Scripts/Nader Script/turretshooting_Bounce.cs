@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class turretshooting : MonoBehaviour
+public class turretshooting_Bounce : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
