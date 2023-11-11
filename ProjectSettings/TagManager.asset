@@ -13,6 +13,7 @@ TagManager:
   - Bullet Spawner
   - Enemy Bullet Spawner
   - Boss
+  - Machine Gun Power-Up
   layers:
   - Default
   - TransparentFX
