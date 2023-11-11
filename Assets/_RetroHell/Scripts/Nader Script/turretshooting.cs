@@ -8,9 +8,9 @@ public class turretshooting : MonoBehaviour
     [SerializeField] float bulletSpeed = 10f;
     [SerializeField] float nextFireTime = 0f;
 
-    private void Update()
+    public void Update()
     {
-        if(Time.time > nextFireTime)
+        if (Time.time > nextFireTime)
         {
             Shoot();
             nextFireTime = Time.time + 1f / fireRate;
