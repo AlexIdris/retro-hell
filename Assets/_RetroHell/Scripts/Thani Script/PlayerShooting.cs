@@ -13,7 +13,7 @@ public class Shooting : MonoBehaviour
     {
         invincibilityFrame += Time.deltaTime;
 
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (invincibilityFrame > 0.1)
             {
@@ -23,18 +23,9 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        if (Input.GetKeyDown("o"))
-        {
-            if (invincibilityFrame > 0.1)
-            {
-                Shoot();
-                Debug.Log("Shot a bullet!");
-                invincibilityFrame = 0;
-            }
-        }
 
-        if (Input.GetKey("p") && machineGunObtained == true && machineGunBullets > 0)
+
+        if (Input.GetKey(KeyCode.Mouse1) && machineGunObtained == true && machineGunBullets > 0)
         {
             if (invincibilityFrame > 0.1)
             {

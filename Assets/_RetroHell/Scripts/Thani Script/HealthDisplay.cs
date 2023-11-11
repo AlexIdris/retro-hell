@@ -8,6 +8,7 @@ public class HealthDisplay : MonoBehaviour
     public void MaxHealth(int playerHealth)
     {
         bar.maxValue = playerHealth;
+        bar.value = playerHealth;
     }
 
     public void ChangeHealth(int playerHealth)
