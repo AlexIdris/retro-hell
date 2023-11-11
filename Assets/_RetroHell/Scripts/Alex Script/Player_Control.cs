@@ -30,12 +30,12 @@ public class Player_Control : MonoBehaviour
     }
     void Movement()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        var horizontalInput = Input.GetAxis("Horizontal");
+        var verticalInput = Input.GetAxis("Vertical");
 
         Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
 
-        rb.velocity = moveDirection * speed;
+        rb.velocity = transform.forward * verticalInput * speed + transform.right * horizontalInput * speed;
         float velocityMagnitude = rb.velocity.magnitude;
 
         if (velocityMagnitude > 0)
@@ -48,7 +48,7 @@ public class Player_Control : MonoBehaviour
         }
 
     }
-    vfdccd
+
     void Jump()
     {
         if (Input.GetButton("Jump") && isGrounded)
