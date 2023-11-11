@@ -16,7 +16,7 @@ public class PowerUpHealth : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             playerHealth.currentHealth += extraHealth;
             Destroy(gameObject);

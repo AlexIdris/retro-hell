@@ -1,13 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MachineGun : MonoBehaviour
 {
-    public Player_Control player;
-    public Shooting playerControls;
+    public GameObject player;
+    public PlayerShooting playerControls;
 
-    public void OnCollisionEnter(Collision other)
+    private void Start()
     {
-        if (other.gameObject.tag == "Player")
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerControls = player.GetComponent<PlayerShooting>();
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Player"))
         {
             playerControls.machineGunObtained = true;
             playerControls.machineGunBullets = 50;
