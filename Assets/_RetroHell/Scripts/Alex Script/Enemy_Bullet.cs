@@ -14,7 +14,7 @@ public class Enemy_Bullet : MonoBehaviour
     {
         timeAwake += Time.deltaTime;
 
-        if (timeAwake >= 3)
+        if (timeAwake >= 5)
         {
             Destroy(gameObject);
         }
@@ -29,7 +29,7 @@ public class Enemy_Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "Breakable Wall")
         {
-            Destroy(other.gameObject);
+
         }
 
         if (other.gameObject.CompareTag("Player"))
@@ -38,8 +38,15 @@ public class Enemy_Bullet : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(10);
+
             }
         }
+
+        if (other.gameObject.tag == "Enemy Bullet")
+        {
+
+        }
+
         Destroy(gameObject);
 
     }
