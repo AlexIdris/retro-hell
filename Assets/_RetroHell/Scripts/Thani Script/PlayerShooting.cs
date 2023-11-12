@@ -13,7 +13,7 @@ public class PlayerShooting : MonoBehaviour
     {
         invincibilityFrame += Time.deltaTime;
 
-        if (Input.GetKeyDown("o"))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (invincibilityFrame > 0.1)
             {
@@ -23,7 +23,9 @@ public class PlayerShooting : MonoBehaviour
             }
         }
 
-        if (Input.GetKey("p") && machineGunObtained == true && machineGunBullets > 0)
+
+
+        if (Input.GetKey(KeyCode.Mouse1) && machineGunObtained == true && machineGunBullets > 0)
         {
             if (invincibilityFrame > 0.1)
             {

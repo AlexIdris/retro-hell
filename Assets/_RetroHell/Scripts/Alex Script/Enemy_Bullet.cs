@@ -2,10 +2,22 @@ using UnityEngine;
 
 public class Enemy_Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
+    public float timeAwake;
+    public static int bulletDamage;
 
+    private void Start()
+    {
+        bulletDamage = 5;
+    }
+
+    private void FixedUpdate()
+    {
+        timeAwake += Time.deltaTime;
+
+        if (timeAwake >= 5)
+        {
+            Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -17,7 +29,7 @@ public class Enemy_Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "Breakable Wall")
         {
-            Destroy(other.gameObject);
+
         }
 
         if (other.gameObject.CompareTag("Player"))
@@ -26,8 +38,15 @@ public class Enemy_Bullet : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(10);
+
             }
         }
+
+        if (other.gameObject.tag == "Enemy Bullet")
+        {
+
+        }
+
         Destroy(gameObject);
 
     }

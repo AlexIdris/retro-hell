@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class turretshooting : MonoBehaviour
+public class turretshooting_Bounce : MonoBehaviour
 {
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] Transform firePoint;
@@ -8,9 +8,9 @@ public class turretshooting : MonoBehaviour
     [SerializeField] float bulletSpeed = 10f;
     [SerializeField] float nextFireTime = 0f;
 
-    public void Update()
+    private void Update()
     {
-        if (Time.time > nextFireTime)
+        if(Time.time > nextFireTime)
         {
             Shoot();
             nextFireTime = Time.time + 1f / fireRate;

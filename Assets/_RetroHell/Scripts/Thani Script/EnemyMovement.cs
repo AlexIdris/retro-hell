@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -8,12 +6,15 @@ public class EnemyMovement : MonoBehaviour
     public float currentDistance;
     public bool shooting;
     [SerializeField] GameObject target;
+    [SerializeField] float playerDistance = 5f;
 
     public GameObject bullet;
     [SerializeField] GameObject bulletSpawner;
     public float bulletSpeed;
     public float invincibilityFrame;
 
+    [SerializeField] float nextFireTime = 0f;
+    [SerializeField] float fireRate = 1.0f;
     public void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
@@ -31,17 +32,18 @@ public class EnemyMovement : MonoBehaviour
 
         transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.up);
 
-        if (currentDistance > 10)
+        if (currentDistance > playerDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, movement);
             shooting = false;
         }
 
-        if (shooting == true && invincibilityFrame > 0.2)
+        if (shooting == true && invincibilityFrame > 0.2 && Time.time > nextFireTime)
         {
             Shoot();
             Debug.Log("Shot a bullet!");
             invincibilityFrame = 0;
+            nextFireTime = Time.time + 1f / fireRate;
         }
     }
 
@@ -49,5 +51,16 @@ public class EnemyMovement : MonoBehaviour
     {
         var bulletSample = Instantiate(bullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
         bulletSample.GetComponent<Rigidbody>().velocity = bulletSpawner.transform.forward * bulletSpeed;
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Bullets")
+        {
+            Destroy(gameObject);
+        }
+        if (other.tag == "Enemy Bullets")
+        {
+            Destroy(other.gameObject);
+        }
     }
 }
