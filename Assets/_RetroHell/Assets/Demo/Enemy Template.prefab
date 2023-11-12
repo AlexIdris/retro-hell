@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.03, y: 1.26, z: 20.48}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3670785717941815391}
@@ -151,10 +151,13 @@ MonoBehaviour:
   currentDistance: 0
   shooting: 0
   target: {fileID: 0}
-  bullet: {fileID: 4155289432700856960, guid: d6f0b79a59ae0458d888a7080a0108c7, type: 3}
+  playerDistance: 5
   bulletSpawner: {fileID: 5517666368430982169}
+  bullet: {fileID: 3079355570006537828, guid: d99aaf1fc578c5445b3fcb83612b2e4b, type: 3}
   bulletSpeed: 10
   invincibilityFrame: 0
+  nextFireTime: 0
+  fireRate: 1
 --- !u!1 &5517666368430982169
 GameObject:
   m_ObjectHideFlags: 0
