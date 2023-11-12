@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Shooting : MonoBehaviour
@@ -8,6 +9,8 @@ public class Shooting : MonoBehaviour
     public float invincibilityFrame;
     public int machineGunBullets;
     public bool machineGunObtained;
+
+    [SerializeField] TMP_Text bullettext;
 
     private void Update()
     {
@@ -33,12 +36,14 @@ public class Shooting : MonoBehaviour
                 Debug.Log("Shot a bullet!");
                 invincibilityFrame = 0;
                 machineGunBullets -= 1;
+                bullettext.text = machineGunBullets.ToString();
             }
         }
 
         if (machineGunBullets == 0)
         {
             machineGunObtained = false;
+            bullettext.text = machineGunBullets.ToString();
         }
     }
 
