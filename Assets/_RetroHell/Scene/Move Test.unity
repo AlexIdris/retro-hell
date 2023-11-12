@@ -3989,7 +3989,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   button: {fileID: 2065467175}
-  buttonInteractable: 1
 --- !u!136 &1240022019
 CapsuleCollider:
   m_ObjectHideFlags: 0
