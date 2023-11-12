@@ -6,18 +6,21 @@ public class PowerUpHealth : MonoBehaviour
     public Player_Control playerHealth;
     public int extraHealth;
 
-    private void Start()
+
+    private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<Player_Control>();
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
             playerHealth.currentHealth += extraHealth;
+            playerHealth.health.ChangeHealth(playerHealth.currentHealth);
             Destroy(gameObject);
         }
     }
+
 }

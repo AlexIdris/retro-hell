@@ -5,6 +5,7 @@ public class Shooting : MonoBehaviour
 {
     public GameObject bullet;
     [SerializeField] Transform bulletSpawner;
+    [SerializeField] GameObject machineGun;
     public float bulletSpeed;
     public float invincibilityFrame;
     public int machineGunBullets;
@@ -44,6 +45,7 @@ public class Shooting : MonoBehaviour
         {
             machineGunObtained = false;
             bullettext.text = machineGunBullets.ToString();
+            machineGun.SetActive(false);
         }
     }
 

@@ -21,10 +21,7 @@ public class Enemy_Bullet : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
 
-    }
     public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Breakable Wall")
@@ -42,9 +39,9 @@ public class Enemy_Bullet : MonoBehaviour
             }
         }
 
-        if (other.gameObject.tag == "Enemy Bullet")
+        if (other.gameObject.tag == "Bullets")
         {
-
+            Destroy(gameObject);
         }
 
         Destroy(gameObject);

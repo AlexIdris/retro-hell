@@ -14,7 +14,8 @@ public class EnemyMovement : MonoBehaviour
 
     [SerializeField] float nextFireTime = 0f;
     [SerializeField] float fireRate = 1.0f;
-    public void Start()
+
+    void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         bullet = GameObject.FindGameObjectWithTag("Enemy Bullet");

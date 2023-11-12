@@ -35,6 +35,10 @@ public class BulletPhysics : MonoBehaviour
                 playerHealth.TakeDamage(10);
             }
         }
+        if (other.gameObject.tag == "Bullets")
+        {
+            Destroy(other.gameObject);
+        }
         Destroy(gameObject);
 
     }
