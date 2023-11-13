@@ -1,24 +1,27 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MachineGun : MonoBehaviour
 {
-    public GameObject player;
-    public PlayerShooting playerControls;
+    public Player_Control player;
+    public Shooting playerControls;
+
+    [SerializeField] TMP_Text bullettext;
+    [SerializeField] GameObject machineGun;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerControls = player.GetComponent<PlayerShooting>();
-    }
 
-    private void OnCollisionEnter(Collision other)
+    }
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.tag == "Player")
         {
+
             playerControls.machineGunObtained = true;
             playerControls.machineGunBullets = 50;
+            machineGun.SetActive(true);
+            bullettext.text = playerControls.machineGunBullets.ToString();
             Destroy(gameObject);
         }
     }

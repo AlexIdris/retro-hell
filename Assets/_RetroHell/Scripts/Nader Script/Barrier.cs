@@ -10,6 +10,11 @@ public class Barrier : MonoBehaviour
             {
                 Destroy(collision.gameObject);
             }
+
+            if (collision.gameObject.CompareTag("Bullets"))
+            {
+                Destroy(collision.gameObject);
+            }
         }
     }
 

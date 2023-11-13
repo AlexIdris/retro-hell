@@ -1,13 +1,17 @@
+using TMPro;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
     public GameObject bullet;
     [SerializeField] Transform bulletSpawner;
+    [SerializeField] GameObject machineGun;
     public float bulletSpeed;
     public float invincibilityFrame;
     public int machineGunBullets;
     public bool machineGunObtained;
+
+    [SerializeField] TMP_Text bullettext;
 
     private void Update()
     {
@@ -33,12 +37,15 @@ public class PlayerShooting : MonoBehaviour
                 Debug.Log("Shot a bullet!");
                 invincibilityFrame = 0;
                 machineGunBullets -= 1;
+                bullettext.text = machineGunBullets.ToString();
             }
         }
 
         if (machineGunBullets == 0)
         {
             machineGunObtained = false;
+            bullettext.text = machineGunBullets.ToString();
+            machineGun.SetActive(false);
         }
     }
 

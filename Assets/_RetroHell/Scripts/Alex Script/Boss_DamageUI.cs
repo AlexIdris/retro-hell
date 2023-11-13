@@ -2,49 +2,61 @@ using UnityEngine;
 
 public class Boss_DamageUI : MonoBehaviour
 {
-    [SerializeField] int maxHealth = 500;
-    [SerializeField] int halfHealth = 250;
+    [SerializeField] int maxHealth = 1000;
+    [SerializeField] int firstHealth = 750;
+    [SerializeField] int halfHealth = 500;
     public int currentHealth;
 
 
-    [SerializeField] GameObject Bullet;
-    [SerializeField] GameObject Bulletone;
-    [SerializeField] GameObject Bullettwo;
-    [SerializeField] GameObject Bulletthree;
-    [SerializeField] GameObject Minions;
-    [SerializeField] GameObject Minionsone;
-    [SerializeField] GameObject Minionstwo;
-    [SerializeField] GameObject Minionsthree;
+    [SerializeField] GameObject secondhealthpattern;
+    [SerializeField] GameObject firsthealthpattern;
+    [SerializeField] GameObject thirdhealthpattern;
+    bool first = false;
+    bool second = false;
+
+
 
     public Enemy_Health health;
     void Start()
     {
+        first = true;
         currentHealth = maxHealth;
         health.SetMaxHealth(maxHealth);
-        Minions.SetActive(false);
-        Minionsone.SetActive(false);
-        Minionstwo.SetActive(false);
-        Minionsthree.SetActive(false);
 
-        Bullet.SetActive(true);
-        Bulletone.SetActive(true);
-        Bullettwo.SetActive(true);
-        Bulletthree.SetActive(true);
+        firsthealthpattern.SetActive(true);
+        secondhealthpattern.SetActive(false);
+        thirdhealthpattern.SetActive(false);
     }
+
     private void Update()
     {
-        if (currentHealth <= halfHealth)
-        {
-            Minions.SetActive(true);
-            Minionsone.SetActive(true);
-            Minionstwo.SetActive(true);
-            Minionsthree.SetActive(true);
 
-            Bullet.SetActive(false);
-            Bulletone.SetActive(false);
-            Bullettwo.SetActive(false);
-            Bulletthree.SetActive(false);
+        if (currentHealth <= firstHealth && first)
+        {
+            Secondpattern();
+            first = false;
+            second = true;
         }
+        if (currentHealth <= halfHealth && second)
+        {
+            Thirdpattern();
+
+        }
+
+    }
+    void Secondpattern()
+    {
+        firsthealthpattern.SetActive(false);
+        secondhealthpattern.SetActive(true);
+        thirdhealthpattern.SetActive(false);
+
+
+    }
+    void Thirdpattern()
+    {
+        firsthealthpattern.SetActive(false);
+        secondhealthpattern.SetActive(false);
+        thirdhealthpattern.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -7,15 +7,15 @@ public class EnemyMovement : MonoBehaviour
     public bool shooting;
     [SerializeField] GameObject target;
     [SerializeField] float playerDistance = 5f;
-
-    public GameObject bullet;
     [SerializeField] GameObject bulletSpawner;
-    public float bulletSpeed;
+    public GameObject bullet;
+    public float bulletSpeed = 1f;
     public float invincibilityFrame;
 
     [SerializeField] float nextFireTime = 0f;
     [SerializeField] float fireRate = 1.0f;
-    public void Start()
+
+    void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
         bulletSpawner = GameObject.FindGameObjectWithTag("Enemy Bullet Spawner");
@@ -60,7 +60,7 @@ public class EnemyMovement : MonoBehaviour
         }
         if (other.tag == "Enemy Bullets")
         {
-            Destroy(other.gameObject);
+
         }
     }
 }
