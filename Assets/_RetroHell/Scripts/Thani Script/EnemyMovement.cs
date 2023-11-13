@@ -52,6 +52,7 @@ public class EnemyMovement : MonoBehaviour
         var bulletSample = Instantiate(bullet, bulletSpawner.transform.position, bulletSpawner.transform.rotation);
         bulletSample.GetComponent<Rigidbody>().velocity = bulletSpawner.transform.forward * bulletSpeed;
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bullets")
