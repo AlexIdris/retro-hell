@@ -4,7 +4,7 @@ using UnityEngine;
 public class MachineGun : MonoBehaviour
 {
     public Player_Control player;
-    public Shooting playerControls;
+    public PlayerShooting playerControls;
 
     [SerializeField] TMP_Text bullettext;
     [SerializeField] GameObject machineGun;

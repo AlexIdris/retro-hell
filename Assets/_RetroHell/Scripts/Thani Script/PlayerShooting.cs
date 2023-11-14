@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class Shooting : MonoBehaviour
+public class PlayerShooting : MonoBehaviour
 {
     public GameObject bullet;
     [SerializeField] Transform bulletSpawner;
@@ -53,5 +53,14 @@ public class Shooting : MonoBehaviour
     {
         var bulletSample = Instantiate(bullet, bulletSpawner.position, bulletSpawner.rotation);
         bulletSample.GetComponent<Rigidbody>().velocity = bulletSpawner.forward * bulletSpeed;
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "MachineGun")
+        {
+            machineGunObtained = true;
+            machineGunBullets = 50;
+        }
     }
 }

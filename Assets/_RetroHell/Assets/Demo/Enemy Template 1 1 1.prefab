@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 3428133157593259289}
   m_Layer: 0
   m_Name: Enemy Bullet Spawner
-  m_TagString: Enemy
+  m_TagString: Enemy Bullet Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
