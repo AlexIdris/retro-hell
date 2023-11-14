@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class MoveToTarget : MonoBehaviour
+public class moveBarrel : MonoBehaviour
 {
     public Vector3 moveUp = new Vector3(0f, 9f, 0f);//move barrel up
     public Vector3 moveDown = new Vector3(0f, 4f, 0f);//move barrel down
@@ -9,7 +9,7 @@ public class MoveToTarget : MonoBehaviour
 
     private bool Moving = false;//checks if barrel is moving
 
-    void Start()
+    void OnEnable()
     {
         // starts moving the barrel up and down
         StartCoroutine(isMoviing());
@@ -27,11 +27,17 @@ public class MoveToTarget : MonoBehaviour
     IEnumerator MoveTo(Vector3 targetPosition)
     {
         Moving = true;
+        if(Moving == true)
+        {
+
+        
         while (Vector3.Distance(transform.position, targetPosition) > 1f)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, Speed * Time.deltaTime);
             yield return null;
         }
-        Moving = false;
+            Moving = false;
+        }
+        
     }
 }
