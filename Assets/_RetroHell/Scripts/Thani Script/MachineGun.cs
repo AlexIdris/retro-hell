@@ -8,6 +8,7 @@ public class MachineGun : MonoBehaviour
 
     [SerializeField] TMP_Text bullettext;
     [SerializeField] GameObject machineGun;
+    [SerializeField] int maxAmmo = 30;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class MachineGun : MonoBehaviour
         {
 
             playerControls.machineGunObtained = true;
-            playerControls.machineGunBullets = 50;
+            playerControls.machineGunBullets = maxAmmo;
             machineGun.SetActive(true);
             bullettext.text = playerControls.machineGunBullets.ToString();
             Destroy(gameObject);

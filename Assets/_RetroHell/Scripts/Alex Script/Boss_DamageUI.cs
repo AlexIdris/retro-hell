@@ -1,20 +1,25 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Boss_DamageUI : MonoBehaviour
 {
     [SerializeField] int maxHealth = 1000;
     [SerializeField] int firstHealth = 750;
     [SerializeField] int halfHealth = 500;
+    [SerializeField] int lasthealth = 250;
+    [SerializeField] int dead = 0;
     public int currentHealth;
 
 
     [SerializeField] GameObject secondhealthpattern;
     [SerializeField] GameObject firsthealthpattern;
     [SerializeField] GameObject thirdhealthpattern;
+    [SerializeField] GameObject fourthhealthpattern;
+    [SerializeField] GameObject miniturrenthealth;
     bool first = false;
     bool second = false;
-
-
+    bool third = false;
+    bool fourth = false;
 
     public Enemy_Health health;
     void Start()
@@ -26,6 +31,8 @@ public class Boss_DamageUI : MonoBehaviour
         firsthealthpattern.SetActive(true);
         secondhealthpattern.SetActive(false);
         thirdhealthpattern.SetActive(false);
+        fourthhealthpattern.SetActive(false);
+        miniturrenthealth.SetActive(false);
     }
 
     private void Update()
@@ -40,7 +47,22 @@ public class Boss_DamageUI : MonoBehaviour
         if (currentHealth <= halfHealth && second)
         {
             Thirdpattern();
+            first = false;
+            second = false;
+            third = true;
+        }
+        if (currentHealth <= lasthealth && third)
+        {
+            Fourthpattern();
+            first = false;
+            second = false;
+            third = false;
+            fourth = true;
+        }
+        if (currentHealth == dead && fourth)
+        {
 
+            SceneManager.LoadScene(0);
         }
 
     }
@@ -49,14 +71,24 @@ public class Boss_DamageUI : MonoBehaviour
         firsthealthpattern.SetActive(false);
         secondhealthpattern.SetActive(true);
         thirdhealthpattern.SetActive(false);
-
-
+        fourthhealthpattern.SetActive(false);
+        miniturrenthealth.SetActive(false);
     }
     void Thirdpattern()
     {
         firsthealthpattern.SetActive(false);
         secondhealthpattern.SetActive(false);
         thirdhealthpattern.SetActive(true);
+        fourthhealthpattern.SetActive(false);
+        miniturrenthealth.SetActive(false);
+    }
+    void Fourthpattern()
+    {
+        firsthealthpattern.SetActive(true);
+        secondhealthpattern.SetActive(false);
+        thirdhealthpattern.SetActive(false);
+        fourthhealthpattern.SetActive(true);
+        miniturrenthealth.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)

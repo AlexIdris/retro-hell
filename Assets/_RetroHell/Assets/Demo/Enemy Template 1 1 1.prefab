@@ -348,10 +348,10 @@ MonoBehaviour:
   playerDistance: 5
   bulletSpawner: {fileID: 5515014918080694824}
   bullet: {fileID: 3079355570006537828, guid: d99aaf1fc578c5445b3fcb83612b2e4b, type: 3}
-  bulletSpeed: 2
+  bulletSpeed: 1
   invincibilityFrame: 0
   nextFireTime: 2
-  fireRate: 3
+  fireRate: 0.2
 --- !u!54 &8595796326591560924
 Rigidbody:
   m_ObjectHideFlags: 0
