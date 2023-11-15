@@ -5237,8 +5237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57f8faab0ca9cd542826eb22209322ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.02
-  rotationDelay: 2
+  speed: 1
+  rotationDelay: 3
 --- !u!4 &988399752
 Transform:
   m_ObjectHideFlags: 0
@@ -5952,12 +5952,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1107250405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ead80c9ec4cc5545a8af2a982f88ce0, type: 3}
+  m_Script: {fileID: 11500000, guid: d63653637c9a1354aa31ffdda2f68143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveUp: {x: 0, y: 0, z: 9}
-  moveDown: {x: 0, y: 0, z: 4}
-  Speed: 2
+  minDistance: 1
+  maxDistance: 6
+  speed: 2
 --- !u!1 &1107486393
 GameObject:
   m_ObjectHideFlags: 0
@@ -6191,15 +6191,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.21000123
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6885452
+      value: -0.16
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5581642
+      value: -0.504
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10025,15 +10025,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.21000123
+      value: -0.003
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6885452
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.40835407
+      value: 0.498
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11556,15 +11556,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.6200004
+      value: 0.034
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6885452
+      value: -0.06
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.4578881
+      value: -0.496
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11781,12 +11781,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1998330600}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ead80c9ec4cc5545a8af2a982f88ce0, type: 3}
+  m_Script: {fileID: 11500000, guid: d63653637c9a1354aa31ffdda2f68143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveUp: {x: 1, y: 1, z: 9}
-  moveDown: {x: 1, y: 1, z: 4}
-  Speed: 2
+  minDistance: 1
+  maxDistance: 6
+  speed: 2
 --- !u!1 &2029240389
 GameObject:
   m_ObjectHideFlags: 0
@@ -12729,15 +12729,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.61999947
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6885452
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.5086306
+      value: 0.509
       objectReference: {fileID: 0}
     - target: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
       propertyPath: m_LocalRotation.w
