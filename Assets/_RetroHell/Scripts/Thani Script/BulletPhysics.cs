@@ -14,7 +14,7 @@ public class BulletPhysics : MonoBehaviour
     {
         timeAwake += Time.deltaTime;
 
-        if (timeAwake >= 3)
+        if (timeAwake >= 2)
         {
             Destroy(gameObject);
         }
