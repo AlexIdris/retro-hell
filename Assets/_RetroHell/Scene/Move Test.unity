@@ -1150,6 +1150,137 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &181655396
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181655400}
+  - component: {fileID: 181655399}
+  - component: {fileID: 181655398}
+  - component: {fileID: 181655397}
+  - component: {fileID: 181655401}
+  m_Layer: 0
+  m_Name: Boss Shield
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!136 &181655397
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181655396}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &181655398
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181655396}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &181655399
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181655396}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &181655400
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181655396}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.52, y: 3.58, z: -0.069999695}
+  m_LocalScale: {x: 9, y: 6, z: 9}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1259099764}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &181655401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181655396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c7ab7b1ffcd46e69a27c31bee778f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  miniBoss1: {fileID: 1558427378}
+  miniBoss2: {fileID: 1716221465}
+  miniBoss3: {fileID: 1418000661}
+  miniBoss4: {fileID: 1621218484}
+  miniBoss1Health: {fileID: 1558427382}
+  miniBoss2Health: {fileID: 1716221467}
+  miniBoss3Health: {fileID: 1418000663}
+  miniBoss4Health: {fileID: 1621218486}
+  mainBoss: {fileID: 1259099761}
+  mainBossHealth: {fileID: 1259099763}
+  bossShield: {fileID: 181655396}
 --- !u!1 &183716830
 GameObject:
   m_ObjectHideFlags: 0
@@ -7249,7 +7380,7 @@ CapsuleCollider:
   m_Radius: 2.206612
   m_Height: 18.594496
   m_Direction: 1
-  m_Center: {x: -0.14732456, y: 1.2283602, z: -0.44697952}
+  m_Center: {x: -0.1473246, y: 1.2283602, z: -0.44697952}
 --- !u!114 &1259099763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7273,6 +7404,8 @@ MonoBehaviour:
   thirdhealthpattern: {fileID: 626688874}
   fourthhealthpattern: {fileID: 1430271467}
   miniturrenthealth: {fileID: 1208491966}
+  ShieldCode: {fileID: 181655401}
+  ShieldObject: {fileID: 181655396}
   health: {fileID: 342196774}
 --- !u!4 &1259099764
 Transform:
@@ -7289,6 +7422,7 @@ Transform:
   m_Children:
   - {fileID: 1430271468}
   - {fileID: 988399752}
+  - {fileID: 181655400}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1282421706

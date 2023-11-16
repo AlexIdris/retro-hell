@@ -16,6 +16,9 @@ public class Boss_DamageUI : MonoBehaviour
     [SerializeField] GameObject thirdhealthpattern;
     [SerializeField] GameObject fourthhealthpattern;
     [SerializeField] GameObject miniturrenthealth;
+    [SerializeField] BossShield ShieldCode;
+    [SerializeField] GameObject ShieldObject;
+
     bool first = false;
     bool second = false;
     bool third = false;
@@ -33,6 +36,8 @@ public class Boss_DamageUI : MonoBehaviour
         thirdhealthpattern.SetActive(false);
         fourthhealthpattern.SetActive(false);
         miniturrenthealth.SetActive(false);
+
+        ShieldCode = ShieldObject.GetComponent<BossShield>();
     }
 
     private void Update()
@@ -58,6 +63,8 @@ public class Boss_DamageUI : MonoBehaviour
             second = false;
             third = false;
             fourth = true;
+
+            ShieldCode.Activate();
         }
         if (currentHealth == dead && fourth)
         {
