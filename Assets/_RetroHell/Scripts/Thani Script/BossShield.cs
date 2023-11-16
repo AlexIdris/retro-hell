@@ -16,6 +16,7 @@ public class BossShield : MonoBehaviour
     public GameObject mainBoss;
     public Boss_DamageUI mainBossHealth;
     public GameObject bossShield;
+    public bool activated;
 
     void Start()
     {
@@ -30,6 +31,7 @@ public class BossShield : MonoBehaviour
     {
         if (miniBoss1Health.minicurrentHealth == 0 && miniBoss2Health.minicurrentHealth == 0 && miniBoss3Health.minicurrentHealth == 0 && miniBoss4Health.minicurrentHealth == 0)
         {
+            activated = false;
             bossShield.SetActive(false);
         }
     }
@@ -37,5 +39,7 @@ public class BossShield : MonoBehaviour
     public void Activate()
     {
         bossShield.SetActive(true);
+        activated = true;
+        Debug.Log("Shield Activated!");
     }
 }

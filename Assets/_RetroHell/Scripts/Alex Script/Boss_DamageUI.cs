@@ -100,12 +100,12 @@ public class Boss_DamageUI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Bullets")
+        if (other.tag == "Bullets" && ShieldCode.activated == false)
         {
             TakeDamage(10);
-
         }
     }
+
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;

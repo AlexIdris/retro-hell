@@ -39,6 +39,10 @@ public class BulletPhysics : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+        if (other.gameObject.tag == "Shield")
+        {
+            Destroy(gameObject);
+        }
         Destroy(gameObject);
 
     }

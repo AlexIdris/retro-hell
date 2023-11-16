@@ -18,7 +18,6 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
-        bulletSpawner = GameObject.FindGameObjectWithTag("Enemy Bullet Spawner");
     }
 
     public void Update()
