@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class Boss_DamageUI : MonoBehaviour
 {
-    [SerializeField] int maxHealth = 1000;
-    [SerializeField] int firstHealth = 750;
-    [SerializeField] int halfHealth = 500;
-    [SerializeField] int lasthealth = 250;
+    [SerializeField] int maxHealth = 2000;
+    [SerializeField] int firstHealth = 1500;
+    [SerializeField] int halfHealth = 1000;
+    [SerializeField] int lasthealth = 500;
     [SerializeField] int dead = 0;
     public int currentHealth;
 
