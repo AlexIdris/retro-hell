@@ -38,7 +38,7 @@ public class PauseSystem : MonoBehaviour
 
     public void LoadMainMenu()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
 
