@@ -8,7 +8,7 @@ public class MachineGun : MonoBehaviour
 
     [SerializeField] TMP_Text bullettext;
     [SerializeField] GameObject machineGun;
-    [SerializeField] int maxAmmo = 30;
+    [SerializeField] int maxAmmo = 50;
 
     private void Start()
     {

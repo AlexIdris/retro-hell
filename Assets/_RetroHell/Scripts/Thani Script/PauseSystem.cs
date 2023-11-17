@@ -33,7 +33,7 @@ public class PauseSystem : MonoBehaviour
 
     public void Restart()
     {
-        SceneManager.LoadScene("Move Test");
+        SceneManager.LoadScene(1);
     }
 
     public void LoadMainMenu()

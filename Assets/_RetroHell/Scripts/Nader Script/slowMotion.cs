@@ -10,7 +10,10 @@ public class slowMotion : MonoBehaviour
     [SerializeField] Button button;
     [SerializeField] GameObject SlowmoFrame;
     [SerializeField] TMP_Text EText;
-    [SerializeField] float delayTime = 2f;
+    [SerializeField] float cooldownTime = 5f;
+    [SerializeField] float cooldownTimer = 0f;
+    [SerializeField] bool isCooldown = true;
+
 
 
     // Start is called before the first frame update
@@ -25,27 +28,34 @@ public class slowMotion : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        Slowdowntime();
-        Normaltime();
-
-    }
-    void Slowdowntime()
-    {
-
-
-        if (Input.GetKeyDown(KeyCode.E))
+        if (isCooldown)
         {
 
-            slowMo = true;
-            Time.timeScale = slowMoSpeed;
-            button.onClick.Invoke();
+            cooldownTimer -= Time.deltaTime;
+
+            if (cooldownTimer <= 0)
+            {
+                isCooldown = false;
+                cooldownTimer = 0f;
+            }
+        }
+        if (!isCooldown)
+        {
+            button.interactable = true;
             SlowmoFrame.SetActive(true);
             EText.gameObject.SetActive(true);
 
+            if (Input.GetKeyDown(KeyCode.E) && !isCooldown)
+            {
+
+                slowMo = true;
+                Time.timeScale = slowMoSpeed;
+
+
+            }
         }
-    }
-    void Normaltime()
-    {
+
+
 
         if (Input.GetKeyUp(KeyCode.E))
         {
@@ -55,7 +65,20 @@ public class slowMotion : MonoBehaviour
             SlowmoFrame.SetActive(false);
             EText.gameObject.SetActive(false);
 
+            isCooldown = true;
+            cooldownTimer = cooldownTime;
+
 
         }
+
+    }
+    void Slowdowntime()
+    {
+
+
+    }
+    void Normaltime()
+    {
+
     }
 }

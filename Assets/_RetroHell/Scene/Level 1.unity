@@ -5873,7 +5873,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1101921251
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7302,10 +7302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cecde9d8036ede4e950f2a62ec50651, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  firstHealth: 750
-  halfHealth: 500
-  lasthealth: 250
+  maxHealth: 2000
+  firstHealth: 1500
+  halfHealth: 1000
+  lasthealth: 500
   dead: 0
   currentHealth: 0
   secondhealthpattern: {fileID: 1458513117}
@@ -12691,6 +12691,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1240022007}
+    - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: maxAmmo
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: bullettext
       value: 

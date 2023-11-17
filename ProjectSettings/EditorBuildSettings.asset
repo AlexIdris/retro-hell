@@ -17,5 +17,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_RetroHell/Scene/Brief & Control.unity
     guid: 104e0f6fe231fb74fa32e3678a53e6ab
+  - enabled: 1
+    path: Assets/_RetroHell/Scene/Levels.unity
+    guid: 60a50ea2a1a2e944cb289f93e7c91c6a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
