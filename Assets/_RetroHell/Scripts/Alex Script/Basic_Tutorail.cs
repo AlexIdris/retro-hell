@@ -23,10 +23,9 @@ public class Basic_Tutorail : MonoBehaviour
         Next.SetActive(true);
         Previous.SetActive(false);
     }
-    private void FixedUpdate()
+    private void Update()
     {
 
-        timeAwake += Time.deltaTime;
         if (Input.GetKey(KeyCode.Alpha2))
         {
             TutorText.text = "Blue Box Indicate Machineguns\n " +
@@ -46,12 +45,6 @@ public class Basic_Tutorail : MonoBehaviour
             IntructionText.text = "Press 2 for Next";
             Next.SetActive(true);
             Previous.SetActive(false);
-        }
-
-        if (timeAwake >= 15)
-        {
-
-            Destroy(gameObject);
         }
 
 

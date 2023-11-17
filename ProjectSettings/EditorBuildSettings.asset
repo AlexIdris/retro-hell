@@ -11,5 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_RetroHell/Scene/Menu.unity
     guid: e82bbb24790784d498a49fa3bdbc7f04
+  - enabled: 1
+    path: Assets/_RetroHell/Scene/Controls.unity
+    guid: c3b2f022ae2a661428e4134270bdc020
+  - enabled: 1
+    path: Assets/_RetroHell/Scene/Brief & Control.unity
+    guid: 104e0f6fe231fb74fa32e3678a53e6ab
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
