@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
 {
@@ -79,7 +80,16 @@ public class Player_Control : MonoBehaviour
         if (other.tag == "Enemy Bullet")
         {
             TakeDamage(10);
+            if (currentHealth == 0)
+            {
+                OnDeath();
+            }
         }
+
+    }
+    void OnDeath()
+    {
+        SceneManager.LoadScene(1);
     }
     void TakeDamage(int damage)
     {

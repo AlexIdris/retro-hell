@@ -102,10 +102,17 @@ public class Boss_DamageUI : MonoBehaviour
     {
         if (other.tag == "Bullets" && ShieldCode.activated == false)
         {
-            TakeDamage(10);
+            TakeDamage(10); if (currentHealth == 0)
+            {
+                OnDeath();
+            }
         }
-    }
 
+    }
+    void OnDeath()
+    {
+        SceneManager.LoadScene(1);
+    }
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
