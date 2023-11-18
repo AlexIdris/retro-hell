@@ -4,10 +4,11 @@ using UnityEngine.SceneManagement;
 public class Boss_DamageUI : MonoBehaviour
 {
     [SerializeField] int maxHealth = 2000;
-    [SerializeField] int firstHealth = 1500;
-    [SerializeField] int halfHealth = 1000;
-    [SerializeField] int lasthealth = 500;
-    [SerializeField] int dead = 0;
+    [SerializeField] int firstHealth = 1600;
+    [SerializeField] int halfHealth = 1200;
+    [SerializeField] int lasthealth = 800;
+    [SerializeField] int lasthealthsecorndpattern = 400;
+    private int dead = 0;
     public int currentHealth;
 
 
@@ -19,14 +20,17 @@ public class Boss_DamageUI : MonoBehaviour
     [SerializeField] BossShield ShieldCode;
     [SerializeField] GameObject ShieldObject;
 
+
     bool first = false;
     bool second = false;
     bool third = false;
     bool fourth = false;
+    bool fiveth = false;
 
     public Enemy_Health health;
     void Start()
     {
+
         first = true;
         currentHealth = maxHealth;
         health.SetMaxHealth(maxHealth);
@@ -66,10 +70,14 @@ public class Boss_DamageUI : MonoBehaviour
 
             ShieldCode.Activate();
         }
+        if (currentHealth <= lasthealthsecorndpattern && fourth)
+        {
+            Fivethpattern();
+        }
         if (currentHealth == dead && fourth)
         {
 
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(5);
         }
 
     }
@@ -97,12 +105,22 @@ public class Boss_DamageUI : MonoBehaviour
         fourthhealthpattern.SetActive(true);
         miniturrenthealth.SetActive(true);
     }
+    void Fivethpattern()
+    {
+        firsthealthpattern.SetActive(true);
+        secondhealthpattern.SetActive(true);
+        thirdhealthpattern.SetActive(true);
+        fourthhealthpattern.SetActive(false);
+        miniturrenthealth.SetActive(false);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bullets" && ShieldCode.activated == false)
         {
-            TakeDamage(10); if (currentHealth == 0)
+            EnemyTakeDamage(10);
+
+            if (currentHealth == 0)
             {
                 OnDeath();
             }
@@ -111,9 +129,9 @@ public class Boss_DamageUI : MonoBehaviour
     }
     void OnDeath()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(4);
     }
-    public void TakeDamage(int damage)
+    public void EnemyTakeDamage(int damage)
     {
         currentHealth -= damage;
         health.SetHealth(currentHealth);

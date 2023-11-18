@@ -10,6 +10,16 @@ public class PauseSystem : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+    public void IngamePauseIn()
+    {
+
+        if (gamePaused == false)
+        {
+            Time.timeScale = 0;
+            pauseScreen.SetActive(true);
+            Debug.Log("Game Paused!");
+        }
+    }
 
     public void Update()
     {

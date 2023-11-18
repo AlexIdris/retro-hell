@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossShield : MonoBehaviour
@@ -41,5 +39,15 @@ public class BossShield : MonoBehaviour
         bossShield.SetActive(true);
         activated = true;
         Debug.Log("Shield Activated!");
+
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Bullets")
+        {
+            Destroy(other.gameObject);
+        }
+
     }
 }

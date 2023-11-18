@@ -9,13 +9,14 @@ TagManager:
   - Breakable
   - Breakable Wall
   - Enemy
-  - Enemy Bullet
   - Bullet Spawner
   - Enemy Bullet Spawner
   - Boss
   - Machine Gun Power-Up
   - MachineGun
   - Shield
+  - EnemyBullets
+  - Wall
   layers:
   - Default
   - TransparentFX

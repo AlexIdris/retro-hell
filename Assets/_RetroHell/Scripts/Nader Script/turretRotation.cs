@@ -4,7 +4,7 @@ public class turretRotation : MonoBehaviour
 {
 
     public float speed = 10;
-    public float rotationDelay = 1f;
+    public float rotationDelay = 0.5f;
     private bool rotating = false;
 
 

@@ -17,8 +17,8 @@ public class PowerUpHealth : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            playerHealth.currentHealth += extraHealth;
-            playerHealth.health.ChangeHealth(playerHealth.currentHealth);
+            playerHealth.playercurrentHealth += extraHealth;
+            playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
             Destroy(gameObject);
         }
     }

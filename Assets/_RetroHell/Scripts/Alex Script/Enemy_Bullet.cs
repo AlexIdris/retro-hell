@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy_Bullet : MonoBehaviour
 {
-    public float timeAwake;
+    [SerializeField] float timeAwake;
     public static int bulletDamage;
 
     private void Start()
@@ -14,7 +14,7 @@ public class Enemy_Bullet : MonoBehaviour
     {
         timeAwake += Time.deltaTime;
 
-        if (timeAwake >= 5)
+        if (timeAwake >= 7)
         {
             Destroy(gameObject);
         }
@@ -22,29 +22,39 @@ public class Enemy_Bullet : MonoBehaviour
 
     // Update is called once per frame
 
-    public void OnCollisionEnter(Collision other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Breakable Wall")
-        {
-
-        }
-
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Boss_DamageUI playerHealth = other.gameObject.GetComponent<Boss_DamageUI>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(10);
-
-            }
-        }
-
-        if (other.gameObject.tag == "Bullets")
+        if (other.tag == "Breakable Wall")
         {
             Destroy(gameObject);
         }
 
-        Destroy(gameObject);
+        if (other.tag == "Player")
+        {
+            Player_Control playerHealth = other.gameObject.GetComponent<Player_Control>();
+
+            if (playerHealth != null)
+            {
+
+                Destroy(gameObject);
+
+            }
+        }
+        if (other.tag == "Wall")
+        {
+            Destroy(gameObject);
+        }
+        if (other.tag == "EnemyBullets")
+        {
+            Destroy(gameObject);
+        }
+
+        if (other.tag == "Bullets")
+        {
+            Destroy(gameObject);
+        }
+
+
 
     }
 }
