@@ -13,21 +13,25 @@ public class Basic_Tutorail : MonoBehaviour
     {
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        Frame.SetActive(true);
+        TutorText.gameObject.SetActive(true);
+
+        TutorText.text = "WASD for Movement\n" +
+            "Left Click Mouse for Shooting\n" +
+            "E to Slowdown Time\n";
+
+        IntructionText.text = "Press 2 for Next";
+        Next.SetActive(true);
+        Previous.SetActive(false);
+
+
+    }
     void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
-
-            Frame.SetActive(true);
-            TutorText.gameObject.SetActive(true);
-
-            TutorText.text = "WASD for Movement\n" +
-                "Left Click Mouse for Shooting\n" +
-                "E to Slowdown Time\n";
-
-            IntructionText.text = "Hold Down 2 for Next";
-            Next.SetActive(true);
-            Previous.SetActive(false);
 
             if (Input.GetKey(KeyCode.Alpha2))
             {
@@ -45,7 +49,7 @@ public class Basic_Tutorail : MonoBehaviour
                 TutorText.text = "WASD for Movement\n" +
                "Left Click Mouse for Shooting\n" +
                "E to Slowdown Time\n";
-                IntructionText.text = "Hold Down 2 for Next";
+                IntructionText.text = "Press 2 for Next";
                 Next.SetActive(true);
                 Previous.SetActive(false);
             }
