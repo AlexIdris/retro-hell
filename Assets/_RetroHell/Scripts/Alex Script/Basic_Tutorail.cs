@@ -8,26 +8,11 @@ public class Basic_Tutorail : MonoBehaviour
     [SerializeField] GameObject Frame;
     [SerializeField] GameObject Next;
     [SerializeField] GameObject Previous;
+    [SerializeField] GameObject TutorailPopups;
     private void Start()
     {
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
 
-            Frame.SetActive(true);
-            TutorText.gameObject.SetActive(true);
-
-            TutorText.text = "WASD for Movement\n" +
-                "Left Click Mouse for Shooting\n" +
-                "E to Slowdown Time\n";
-
-            IntructionText.text = "Press 2 for Next";
-            Next.SetActive(true);
-            Previous.SetActive(false);
-        }
-    }
     void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
@@ -40,7 +25,7 @@ public class Basic_Tutorail : MonoBehaviour
                 "Left Click Mouse for Shooting\n" +
                 "E to Slowdown Time\n";
 
-            IntructionText.text = "Press 2 for Next";
+            IntructionText.text = "Hold Down 2 for Next";
             Next.SetActive(true);
             Previous.SetActive(false);
 
@@ -57,10 +42,10 @@ public class Basic_Tutorail : MonoBehaviour
             }
             if (Input.GetKey(KeyCode.Alpha1))
             {
-                TutorText.text = "WSAD for Movement\n" +
+                TutorText.text = "WASD for Movement\n" +
                "Left Click Mouse for Shooting\n" +
                "E to Slowdown Time\n";
-                IntructionText.text = "Press 2 for Next";
+                IntructionText.text = "Hold Down 2 for Next";
                 Next.SetActive(true);
                 Previous.SetActive(false);
             }
@@ -70,10 +55,7 @@ public class Basic_Tutorail : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
 
-        Frame.SetActive(false);
-        TutorText.gameObject.SetActive(false);
-        Next.SetActive(false);
-        Previous.SetActive(false);
+        TutorailPopups.SetActive(false);
 
     }
 

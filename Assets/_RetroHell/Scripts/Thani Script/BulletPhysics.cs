@@ -2,48 +2,54 @@ using UnityEngine;
 
 public class BulletPhysics : MonoBehaviour
 {
-    public float timeAwake;
+    [SerializeField] float playerBulletTimeAwake;
     public static int bulletDamage;
 
     private void Start()
     {
-        bulletDamage = 5;
+        bulletDamage = 10;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        timeAwake += Time.deltaTime;
+        playerBulletTimeAwake += Time.deltaTime;
 
-        if (timeAwake >= 2)
+        if (playerBulletTimeAwake >= 0.7)
         {
             Destroy(gameObject);
         }
     }
 
-    public void OnCollisionEnter(Collision other)
+    public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Breakable Wall")
+        if (other.tag == "Breakable Wall")
         {
             Destroy(other.gameObject);
         }
 
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.tag == "Boss")
         {
             Boss_DamageUI playerHealth = other.gameObject.GetComponent<Boss_DamageUI>();
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(10);
+                Destroy(gameObject);
             }
         }
-        if (other.gameObject.tag == "Bullets")
+        if (other.tag == "Enemy")
         {
             Destroy(other.gameObject);
+            Destroy(gameObject);
         }
-        if (other.gameObject.tag == "Shield")
+        if (other.tag == "Bullets")
+        {
+            Destroy(other.gameObject);
+            Destroy(gameObject);
+        }
+        if (other.tag == "Shield")
         {
             Destroy(gameObject);
         }
-        Destroy(gameObject);
+
 
     }
 

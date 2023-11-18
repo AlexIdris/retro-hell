@@ -58,9 +58,9 @@ public class EnemyMovement : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (other.tag == "Enemy Bullets")
+        if (other.tag == "EnemyBullets")
         {
-
+            Destroy(other.gameObject);
         }
     }
 }

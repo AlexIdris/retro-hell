@@ -3,23 +3,25 @@ using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
 {
-    public float speed;
-    public float jump;
-
+    [SerializeField] float speed;
+    [SerializeField] float jump;
+    [SerializeField] float Gravity;
     private string Ground = "Ground";
-    private Rigidbody rb;
+    [SerializeField] bool isGrounded;
+    [SerializeField] Rigidbody rb;
     [SerializeField] Animator anim;
-
-    private bool isGrounded = true;
+    [SerializeField] CharacterController controller;
+    private Vector3 velocity;
 
     [SerializeField] int maxHealth = 500;
-    public int currentHealth;
+    public int playercurrentHealth;
     public HealthDisplay health;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        currentHealth = maxHealth;
+        playercurrentHealth = maxHealth;
         health.MaxHealth(maxHealth);
+        isGrounded = true;
     }
 
     void Update()
@@ -37,9 +39,9 @@ public class Player_Control : MonoBehaviour
         Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
 
         rb.velocity = transform.forward * verticalInput * speed + transform.right * horizontalInput * speed;
-        float velocityMagnitude = rb.velocity.magnitude;
+        float move = rb.velocity.magnitude;
 
-        if (velocityMagnitude > 0)
+        if (move > 0)
         {
             anim.SetBool("run", true);
         }
@@ -47,21 +49,28 @@ public class Player_Control : MonoBehaviour
         {
             anim.SetBool("run", false);
         }
-
+        controller.Move(rb.velocity * speed * Time.deltaTime + velocity * Time.deltaTime);
     }
 
     void Jump()
     {
         if (Input.GetButton("Jump") && isGrounded)
         {
-            rb.AddForce(Vector3.up * jump, ForceMode.Impulse);
+
             anim.SetBool("jump", true);
-            isGrounded = false;
+            velocity.y = Mathf.Sqrt(jump * -2 * Gravity);
+
         }
-        else
+        isGrounded = controller.isGrounded;
+
+        if (isGrounded && velocity.y < 0)
         {
-            anim.SetBool("jump", false);
+            anim.SetBool("Jump", false);
+            velocity.y = -2f;
         }
+        velocity.y += Gravity * Time.deltaTime;
+
+        controller.Move(velocity * Time.deltaTime);
     }
     void Crouch()
     {
@@ -77,10 +86,10 @@ public class Player_Control : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy Bullet")
+        if (other.tag == "EnemyBullets")
         {
             TakeDamage(10);
-            if (currentHealth == 0)
+            if (playercurrentHealth <= 0)
             {
                 OnDeath();
             }
@@ -91,10 +100,10 @@ public class Player_Control : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
-    void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        health.ChangeHealth(currentHealth);
+        playercurrentHealth -= damage;
+        health.ChangeHealth(playercurrentHealth);
     }
 
     private void OnCollisionEnter(Collision collision)
