@@ -3,6 +3,7 @@ using UnityEngine;
 public class BulletPhysics : MonoBehaviour
 {
     [SerializeField] float playerBulletTimeAwake;
+    [SerializeField] float awaken;
     public static int bulletDamage;
 
     private void Start()
@@ -14,7 +15,7 @@ public class BulletPhysics : MonoBehaviour
     {
         playerBulletTimeAwake += Time.deltaTime;
 
-        if (playerBulletTimeAwake >= 0.7)
+        if (playerBulletTimeAwake >= awaken)
         {
             Destroy(gameObject);
         }
