@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float playerDistance = 5f;
     [SerializeField] GameObject bulletSpawner;
     public GameObject bullet;
+    public PauseSystem pause;
     public float bulletSpeed = 1f;
     public float invincibilityFrame;
 
@@ -29,15 +30,15 @@ public class EnemyMovement : MonoBehaviour
         shooting = true;
         invincibilityFrame += Time.deltaTime;
 
-        transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.up);
-
-        if (currentDistance > playerDistance)
+        if (currentDistance > playerDistance && pause.gamePaused == false)
         {
+            transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.up);
+
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, movement);
             shooting = false;
         }
 
-        if (shooting == true && invincibilityFrame > 0.2 && Time.time > nextFireTime)
+        if (shooting == true && invincibilityFrame > 0.2 && Time.time > nextFireTime && pause.gamePaused == false)
         {
             Shoot();
             Debug.Log("Shot a bullet!");

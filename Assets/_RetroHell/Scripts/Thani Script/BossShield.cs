@@ -48,6 +48,5 @@ public class BossShield : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
-
     }
 }
