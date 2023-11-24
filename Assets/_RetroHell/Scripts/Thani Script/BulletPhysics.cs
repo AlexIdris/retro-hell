@@ -36,6 +36,7 @@ public class BulletPhysics : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
         if (other.tag == "Enemy")
         {
             Destroy(other.gameObject);
@@ -50,9 +51,5 @@ public class BulletPhysics : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-
     }
-
-
 }

@@ -7,10 +7,11 @@ public class turretshooting : MonoBehaviour
     [SerializeField] float fireRate = 1.0f;
     [SerializeField] float bulletSpeed = 10f;
     [SerializeField] float nextFireTime = 0f;
+    public PauseSystem pause;
 
     public void Update()
     {
-        if (Time.time > nextFireTime)
+        if (Time.time > nextFireTime && pause.gamePaused == false)
         {
             Shoot();
             nextFireTime = Time.time + 1f / fireRate;

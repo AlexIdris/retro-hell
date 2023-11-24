@@ -27,8 +27,6 @@ public class PlayerShooting : MonoBehaviour
             }
         }
 
-
-
         if (Input.GetKey(KeyCode.Mouse1) && machineGunObtained == true && machineGunBullets > 0)
         {
             if (invincibilityFrame > 0.1)

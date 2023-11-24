@@ -6,11 +6,12 @@ public class turretRotation : MonoBehaviour
     public float speed = 10;
     public float rotationDelay = 0.5f;
     private bool rotating = false;
+    public PauseSystem pause;
 
 
     void Update()
     {
-        if (Time.time >= rotationDelay && !rotating)
+        if (Time.time >= rotationDelay && !rotating && pause.gamePaused == false)
         {
             RotateTurret();
         }
