@@ -293,4 +293,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerBulletTimeAwake: 0
-  awaken: 0.89
+  awaken: 0.85
