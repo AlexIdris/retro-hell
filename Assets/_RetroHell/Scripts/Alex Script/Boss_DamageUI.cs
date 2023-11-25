@@ -11,6 +11,9 @@ public class Boss_DamageUI : MonoBehaviour
     private int dead = 0;
     public int currentHealth;
 
+    [SerializeField] float timer = 0;
+    [SerializeField] float delay = 2;
+
 
     [SerializeField] GameObject secondhealthpattern;
     [SerializeField] GameObject firsthealthpattern;
@@ -19,6 +22,9 @@ public class Boss_DamageUI : MonoBehaviour
     [SerializeField] GameObject miniturrenthealth;
     [SerializeField] BossShield ShieldCode;
     [SerializeField] GameObject ShieldObject;
+    [SerializeField] GameObject FirstForm;
+    [SerializeField] GameObject LastForm;
+    [SerializeField] Animator animator;
 
 
     bool first = false;
@@ -42,10 +48,13 @@ public class Boss_DamageUI : MonoBehaviour
         miniturrenthealth.SetActive(false);
 
         ShieldCode = ShieldObject.GetComponent<BossShield>();
+        FirstForm.SetActive(true);
+        LastForm.SetActive(false);
     }
 
     private void Update()
     {
+
 
         if (currentHealth <= firstHealth && first)
         {
@@ -79,28 +88,43 @@ public class Boss_DamageUI : MonoBehaviour
 
             SceneManager.LoadScene(5);
         }
-
+        if (currentHealth <= firstHealth && currentHealth > lasthealth)
+        {
+            animator.enabled = true;
+            timer += Time.deltaTime;
+            if (timer >= delay)
+            {
+                animator.enabled = false;
+            }
+        }
     }
     void Secondpattern()
     {
         firsthealthpattern.SetActive(false);
         secondhealthpattern.SetActive(true);
+
         thirdhealthpattern.SetActive(false);
         fourthhealthpattern.SetActive(false);
         miniturrenthealth.SetActive(false);
+
+
     }
     void Thirdpattern()
     {
         firsthealthpattern.SetActive(false);
         secondhealthpattern.SetActive(false);
+        animator.enabled = false;
         thirdhealthpattern.SetActive(true);
         fourthhealthpattern.SetActive(false);
         miniturrenthealth.SetActive(false);
     }
     void Fourthpattern()
     {
+        FirstForm.SetActive(false);
+        LastForm.SetActive(true);
         firsthealthpattern.SetActive(true);
         secondhealthpattern.SetActive(false);
+        animator.enabled = false;
         thirdhealthpattern.SetActive(false);
         fourthhealthpattern.SetActive(true);
         miniturrenthealth.SetActive(true);
@@ -109,9 +133,11 @@ public class Boss_DamageUI : MonoBehaviour
     {
         firsthealthpattern.SetActive(true);
         secondhealthpattern.SetActive(true);
+        animator.enabled = true;
         thirdhealthpattern.SetActive(true);
         fourthhealthpattern.SetActive(false);
         miniturrenthealth.SetActive(false);
+        animator.enabled = false;
     }
 
     private void OnTriggerEnter(Collider other)
