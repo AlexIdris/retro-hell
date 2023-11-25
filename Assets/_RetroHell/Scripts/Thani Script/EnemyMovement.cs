@@ -32,6 +32,8 @@ public class EnemyMovement : MonoBehaviour
 
         if (currentDistance > playerDistance && pause.gamePaused == false)
         {
+
+
             transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.up);
 
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, movement);
