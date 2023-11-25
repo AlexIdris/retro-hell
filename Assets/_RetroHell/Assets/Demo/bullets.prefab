@@ -292,4 +292,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4678c27e90235491aac1a7f8b8a0d636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeAwake: 0
+  playerBulletTimeAwake: 0
+  awaken: 0.85
