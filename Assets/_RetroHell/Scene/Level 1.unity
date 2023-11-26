@@ -963,6 +963,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2088256155}
+    - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: bullettext
       value: 
       objectReference: {fileID: 1408537770}
@@ -970,6 +974,10 @@ PrefabInstance:
       propertyPath: machineGun
       value: 
       objectReference: {fileID: 1101921250}
+    - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: animatorObject
+      value: 
+      objectReference: {fileID: 2088256153}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: playerControls
       value: 
@@ -3500,6 +3508,18 @@ PrefabInstance:
       value: 10.395807
       objectReference: {fileID: 0}
     - target: {fileID: 5465940246521907071, guid: a3aa19e00bf8aa4488eec9aee110ee01, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465940246521907071, guid: a3aa19e00bf8aa4488eec9aee110ee01, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465940246521907071, guid: a3aa19e00bf8aa4488eec9aee110ee01, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465940246521907071, guid: a3aa19e00bf8aa4488eec9aee110ee01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -3.7063022
       objectReference: {fileID: 0}
@@ -4823,9 +4843,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1240022006}
     - target: {fileID: 1210211327256372016, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2088256155}
+    - target: {fileID: 1210211327256372016, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 1240022007}
+    - target: {fileID: 1210211327256372016, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
+      propertyPath: animatorObject
+      value: 
+      objectReference: {fileID: 2088256153}
     - target: {fileID: 2920219364118264063, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
       propertyPath: m_Name
       value: Health Power-Up (2)
@@ -9472,6 +9500,7 @@ Transform:
   - {fileID: 1332802062}
   - {fileID: 878435246}
   - {fileID: 1938692101}
+  - {fileID: 2088256154}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -0.903, z: 0}
 --- !u!54 &1240022012
@@ -11781,6 +11810,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2088256155}
+    - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: bullettext
       value: 
       objectReference: {fileID: 1408537770}
@@ -11788,6 +11821,10 @@ PrefabInstance:
       propertyPath: machineGun
       value: 
       objectReference: {fileID: 1101921250}
+    - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: animatorObject
+      value: 
+      objectReference: {fileID: 2088256153}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: playerControls
       value: 
@@ -12350,9 +12387,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1240022006}
     - target: {fileID: 1210211327256372016, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2088256155}
+    - target: {fileID: 1210211327256372016, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 1240022007}
+    - target: {fileID: 1210211327256372016, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
+      propertyPath: animatorObject
+      value: 
+      objectReference: {fileID: 2088256153}
     - target: {fileID: 2920219364118264063, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
       propertyPath: m_Name
       value: Health Power-Up (1)
@@ -15789,6 +15834,53 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
+--- !u!1 &2088256153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2088256154}
+  - component: {fileID: 2088256155}
+  m_Layer: 0
+  m_Name: Power-Up Icon
+  m_TagString: Animator
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2088256154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088256153}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1240022008}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2088256155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088256153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8f6224f97794a2bb07ece5704d13af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthIcon: {fileID: 2701059644804530707, guid: 23b19060a55c54d96822a128244c0452, type: 3}
+  MGIcon: {fileID: 2701059644804530707, guid: 0c525642599b34449afdae6358265d07, type: 3}
+  spawnPoint: {fileID: 2088256154}
 --- !u!4 &2088486115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
@@ -15937,6 +16029,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2088256155}
+    - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: bullettext
       value: 
       objectReference: {fileID: 1408537770}
@@ -15944,6 +16040,10 @@ PrefabInstance:
       propertyPath: machineGun
       value: 
       objectReference: {fileID: 1101921250}
+    - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: animatorObject
+      value: 
+      objectReference: {fileID: 2088256153}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: playerControls
       value: 
@@ -16660,9 +16760,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1240022006}
     - target: {fileID: 1210211327256372016, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2088256155}
+    - target: {fileID: 1210211327256372016, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
       propertyPath: playerHealth
       value: 
       objectReference: {fileID: 1240022007}
+    - target: {fileID: 1210211327256372016, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
+      propertyPath: animatorObject
+      value: 
+      objectReference: {fileID: 2088256153}
     - target: {fileID: 2920219364118264063, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
       propertyPath: m_Name
       value: Health Power-Up
@@ -16858,6 +16966,10 @@ PrefabInstance:
       value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 2088256155}
+    - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: bullettext
       value: 
       objectReference: {fileID: 1408537770}
@@ -16865,6 +16977,10 @@ PrefabInstance:
       propertyPath: machineGun
       value: 
       objectReference: {fileID: 1101921250}
+    - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: animatorObject
+      value: 
+      objectReference: {fileID: 2088256153}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: playerControls
       value: 
