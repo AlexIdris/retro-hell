@@ -17,6 +17,8 @@ TagManager:
   - Shield
   - EnemyBullets
   - Wall
+  - Animator
+  - Power-Up Icon Spawner
   layers:
   - Default
   - TransparentFX
