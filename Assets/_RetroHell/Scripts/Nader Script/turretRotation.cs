@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class turretRotation : MonoBehaviour
 {
-
     public float speed = 10;
     public float rotationDelay = 0.5f;
-    private bool rotating = false;
-    public PauseSystem pause;
+    public float rotateValue;
 
+    private bool rotating = false;
+
+    public PauseSystem pause;
 
     void Update()
     {
@@ -16,11 +17,11 @@ public class turretRotation : MonoBehaviour
             RotateTurret();
         }
     }
+
     public void RotateTurret()
     {
         transform.Rotate(0, speed, 0);
+        rotateValue += speed;
+        Debug.Log(rotateValue);
     }
-
-
-
 }
