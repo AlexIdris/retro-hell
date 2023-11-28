@@ -16,6 +16,7 @@ public class turretshooting : MonoBehaviour
             Shoot();
             nextFireTime = Time.time + 1f / fireRate;
         }
+
     }
 
     void Shoot()

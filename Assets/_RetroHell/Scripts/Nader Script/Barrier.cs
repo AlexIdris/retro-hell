@@ -2,18 +2,18 @@ using UnityEngine;
 
 public class Barrier : MonoBehaviour
 {
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggeer(Collision collider)
     {
         {
 
-            if (collision.gameObject.CompareTag("EnemyBullets"))
+            if (collider.gameObject.CompareTag("EnemyBullets"))
             {
-                Destroy(collision.gameObject);
+                Destroy(collider.gameObject);
             }
 
-            if (collision.gameObject.CompareTag("Bullets"))
+            if (collider.gameObject.CompareTag("Bullets"))
             {
-                Destroy(collision.gameObject);
+                Destroy(collider.gameObject);
             }
         }
     }
