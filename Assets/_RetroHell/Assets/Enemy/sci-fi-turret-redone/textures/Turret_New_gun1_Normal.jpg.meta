@@ -7,7 +7,11 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
+<<<<<<< HEAD
     sRGBTexture: 0
+=======
+    sRGBTexture: 1
+>>>>>>> 7e7226df361db4567f05f93ed55d85cf4d251ecc
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -54,7 +58,11 @@ TextureImporter:
   alphaUsage: 1
   alphaIsTransparency: 0
   spriteTessellationDetail: -1
+<<<<<<< HEAD
   textureType: 1
+=======
+  textureType: 0
+>>>>>>> 7e7226df361db4567f05f93ed55d85cf4d251ecc
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
