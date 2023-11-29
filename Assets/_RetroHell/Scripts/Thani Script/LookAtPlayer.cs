@@ -9,6 +9,11 @@ public class LookAtPlayer : MonoBehaviour
     public float rotationFreezeX = 0;
     public float rotationFreezeY = 0;
 
+    public void Start()
+    {
+        target = GameObject.FindGameObjectWithTag("Player");
+    }
+
     void FixedUpdate()
     {
         transform.position = transform.position;
