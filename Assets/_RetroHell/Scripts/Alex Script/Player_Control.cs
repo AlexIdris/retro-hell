@@ -43,11 +43,11 @@ public class Player_Control : MonoBehaviour
 
         if (move > 0)
         {
-            anim.SetBool("run", true);
+            //anim.SetBool("run", true);
         }
         else
         {
-            anim.SetBool("run", false);
+            //anim.SetBool("run", false);
         }
         controller.Move(rb.velocity * speed * Time.deltaTime + velocity * Time.deltaTime);
     }
@@ -57,7 +57,7 @@ public class Player_Control : MonoBehaviour
         if (Input.GetButton("Jump") && isGrounded)
         {
 
-            anim.SetBool("jump", true);
+            // anim.SetBool("jump", true);
             velocity.y = Mathf.Sqrt(jump * -2 * Gravity);
 
         }
@@ -65,7 +65,7 @@ public class Player_Control : MonoBehaviour
 
         if (isGrounded && velocity.y < 0)
         {
-            anim.SetBool("Jump", false);
+            // anim.SetBool("Jump", false);
             velocity.y = -2f;
         }
         velocity.y += Gravity * Time.deltaTime;
