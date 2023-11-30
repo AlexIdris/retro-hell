@@ -22,6 +22,6 @@ public class turretRotation : MonoBehaviour
     {
         transform.Rotate(0, speed, 0);
         rotateValue += speed;
-        Debug.Log(rotateValue);
+
     }
 }
