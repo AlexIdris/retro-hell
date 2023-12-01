@@ -5,9 +5,8 @@ using UnityEngine;
 public class LookAtPlayer : MonoBehaviour
 {
     public GameObject target;
-
-    public float rotationFreezeX = 0;
-    public float rotationFreezeY = 0;
+    public float rotationStopperX = 90;
+    public float rotationStopperZ = 0;
 
     public void Start()
     {
@@ -16,7 +15,9 @@ public class LookAtPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        transform.position = transform.position;
-        transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position, transform.up);
+        transform.rotation = Quaternion.LookRotation(target.transform.position - transform.position);
+
+        Vector3 eulerAngles = transform.eulerAngles;
+        transform.eulerAngles = new Vector3(-rotationStopperX, eulerAngles.y, rotationStopperZ);
     }
 }
