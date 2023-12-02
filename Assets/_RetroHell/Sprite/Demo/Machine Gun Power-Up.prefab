@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -13.496912, y: 0.56, z: 13.578716}
-  m_LocalScale: {x: 0.5, y: 0.1, z: 0.5}
+  m_LocalScale: {x: 1, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7084305627003528890}
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c6d1caab4a010ab4088c23d3b6b103d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -101,7 +101,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -121,9 +121,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerControls: {fileID: 0}
+  animatorObject: {fileID: 0}
+  animator: {fileID: 0}
   bullettext: {fileID: 0}
   machineGun: {fileID: 0}
-  maxAmmo: 50
+  maxAmmo: 30
 --- !u!1 &8210700002238439648
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +138,7 @@ GameObject:
   - component: {fileID: 1902804734172730078}
   - component: {fileID: 7451666739956823114}
   - component: {fileID: 143032619561848683}
+  - component: {fileID: 605008981565768345}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -229,3 +232,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &605008981565768345
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8210700002238439648}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d65147d637da9214da2466a5191fc67d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

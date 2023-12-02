@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10677705, g: 0.06954285, b: 0.129084, a: 1}
+  m_IndirectSpecularColor: {r: 0.10677707, g: 0.06954285, b: 0.12908399, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1004,6 +1004,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4ef551db34b5a4faf2eed0145fcb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &36394182
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 36394184}
+  - component: {fileID: 36394183}
+  m_Layer: 0
+  m_Name: PowerUpSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &36394183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36394182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567835ef793184fefb3eb795ccb256be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PowerUps:
+  - {fileID: 2920219364118264063, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
+  - {fileID: 236977779879603094, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+  timer: 0
+  randomPowerUp: 0
+--- !u!4 &36394184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 36394182}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &36977749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2427,7 +2476,7 @@ PrefabInstance:
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1240022007}
+      objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: maxAmmo
       value: 30
@@ -11771,33 +11820,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572250247}
   m_Mesh: {fileID: 5650848451787114459, guid: b7bda0d081a9f4a4cb7759ad2903c562, type: 3}
---- !u!1 &581239481 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4672470727393737718, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
-  m_PrefabInstance: {fileID: 921568187881212947}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &581239483
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581239481}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d65147d637da9214da2466a5191fc67d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &587331553 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5616824443027233232, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
@@ -16446,7 +16468,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df323e622bff57e40b46312290204da6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 981836336}
   m_SourcePrefab: {fileID: 100100000, guid: df323e622bff57e40b46312290204da6, type: 3}
 --- !u!1 &868642128
 GameObject:
@@ -18244,6 +18269,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980776930}
   m_Mesh: {fileID: -7527803570560553702, guid: b7bda0d081a9f4a4cb7759ad2903c562, type: 3}
+--- !u!1 &981836333 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: df323e622bff57e40b46312290204da6, type: 3}
+  m_PrefabInstance: {fileID: 863743938}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &981836336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981836333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7efcfb0a43ae542de9bef500193e22d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1240022006}
+  rotationStopperX: 90
+  rotationStopperZ: 0
 --- !u!1 &987232247 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5616824443027233232, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
@@ -22328,33 +22373,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 554319795}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!1 &1206672520 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8210700002238439648, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
-  m_PrefabInstance: {fileID: 8476481493181790637}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1206672522
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206672520}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d65147d637da9214da2466a5191fc67d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1208491966
 GameObject:
   m_ObjectHideFlags: 0
@@ -29381,7 +29399,7 @@ PrefabInstance:
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1240022007}
+      objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: maxAmmo
       value: 30
@@ -34552,9 +34570,10 @@ GameObject:
   - component: {fileID: 1833200150}
   - component: {fileID: 1833200152}
   - component: {fileID: 1833200151}
+  - component: {fileID: 1833200153}
   m_Layer: 5
   m_Name: Heart Icon
-  m_TagString: Untagged
+  m_TagString: Player Heart
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34568,7 +34587,7 @@ RectTransform:
   m_GameObject: {fileID: 1833200149}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.000022188824}
-  m_LocalScale: {x: 0.7766989, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 775070046}
@@ -34616,6 +34635,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833200149}
   m_CullTransparentMesh: 1
+--- !u!114 &1833200153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833200149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84b9bd5f8ac854525ac80013930590d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  minHealth: 0
+  maxScale: 1
+  minScale: 0
+  heart: {fileID: 1833200149}
+  player: {fileID: 1240022006}
+  playerControl: {fileID: 1240022007}
+  currentScale: 0
 --- !u!1 &1836720086
 GameObject:
   m_ObjectHideFlags: 0
@@ -39335,7 +39374,7 @@ PrefabInstance:
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1240022007}
+      objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: maxAmmo
       value: 30
@@ -39904,7 +39943,7 @@ PrefabInstance:
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1240022007}
+      objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: maxAmmo
       value: 30
@@ -41123,26 +41162,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Power-Up
       objectReference: {fileID: 0}
-    - target: {fileID: 3151299906911506188, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: 088de2f0684bae944b5f21c7a7ac5383, type: 2}
-    - target: {fileID: 7517691608076278195, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422080479737471560, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422080479737471560, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8422080479737471560, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8422080479737471560, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.7213
@@ -41186,10 +41205,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4672470727393737718, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 581239483}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
 --- !u!1001 &5068199238748257940
 PrefabInstance:
@@ -41305,13 +41321,9 @@ PrefabInstance:
       value: Machine Gun Power-Up
       objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 1408537770}
-    - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 1240022007}
+      objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: maxAmmo
       value: 30
@@ -41399,10 +41411,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8210700002238439648, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1206672522}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -41421,3 +41430,4 @@ SceneRoots:
   - {fileID: 179923178}
   - {fileID: 5833671}
   - {fileID: 1730280903}
+  - {fileID: 36394184}
