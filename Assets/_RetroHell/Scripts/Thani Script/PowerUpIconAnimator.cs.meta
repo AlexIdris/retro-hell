@@ -3,7 +3,10 @@ guid: 8f8f6224f97794a2bb07ece5704d13af
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - HealthIcon: {instanceID: 0}
+  - MGIcon: {instanceID: 0}
+  - spawnPoint: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
