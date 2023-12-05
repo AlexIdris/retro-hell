@@ -19,7 +19,7 @@ public class MachineGun : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Control>(); ;
         playerControls = GameObject.FindGameObjectWithTag("Gun").GetComponent<PlayerShooting>();
-
+        machineGun = GameObject.FindGameObjectWithTag("GunHUD");
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
     }

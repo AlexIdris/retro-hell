@@ -21,6 +21,7 @@ TagManager:
   - Power-Up Icon Spawner
   - Player Heart
   - Gun
+  - GunHUD
   layers:
   - Default
   - TransparentFX
