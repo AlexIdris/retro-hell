@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ public class slowMotion : MonoBehaviour
     [SerializeField] float cooldownTime = 5f;
     [SerializeField] float cooldownTimer = 0f;
     [SerializeField] bool isCooldown = true;
+    [SerializeField] float last;
 
 
 
@@ -26,7 +28,7 @@ public class slowMotion : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Update()
+    public async void Update()
     {
         if (isCooldown)
         {
@@ -41,24 +43,27 @@ public class slowMotion : MonoBehaviour
         }
         if (!isCooldown)
         {
-            button.interactable = true;
-            SlowmoFrame.SetActive(true);
-            EText.gameObject.SetActive(true);
-
-            if (Input.GetKeyDown(KeyCode.E) && !isCooldown)
-            {
-
-                slowMo = true;
-                Time.timeScale = slowMoSpeed;
+            Slowdowntime();
 
 
-            }
         }
 
+    }
 
+    private async void Slowdowntime()
+    {
+        button.interactable = true;
+        SlowmoFrame.SetActive(true);
+        EText.gameObject.SetActive(true);
 
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKey(KeyCode.E) && !isCooldown)
         {
+
+            slowMo = true;
+            Time.timeScale = slowMoSpeed;
+
+            await Task.Delay(2000);
+
             slowMo = false;
             Time.timeScale = normSpeed;
             button.interactable = false;
@@ -69,16 +74,8 @@ public class slowMotion : MonoBehaviour
             cooldownTimer = cooldownTime;
 
 
+
         }
-
-    }
-    void Slowdowntime()
-    {
-
-
-    }
-    void Normaltime()
-    {
 
     }
 }

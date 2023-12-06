@@ -7,13 +7,20 @@ public class PowerUpHealth : MonoBehaviour
     public int extraHealth;
     public GameObject animatorObject;
     public PowerUpIconAnimator animator;
-
+    public HealthDisplay healthDisplay;
+    private bool FullHealth;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<Player_Control>();
+
+
+        healthDisplay = player.GetComponent<HealthDisplay>();
+        bool FullHealth = healthDisplay.fullHealth;
+
     }
+
 
     public void Awake()
     {
@@ -23,6 +30,7 @@ public class PowerUpHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.tag == "Player")
         {
             playerHealth.playercurrentHealth += extraHealth;
