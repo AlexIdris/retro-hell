@@ -19,6 +19,7 @@ TagManager:
   - Wall
   - Animator
   - Power-Up Icon Spawner
+  - Player Heart
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,9 @@ public class MachineGun : MonoBehaviour
 
     public void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Control>(); ;
+        playerControls = GameObject.FindGameObjectWithTag("Gun").GetComponent<PlayerShooting>();
+
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animator.GetComponent<PowerUpIconAnimator>();
     }
