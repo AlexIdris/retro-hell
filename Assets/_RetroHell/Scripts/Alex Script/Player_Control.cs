@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
 {
+    public TakingDamageEffect takingDamageEffect;
     [SerializeField] float speed;
     [SerializeField] float jump;
     [SerializeField] float Gravity;
@@ -104,6 +105,7 @@ public class Player_Control : MonoBehaviour
     {
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
+        StartCoroutine(takingDamageEffect.BloodScreenEffect());
     }
 
     private void OnCollisionEnter(Collision collision)
