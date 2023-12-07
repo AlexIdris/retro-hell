@@ -24,11 +24,6 @@ public class MachineGun : MonoBehaviour
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
     }
 
-    public void Awake()
-    {
-
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")

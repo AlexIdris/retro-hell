@@ -126,6 +126,7 @@ MonoBehaviour:
   bullettext: {fileID: 0}
   machineGun: {fileID: 0}
   maxAmmo: 30
+  timer: 0
 --- !u!1 &8210700002238439648
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class PowerUpHealth : MonoBehaviour
     public HealthDisplay healthDisplay;
     private bool FullHealth;
 
+    public float timer;
+
     public void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
