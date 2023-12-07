@@ -2,13 +2,14 @@ using UnityEngine;
 
 public class PowerUpHealth : MonoBehaviour
 {
+    [SerializeField] GameObject IW_Health;
     public GameObject player;
     public Player_Control playerHealth;
     public int extraHealth;
     public GameObject animatorObject;
     public PowerUpIconAnimator animator;
     public HealthDisplay healthDisplay;
-    private bool FullHealth;
+    [SerializeField] float timer;
 
     public float timer;
 
@@ -36,6 +37,7 @@ public class PowerUpHealth : MonoBehaviour
             playerHealth.playercurrentHealth += extraHealth;
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
             animator.HealthAnimation();
+            IW_Health.SetActive(false);
             Destroy(gameObject);
         }
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Barrier : MonoBehaviour
 {
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
         {
 

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Miniboss_Damage : MonoBehaviour
 {
+    [SerializeField] GameObject IW_MiniBoss;
     [SerializeField] int maxHealth = 200;
     [SerializeField] GameObject healthGone;
     public int minicurrentHealth;
@@ -12,6 +13,7 @@ public class Miniboss_Damage : MonoBehaviour
         minicurrentHealth = maxHealth;
         health.SetMaxHealth(maxHealth);
         healthGone.SetActive(true);
+        IW_MiniBoss.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -23,6 +25,8 @@ public class Miniboss_Damage : MonoBehaviour
             {
                 Destroy(gameObject);
                 healthGone.SetActive(false);
+                IW_MiniBoss.SetActive(false);
+
             }
         }
     }

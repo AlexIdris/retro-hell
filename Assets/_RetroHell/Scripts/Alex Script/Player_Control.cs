@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class Player_Control : MonoBehaviour
 {
     public TakingDamageEffect takingDamageEffect;
+    [SerializeField] GameObject pp_Volume;
     [SerializeField] float cooldownTime = 1f;
     [SerializeField] float cooldownTimer = 0f;
     [SerializeField] bool isCooldown = true;
@@ -18,7 +19,7 @@ public class Player_Control : MonoBehaviour
     [SerializeField] CharacterController controller;
     private Vector3 velocity;
 
-    [SerializeField] int maxHealth = 500;
+    public int maxHealth = 100;
     public int playercurrentHealth;
     public HealthDisplay health;
     private void Start()
@@ -27,6 +28,7 @@ public class Player_Control : MonoBehaviour
         playercurrentHealth = maxHealth;
         health.MaxHealth(maxHealth);
         isGrounded = true;
+        pp_Volume.SetActive(true);
     }
 
     void Update()
@@ -143,7 +145,8 @@ public class Player_Control : MonoBehaviour
     {
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
-       StartCoroutine(takingDamageEffect.BloodScreenEffect());
+
+        StartCoroutine(takingDamageEffect.BloodScreenEffect());
     }
 
     private void OnCollisionEnter(Collision collision)
