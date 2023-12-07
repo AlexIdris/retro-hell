@@ -43,13 +43,13 @@ public class MachineGun : MonoBehaviour
         }
     }
 
-    public void FixedUpdate()
-    {
-        timer += Time.deltaTime;
-
-        if (timer > 5)
+    /*    public void FixedUpdate()
         {
-            Destroy(gameObject);
-        }
-    }
+            timer += Time.deltaTime;
+
+            if (timer > 5)
+            {
+                Destroy(gameObject);
+            }
+        }*/
 }
