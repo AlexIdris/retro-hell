@@ -10,18 +10,23 @@ public class MachineGun : MonoBehaviour
     public PowerUpIconAnimator animator;
 
     [SerializeField] TMP_Text bullettext;
-    [SerializeField] GameObject machineGun;
+    public GameObject machineGun;
     [SerializeField] int maxAmmo = 50;
 
     public float timer;
 
     public void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Control>(); ;
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Control>();
         playerControls = GameObject.FindGameObjectWithTag("Gun").GetComponent<PlayerShooting>();
         machineGun = GameObject.FindGameObjectWithTag("GunHUD");
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
+    }
+
+    public void Awake()
+    {
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,7 +46,7 @@ public class MachineGun : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 10)
+        if (timer > 5)
         {
             Destroy(gameObject);
         }
