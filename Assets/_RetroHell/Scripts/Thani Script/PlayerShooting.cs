@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
+    public AudioSource Audio;
+    public AudioClip playerShooting;
     public GameObject bullet;
     [SerializeField] Transform bulletSpawner;
     [SerializeField] GameObject machineGun;
@@ -51,6 +53,8 @@ public class PlayerShooting : MonoBehaviour
     {
         var bulletSample = Instantiate(bullet, bulletSpawner.position, bulletSpawner.rotation);
         bulletSample.GetComponent<Rigidbody>().velocity = bulletSpawner.forward * bulletSpeed;
+        Audio.clip = playerShooting;
+        Audio.Play();
     }
 
     private void OnCollisionEnter(Collision other)

@@ -3,6 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
 {
+    public TakingDamageEffect takingDamageEffect;
+    [SerializeField] float cooldownTime = 1f;
+    [SerializeField] float cooldownTimer = 0f;
+    [SerializeField] bool isCooldown = true;
+
     [SerializeField] float speed;
     [SerializeField] float jump;
     [SerializeField] float Gravity;
@@ -29,6 +34,18 @@ public class Player_Control : MonoBehaviour
         Movement();
         Jump();
         Crouch();
+
+        if (isCooldown)
+        {
+
+            cooldownTimer -= Time.deltaTime;
+
+            if (cooldownTimer <= 0)
+            {
+                isCooldown = false;
+                cooldownTimer = 0f;
+            }
+        }
 
     }
     void Movement()
@@ -93,8 +110,30 @@ public class Player_Control : MonoBehaviour
             {
                 OnDeath();
             }
-        }
 
+        }
+        else if (other.tag == "Boss")
+        {
+            TakeDamage(1);
+            if (playercurrentHealth <= 0)
+            {
+                OnDeath();
+            }
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Boss" && !isCooldown)
+        {
+            TakeDamage(1);
+
+            if (playercurrentHealth <= 0)
+            {
+                OnDeath();
+            }
+            isCooldown = true;
+            cooldownTimer = cooldownTime;
+        }
     }
     void OnDeath()
     {
@@ -104,6 +143,7 @@ public class Player_Control : MonoBehaviour
     {
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
+       StartCoroutine(takingDamageEffect.BloodScreenEffect());
     }
 
     private void OnCollisionEnter(Collision collision)
