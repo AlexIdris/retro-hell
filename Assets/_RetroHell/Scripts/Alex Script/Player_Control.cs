@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
 {
+    public TakingDamageEffect takingDamageEffect;
     [SerializeField] float cooldownTime = 1f;
     [SerializeField] float cooldownTimer = 0f;
     [SerializeField] bool isCooldown = true;
@@ -142,7 +143,7 @@ public class Player_Control : MonoBehaviour
     {
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
-        StartCoroutine(takingDamageEffect.BloodScreenEffect());
+       //StartCoroutine(takingDamageEffect.BloodScreenEffect());
     }
 
     private void OnCollisionEnter(Collision collision)

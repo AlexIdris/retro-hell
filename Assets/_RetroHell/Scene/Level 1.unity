@@ -16759,7 +16759,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: df323e622bff57e40b46312290204da6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 181655400}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: df323e622bff57e40b46312290204da6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 981836336}
   m_SourcePrefab: {fileID: 100100000, guid: df323e622bff57e40b46312290204da6, type: 3}
 --- !u!1 &864733382
 GameObject:
@@ -24181,6 +24184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8c241179fca6d4d8baad4faed8ee25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  takingDamageEffect: {fileID: 439367273}
   cooldownTime: 1
   cooldownTimer: 0
   isCooldown: 1

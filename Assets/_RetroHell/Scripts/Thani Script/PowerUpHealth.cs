@@ -22,7 +22,7 @@ public class PowerUpHealth : MonoBehaviour
     }
 
 
-    public void Awake()
+    public void Start()
     {
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animator.GetComponent<PowerUpIconAnimator>();

@@ -18,6 +18,8 @@ public class PauseSystem : MonoBehaviour
             Time.timeScale = 0;
             pauseScreen.SetActive(true);
             Debug.Log("Game Paused!");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
@@ -27,6 +29,8 @@ public class PauseSystem : MonoBehaviour
         {
             if (gamePaused == false)
             {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
                 Time.timeScale = 0;
                 pauseScreen.SetActive(true);
                 Debug.Log("Game Paused!");
@@ -36,6 +40,8 @@ public class PauseSystem : MonoBehaviour
 
     public void Resume()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         Time.timeScale = 1;
         pauseScreen.SetActive(false);
         Debug.Log("Game Resumed!");
@@ -43,11 +49,15 @@ public class PauseSystem : MonoBehaviour
 
     public void Restart()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene(1);
     }
 
     public void LoadMainMenu()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         SceneManager.LoadScene(0);
     }
 }
