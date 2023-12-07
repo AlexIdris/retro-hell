@@ -9,7 +9,7 @@ public class PowerUpHealth : MonoBehaviour
     public GameObject animatorObject;
     public PowerUpIconAnimator animator;
     public HealthDisplay healthDisplay;
-    private bool FullHealth;
+
 
     public void Awake()
     {
