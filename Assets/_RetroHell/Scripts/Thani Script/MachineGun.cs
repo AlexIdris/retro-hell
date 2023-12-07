@@ -8,7 +8,7 @@ public class MachineGun : MonoBehaviour
 
     public GameObject animatorObject;
     public PowerUpIconAnimator animator;
-
+    [SerializeField] GameObject IW_MachineGun;
     [SerializeField] TMP_Text bullettext;
     [SerializeField] GameObject machineGun;
     [SerializeField] int maxAmmo = 50;
@@ -32,6 +32,7 @@ public class MachineGun : MonoBehaviour
             animator.MGAnimation();
             machineGun.SetActive(true);
             bullettext.text = playerControls.machineGunBullets.ToString();
+            IW_MachineGun.SetActive(false);
             Destroy(gameObject);
         }
     }

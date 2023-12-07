@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class PowerUpSpawner : MonoBehaviour
@@ -11,16 +11,24 @@ public class PowerUpSpawner : MonoBehaviour
 
     public void FixedUpdate()
     {
+        Spawner();
+    }
+
+    async void Spawner()
+    {
         timer += Time.deltaTime;
 
-        if (timer > 5)
+        if (timer > 5 && timer < 5.2)
         {
             randomPowerUp = Random.Range(0, PowerUps.Count);
 
-            Vector3 position = new Vector3(Random.Range(-15,16), 0, Random.Range(-15, 16));
+            Vector3 position = new Vector3(Random.Range(-30, 30), 0, Random.Range(-30, 30));
             Instantiate(PowerUps[randomPowerUp], position, Quaternion.identity);
-
+            await Task.Delay(3000);
             timer = 0;
         }
+        await Task.Delay(5000);
+        DestroyImmediate(PowerUps[randomPowerUp], true);
+
     }
 }

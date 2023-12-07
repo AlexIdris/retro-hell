@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PowerUpHealth : MonoBehaviour
 {
+    [SerializeField] GameObject IW_Health;
     public GameObject player;
     public Player_Control playerHealth;
     public int extraHealth;
@@ -19,11 +20,7 @@ public class PowerUpHealth : MonoBehaviour
         healthDisplay = player.GetComponent<HealthDisplay>();
         bool FullHealth = healthDisplay.fullHealth;
 
-    }
 
-
-    public void Awake()
-    {
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animator.GetComponent<PowerUpIconAnimator>();
     }
@@ -36,6 +33,7 @@ public class PowerUpHealth : MonoBehaviour
             playerHealth.playercurrentHealth += extraHealth;
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
             animator.HealthAnimation();
+            IW_Health.SetActive(false);
             Destroy(gameObject);
         }
     }
