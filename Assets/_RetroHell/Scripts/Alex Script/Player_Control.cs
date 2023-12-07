@@ -143,7 +143,7 @@ public class Player_Control : MonoBehaviour
     {
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
-       //StartCoroutine(takingDamageEffect.BloodScreenEffect());
+       StartCoroutine(takingDamageEffect.BloodScreenEffect());
     }
 
     private void OnCollisionEnter(Collision collision)
