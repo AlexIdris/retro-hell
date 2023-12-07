@@ -19,8 +19,10 @@ public class PowerUpHealth : MonoBehaviour
 
         healthDisplay = player.GetComponent<HealthDisplay>();
         bool FullHealth = healthDisplay.fullHealth;
+    }
 
-
+    public void Start()
+    {
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animator.GetComponent<PowerUpIconAnimator>();
     }
@@ -34,6 +36,16 @@ public class PowerUpHealth : MonoBehaviour
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
             animator.HealthAnimation();
             IW_Health.SetActive(false);
+            Destroy(gameObject);
+        }
+    }
+
+    public void FixedUpdate()
+    {
+        timer += Time.deltaTime;
+
+        if (timer > 5)
+        {
             Destroy(gameObject);
         }
     }
