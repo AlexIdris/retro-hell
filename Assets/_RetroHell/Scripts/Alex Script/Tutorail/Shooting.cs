@@ -20,8 +20,8 @@ public class Shooting : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "<Left Click to Fire>\n" +
-                "Destroy all enemy";
+            TutorText.text = "<Left-Click to Fire your Gun.>\n" +
+                "Destroy all the enemies.";
 
         }
 
@@ -33,8 +33,8 @@ public class Shooting : MonoBehaviour
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "<Left Click to Fire>\n" +
-                       "Destroy all enemy";
+            TutorText.text = "<Left-Click to Fire your Gun.>\n" +
+                       "Destroy all the enemies.";
 
         }
     }

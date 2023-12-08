@@ -17,8 +17,8 @@ public class Jump : MonoBehaviour
         Frame.SetActive(true);
         TutorText.gameObject.SetActive(true);
 
-        TutorText.text = "<Press Space to Jump>\n" +
-            "Jump Through the Barrels";
+        TutorText.text = "<Press Space to Jump.>\n" +
+            "Jump over the lasers.";
 
 
 
@@ -30,8 +30,8 @@ public class Jump : MonoBehaviour
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "<Press Space to Jump>\n" +
-                "Jump Through the Barrels";
+            TutorText.text = "<Press Space to Jump.>\n" +
+                "Jump over the lasers.";
 
         }
     }

@@ -23,8 +23,8 @@ public class Goodluck : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
             BossEnemyHealth.SetActive(true);
-            TutorText.text = "<Descend Downward & Face Your Enemy>\n" +
-                "Goodluck Soldier";
+            TutorText.text = "<Descend downward and face your enemy.>\n" +
+                "Goodluck, Soldier.";
         }
 
 
@@ -37,8 +37,8 @@ public class Goodluck : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
             BossEnemyHealth.SetActive(true);
-            TutorText.text = "<Descend Downward & Face Your Enemy>\n" +
-                "Goodluck Soldier";
+            TutorText.text = "<Descend downward and face your enemy.>\n" +
+                "Goodluck, Soldier.";
 
         }
     }

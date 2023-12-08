@@ -9,7 +9,6 @@ public class PowerUpHealth : MonoBehaviour
     public GameObject animatorObject;
     public PowerUpIconAnimator animator;
     public HealthDisplay healthDisplay;
-    [SerializeField] float timer;
 
     public float timer;
 
