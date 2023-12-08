@@ -3102,6 +3102,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Machine Gun Power-Up (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 236977779879603094, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: bullet
       value: 
@@ -13018,6 +13022,10 @@ PrefabInstance:
     - target: {fileID: 2920219364118264063, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
       propertyPath: m_Name
       value: Health Power-Up (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920219364118264063, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3151299906911506188, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -24711,7 +24719,6 @@ MonoBehaviour:
   bullettext: {fileID: 1408537770}
   machineGun: {fileID: 1101921250}
   maxAmmo: 30
-  timer: 0
 --- !u!1 &1158724482
 GameObject:
   m_ObjectHideFlags: 0
@@ -32945,7 +32952,6 @@ MonoBehaviour:
   animatorObject: {fileID: 2088256153}
   animator: {fileID: 2088256155}
   healthDisplay: {fileID: 0}
-  timer: 0
 --- !u!4 &1509327674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}
@@ -33444,6 +33450,10 @@ PrefabInstance:
     - target: {fileID: 236977779879603094, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: m_Name
       value: Machine Gun Power-Up (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 236977779879603094, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: bullet
@@ -34597,6 +34607,10 @@ PrefabInstance:
     - target: {fileID: 2920219364118264063, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
       propertyPath: m_Name
       value: Health Power-Up (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2920219364118264063, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3151299906911506188, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -45436,7 +45450,7 @@ GameObject:
   - component: {fileID: 2088256154}
   - component: {fileID: 2088256155}
   m_Layer: 0
-  m_Name: Power-Up Icon
+  m_Name: Power-Up Icon Animator
   m_TagString: Animator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45668,6 +45682,10 @@ PrefabInstance:
     - target: {fileID: 236977779879603094, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: m_Name
       value: Machine Gun Power-Up (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 236977779879603094, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: bullet
@@ -46903,6 +46921,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Power-Up
       objectReference: {fileID: 0}
+    - target: {fileID: 2920219364118264063, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8422080479737471560, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.71
@@ -47060,6 +47082,10 @@ PrefabInstance:
     - target: {fileID: 236977779879603094, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: m_Name
       value: Machine Gun Power-Up
+      objectReference: {fileID: 0}
+    - target: {fileID: 236977779879603094, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2279648282521587149, guid: 11606e0a7995343768ef3d5db5bf4a31, type: 3}
       propertyPath: player

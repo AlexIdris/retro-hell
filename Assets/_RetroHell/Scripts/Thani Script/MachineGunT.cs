@@ -13,8 +13,6 @@ public class MachineGunT : MonoBehaviour
     public GameObject machineGun;
     [SerializeField] int maxAmmo = 50;
 
-    public float timer;
-
     public void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Control>();

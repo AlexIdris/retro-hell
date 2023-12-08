@@ -13,7 +13,7 @@ public class MachineGun : MonoBehaviour
     public GameObject machineGun;
     [SerializeField] int maxAmmo = 50;
 
-    public float timer;
+    public float MGItemTimer;
 
     public void Start()
     {
@@ -33,16 +33,16 @@ public class MachineGun : MonoBehaviour
             animator.MGAnimation();
             machineGun.SetActive(true);
             bullettext.text = playerControls.machineGunBullets.ToString();
-            IW_MachineGun.SetActive(false);
+            //IW_MachineGun.SetActive(false);
             Destroy(gameObject);
         }
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
-        timer += Time.deltaTime;
+        MGItemTimer += Time.deltaTime;
 
-        if (timer > 5)
+        if (MGItemTimer > 5)
         {
             Destroy(gameObject);
         }

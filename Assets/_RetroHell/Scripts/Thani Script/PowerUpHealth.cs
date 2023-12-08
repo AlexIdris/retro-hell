@@ -10,22 +10,16 @@ public class PowerUpHealth : MonoBehaviour
     public PowerUpIconAnimator animator;
     public HealthDisplay healthDisplay;
 
-    public float timer;
+    public float HealthTimer;
 
     public void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<Player_Control>();
-
-
+        animatorObject = GameObject.FindGameObjectWithTag("Animator");
+        animator = animatorObject.GetComponent<PowerUpIconAnimator>();
         healthDisplay = player.GetComponent<HealthDisplay>();
         bool FullHealth = healthDisplay.fullHealth;
-    }
-
-    public void Start()
-    {
-        animatorObject = GameObject.FindGameObjectWithTag("Animator");
-        animator = animator.GetComponent<PowerUpIconAnimator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,16 +30,16 @@ public class PowerUpHealth : MonoBehaviour
             playerHealth.playercurrentHealth += extraHealth;
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
             animator.HealthAnimation();
-            IW_Health.SetActive(false);
+            //IW_Health.SetActive(false);
             Destroy(gameObject);
         }
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
-        timer += Time.deltaTime;
+        HealthTimer += Time.deltaTime;
 
-        if (timer > 5)
+        if (HealthTimer > 5)
         {
             Destroy(gameObject);
         }

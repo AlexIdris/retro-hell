@@ -10,8 +10,6 @@ public class PowerUpHealthT : MonoBehaviour
     public PowerUpIconAnimator animator;
     public HealthDisplay healthDisplay;
 
-    public float timer;
-
     public void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -25,7 +23,7 @@ public class PowerUpHealthT : MonoBehaviour
     public void Start()
     {
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
-        animator = animator.GetComponent<PowerUpIconAnimator>();
+        animator = animatorObject.GetComponent<PowerUpIconAnimator>();
     }
 
     private void OnTriggerEnter(Collider other)
