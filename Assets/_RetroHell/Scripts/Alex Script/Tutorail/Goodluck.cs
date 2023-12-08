@@ -24,7 +24,7 @@ public class Goodluck : MonoBehaviour
             TutorText.gameObject.SetActive(true);
             BossEnemyHealth.SetActive(true);
             TutorText.text = "<Descend downward and face your enemy.>\n" +
-                "Goodluck, Soldier.";
+                "Good Luck, Soldier.";
         }
 
 
@@ -38,7 +38,7 @@ public class Goodluck : MonoBehaviour
             TutorText.gameObject.SetActive(true);
             BossEnemyHealth.SetActive(true);
             TutorText.text = "<Descend downward and face your enemy.>\n" +
-                "Goodluck, Soldier.";
+                "Good Luck, Soldier.";
 
         }
     }

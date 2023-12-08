@@ -18,7 +18,7 @@ public class Jump : MonoBehaviour
         TutorText.gameObject.SetActive(true);
 
         TutorText.text = "<Press Space to Jump.>\n" +
-            "Jump over the lasers.";
+            "Jump over the bumps.";
 
 
 
@@ -31,7 +31,7 @@ public class Jump : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
             TutorText.text = "<Press Space to Jump.>\n" +
-                "Jump over the lasers.";
+                "Jump over the bumps.";
 
         }
     }

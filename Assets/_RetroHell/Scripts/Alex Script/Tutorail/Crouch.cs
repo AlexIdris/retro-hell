@@ -20,7 +20,7 @@ public class Crouch : MonoBehaviour
             TutorText.gameObject.SetActive(true);
 
             TutorText.text = "<Press Control to Crouch.>\n" +
-                "Don't let the turrets shoot you.";
+                "Don't let the lasers hit you.";
 
         }
 
@@ -34,7 +34,7 @@ public class Crouch : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
             TutorText.text = "<Press Control to Crouch.>\n" +
-           "Don't let the turrets shoot you.";
+           "Don't let the lasers hit you.";
 
         }
     }
