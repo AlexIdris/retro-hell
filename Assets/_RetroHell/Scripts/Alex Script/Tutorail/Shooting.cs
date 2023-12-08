@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour
             TutorText.gameObject.SetActive(true);
 
             TutorText.text = "<Left-Click to Fire your Gun.>\n" +
-                "Destroy all the enemies.";
+                "Shoot the glass to escape.";
 
         }
 
@@ -34,7 +34,7 @@ public class Shooting : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
             TutorText.text = "<Left-Click to Fire your Gun.>\n" +
-                       "Destroy all the enemies.";
+                       "Shoot the glass to escape.";
 
         }
     }
