@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class MachineGun : MonoBehaviour
+public class MachineGunT : MonoBehaviour
 {
     public Player_Control player;
     public PlayerShooting playerControls;
@@ -34,16 +34,6 @@ public class MachineGun : MonoBehaviour
             machineGun.SetActive(true);
             bullettext.text = playerControls.machineGunBullets.ToString();
             IW_MachineGun.SetActive(false);
-            Destroy(gameObject);
-        }
-    }
-
-    public void Update()
-    {
-        timer += Time.deltaTime;
-
-        if (timer > 5)
-        {
             Destroy(gameObject);
         }
     }

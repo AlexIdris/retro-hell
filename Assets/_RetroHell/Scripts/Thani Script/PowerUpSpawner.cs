@@ -22,7 +22,7 @@ public class PowerUpSpawner : MonoBehaviour
         {
             randomPowerUp = Random.Range(0, PowerUps.Count);
 
-            Vector3 position = new Vector3(Random.Range(-30, 30), 0, Random.Range(-30, 30));
+            Vector3 position = new Vector3(Random.Range(-20, 20), 0, Random.Range(-20, 20));
             Instantiate(PowerUps[randomPowerUp], position, Quaternion.identity);
             await Task.Delay(3000);
             timer = 0;

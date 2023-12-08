@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PowerUpHealth : MonoBehaviour
+public class PowerUpHealthT : MonoBehaviour
 {
     [SerializeField] GameObject IW_Health;
     public GameObject player;
@@ -37,16 +37,6 @@ public class PowerUpHealth : MonoBehaviour
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
             animator.HealthAnimation();
             IW_Health.SetActive(false);
-            Destroy(gameObject);
-        }
-    }
-
-    public void Update()
-    {
-        timer += Time.deltaTime;
-
-        if (timer > 5)
-        {
             Destroy(gameObject);
         }
     }
