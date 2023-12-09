@@ -12,7 +12,7 @@ public class Minnion_Spawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Time.time > nextFireTime)
         {
