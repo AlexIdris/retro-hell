@@ -12,7 +12,7 @@ public class mouseRotationTest : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Mouse X");
         transform.Rotate(0,horizontal*Speed*Time.deltaTime, 0);

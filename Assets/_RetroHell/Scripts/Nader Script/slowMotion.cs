@@ -28,7 +28,7 @@ public class slowMotion : MonoBehaviour
     }
 
     // Update is called once per frame
-    public async void Update()
+    public async void FixedUpdate()
     {
         if (isCooldown)
         {

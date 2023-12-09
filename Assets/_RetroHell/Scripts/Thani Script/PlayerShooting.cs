@@ -15,7 +15,7 @@ public class PlayerShooting : MonoBehaviour
 
     [SerializeField] TMP_Text bullettext;
 
-    private void Update()
+    private void FixedUpdate()
     {
         invincibilityFrame += Time.deltaTime;
 

@@ -21,7 +21,7 @@ public class EnemyMovement : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player");
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         var movement = speed * Time.fixedDeltaTime;
         currentDistance = Vector3.Distance(transform.position, target.transform.position);
