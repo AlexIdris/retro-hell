@@ -31,7 +31,7 @@ public class Player_Control : MonoBehaviour
         pp_Volume.SetActive(true);
     }
 
-    void FixedUpdate()
+    void Update()
     {
         Movement();
         Jump();

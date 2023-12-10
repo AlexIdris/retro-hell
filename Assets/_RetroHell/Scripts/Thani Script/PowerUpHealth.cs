@@ -3,6 +3,7 @@ using UnityEngine;
 public class PowerUpHealth : MonoBehaviour
 {
     [SerializeField] GameObject IW_Health;
+    [SerializeField] bool FullHealth;
     public GameObject player;
     public Player_Control playerHealth;
     public int extraHealth;
@@ -18,8 +19,8 @@ public class PowerUpHealth : MonoBehaviour
         playerHealth = player.GetComponent<Player_Control>();
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
-        healthDisplay = player.GetComponent<HealthDisplay>();
-        bool FullHealth = healthDisplay.fullHealth;
+        
+        FullHealth = healthDisplay.fullHealth;
     }
 
     private void OnTriggerEnter(Collider other)
