@@ -6,9 +6,11 @@ public class Crouch : MonoBehaviour
     [SerializeField] TMP_Text TutorText;
     [SerializeField] GameObject Frame;
     [SerializeField] GameObject TutorailPopups;
+    [SerializeField] GameObject crouchBullet;
     private void Awake()
     {
         TutorailPopups.SetActive(false);
+        crouchBullet.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -17,6 +19,7 @@ public class Crouch : MonoBehaviour
         {
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
+            crouchBullet.SetActive(true);
             TutorText.gameObject.SetActive(true);
 
             TutorText.text = "<Press Control to Crouch>\n" +
@@ -32,6 +35,7 @@ public class Crouch : MonoBehaviour
         {
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
+            crouchBullet.SetActive(true);
             TutorText.gameObject.SetActive(true);
             TutorText.text = "<Press Control to Crouch>\n" +
            "Avoid Getting Hit by the Turret";
@@ -42,6 +46,7 @@ public class Crouch : MonoBehaviour
     {
 
         TutorailPopups.SetActive(false);
+        crouchBullet.SetActive(false);
 
     }
 

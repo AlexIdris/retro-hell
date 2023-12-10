@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour
             TutorText.gameObject.SetActive(true);
 
             TutorText.text = "<Left Click to Fire>\n" +
-                "Destroy all enemy";
+                "Those are Breakable Walls";
 
         }
 

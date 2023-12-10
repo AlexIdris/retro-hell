@@ -25,6 +25,7 @@ public class slowMotion : MonoBehaviour
         SlowmoFrame.SetActive(true);
         EText.gameObject.SetActive(true);
 
+
     }
 
     // Update is called once per frame
@@ -44,8 +45,6 @@ public class slowMotion : MonoBehaviour
         if (!isCooldown)
         {
             Slowdowntime();
-
-
         }
 
     }

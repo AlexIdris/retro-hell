@@ -14,7 +14,7 @@ public class Enemy_Bullet : MonoBehaviour
     {
         timeAwake += Time.deltaTime;
 
-        if (timeAwake >= 7)
+        if (timeAwake >= 12)
         {
             Destroy(gameObject);
         }

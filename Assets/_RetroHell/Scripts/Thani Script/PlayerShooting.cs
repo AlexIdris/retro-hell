@@ -1,10 +1,11 @@
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    public AudioSource Audio;
-    public AudioClip playerShooting;
+    [SerializeField] GameObject Audio;
+
     public GameObject bullet;
     [SerializeField] Transform bulletSpawner;
     [SerializeField] GameObject machineGun;
@@ -14,7 +15,10 @@ public class PlayerShooting : MonoBehaviour
     public bool machineGunObtained;
 
     [SerializeField] TMP_Text bullettext;
-
+    private void Awake()
+    {
+        Audio.SetActive(false);
+    }
     private void Update()
     {
         invincibilityFrame += Time.deltaTime;
@@ -41,6 +45,7 @@ public class PlayerShooting : MonoBehaviour
             }
         }
 
+
         if (machineGunBullets == 0)
         {
             machineGunObtained = false;
@@ -49,17 +54,20 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    public void Shoot()
+    public async void Shoot()
     {
         var bulletSample = Instantiate(bullet, bulletSpawner.position, bulletSpawner.rotation);
         bulletSample.GetComponent<Rigidbody>().velocity = bulletSpawner.forward * bulletSpeed;
-        Audio.clip = playerShooting;
-        Audio.Play();
+        Audio.SetActive(true);
+        await Task.Delay(50);
+        Audio.SetActive(false);
+        await Task.Delay(50);
+        Audio.SetActive(true);
     }
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "MachineGun")
+        if (other.gameObject.tag == "MachineGun")
         {
             machineGunObtained = true;
             machineGunBullets = 50;

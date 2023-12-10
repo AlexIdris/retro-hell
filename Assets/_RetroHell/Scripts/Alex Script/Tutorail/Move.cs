@@ -20,8 +20,9 @@ public class Move : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "<Press WASD for Movement>\n" +
-                "Advance Past the Cylinders";
+            TutorText.text = "Hi my nameis Orxic & i will be your guard\n" +
+                "<Press WASD for Movement>";
+
 
         }
 
