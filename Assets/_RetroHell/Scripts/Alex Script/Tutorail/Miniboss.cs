@@ -27,8 +27,8 @@ public class Miniboss : MonoBehaviour
             TutorText.gameObject.SetActive(true);
             MiniminiBoss.SetActive(true);
             BossEnemyHealth.SetActive(false);
-            TutorText.text = "<Right Click to Use Machinegun>\n" +
-                "Use your New Weapon to Defeat the Enemy";
+            TutorText.text = "<Right-Click to fire the Machine Gun.>\n" +
+                "Use your new weapon to defeat the enemy.";
         }
 
 
@@ -43,8 +43,8 @@ public class Miniboss : MonoBehaviour
             TutorailMinibossHealth.SetActive(true);
             MiniminiBoss.SetActive(true);
             BossEnemyHealth.SetActive(false);
-            TutorText.text = "<Right Click to Use Machinegun>\n" +
-                "Use your New Weapon to Defeat the Enemy";
+            TutorText.text = "<Right-Click to fire the Machine Gun.>\n" +
+                "Use your new weapon to defeat the enemy.";
 
 
         }

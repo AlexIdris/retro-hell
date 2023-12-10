@@ -22,8 +22,8 @@ public class Crouch : MonoBehaviour
             crouchBullet.SetActive(true);
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "<Press Control to Crouch>\n" +
-                "Avoid Getting Hit by the Turret";
+            TutorText.text = "<Press Control to Crouch.>\n" +
+                "Don't let the lasers hit you.";
 
         }
 
@@ -37,8 +37,8 @@ public class Crouch : MonoBehaviour
             Frame.SetActive(true);
             crouchBullet.SetActive(true);
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "<Press Control to Crouch>\n" +
-           "Avoid Getting Hit by the Turret";
+            TutorText.text = "<Press Control to Crouch.>\n" +
+           "Don't let the lasers hit you.";
 
         }
     }

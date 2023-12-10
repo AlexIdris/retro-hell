@@ -20,8 +20,8 @@ public class Machinegun : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "<Pick Up Machinegun>\n" +
-                "Each Drop Holds 30x Ammo Max at a Time";
+            TutorText.text = "<Pick up the Machine Gun panel.>\n" +
+                "Each panel adds 30 bullets of rapid-fire.";
         }
 
 
@@ -33,8 +33,8 @@ public class Machinegun : MonoBehaviour
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "<Pick Up Machinegun>\n" +
-                "Each Drop Holds 30x Ammo Max at a Time";
+            TutorText.text = "<Pick up the Machine Gun panel.>\n" +
+                "Each panel adds 30 bullets of rapid-fire.";
         }
     }
     void OnTriggerExit(Collider other)

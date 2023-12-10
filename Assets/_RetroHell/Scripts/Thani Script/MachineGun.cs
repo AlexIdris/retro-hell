@@ -13,7 +13,7 @@ public class MachineGun : MonoBehaviour
     public GameObject machineGun;
     [SerializeField] int maxAmmo = 50;
 
-    public float timer;
+    public float MGItemTimer;
 
     public void Start()
     {
@@ -22,11 +22,6 @@ public class MachineGun : MonoBehaviour
         machineGun = GameObject.FindGameObjectWithTag("GunHUD");
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
-    }
-
-    public void Awake()
-    {
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,13 +38,13 @@ public class MachineGun : MonoBehaviour
         }
     }
 
-    /*    public void FixedUpdate()
-        {
-            timer += Time.deltaTime;
+    public void FixedUpdate()
+    {
+        MGItemTimer += Time.deltaTime;
 
-            if (timer > 5)
-            {
-                Destroy(gameObject);
-            }
-        }*/
+        if (MGItemTimer > 5)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

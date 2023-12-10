@@ -20,8 +20,8 @@ public class Health : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "Pick up the Health Essence>\n" +
-                "It Heals you for 50 Health";
+            TutorText.text = "Pick up the Health Essence.>\n" +
+                "It recovers 50 Health Points.";
 
         }
     }
@@ -32,8 +32,8 @@ public class Health : MonoBehaviour
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "Pick up the Health Essence>\n" +
-                    "It Heals you for 50 Health";
+            TutorText.text = "Pick up the Health Essence.>\n" +
+                    "It recovers 50 Health Points.";
 
 
         }

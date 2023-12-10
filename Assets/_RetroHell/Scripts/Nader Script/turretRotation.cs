@@ -10,7 +10,7 @@ public class turretRotation : MonoBehaviour
 
     public PauseSystem pause;
 
-    void Update()
+    void FixedUpdate()
     {
         if (Time.time >= rotationDelay && !rotating && pause.gamePaused == false)
         {
@@ -22,6 +22,5 @@ public class turretRotation : MonoBehaviour
     {
         transform.Rotate(0, speed, 0);
         rotateValue += speed;
-
     }
 }
