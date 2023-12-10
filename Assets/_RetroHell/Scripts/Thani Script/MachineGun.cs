@@ -33,7 +33,7 @@ public class MachineGun : MonoBehaviour
             animator.MGAnimation();
             machineGun.SetActive(true);
             bullettext.text = playerControls.machineGunBullets.ToString();
-            //IW_MachineGun.SetActive(false);
+            IW_MachineGun.SetActive(false);
             Destroy(gameObject);
         }
     }
