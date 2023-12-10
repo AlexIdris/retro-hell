@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1161,19 +1161,19 @@ MonoBehaviour:
       m_Calls: []
   m_text: '
 
-    Stuck in the Nether realms, In a battle to the death with the Neon
+    Stuck in the Nether Realms, In a battle to the death with the Neon
     Queen Beast...
 
-    Unable to go back home until the job is done
+    Unable to go back home until the job is done...
 
     Fight,
-    Hunt, and take her head as your victory
+    Hunt, and Take her head as your victory.
 
-    Defeat is not an option
+    Defeat is not an option.
 
 
     Retrieve
-    Weapos from the falling and live at all cause.
+    weapons from the fallen and live at all costs.
 
 '
   m_isRightToLeft: 0

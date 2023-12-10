@@ -25,7 +25,7 @@ public class BossShield : MonoBehaviour
         mainBossHealth = mainBoss.GetComponent<Boss_DamageUI>();
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (miniBoss1Health.minicurrentHealth == 0 && miniBoss2Health.minicurrentHealth == 0 && miniBoss3Health.minicurrentHealth == 0 && miniBoss4Health.minicurrentHealth == 0)
         {

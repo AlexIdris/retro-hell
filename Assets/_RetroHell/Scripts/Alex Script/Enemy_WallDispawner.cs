@@ -13,7 +13,7 @@ public class Enemy_WallDispawner : MonoBehaviour
         IW_Minion.SetActive(true);
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if ((Minion1 = null) && (Minion2 = null) && (Minion3 = null))
         {

@@ -11,7 +11,7 @@ public class BulletPhysics : MonoBehaviour
         bulletDamage = 10;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         playerBulletTimeAwake += Time.deltaTime;
 

@@ -31,7 +31,7 @@ public class Player_Control : MonoBehaviour
         pp_Volume.SetActive(true);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Movement();
         Jump();
@@ -49,6 +49,10 @@ public class Player_Control : MonoBehaviour
             }
         }
 
+        if (playercurrentHealth > maxHealth)
+        {
+            playercurrentHealth = maxHealth;
+        }
     }
     void Movement()
     {

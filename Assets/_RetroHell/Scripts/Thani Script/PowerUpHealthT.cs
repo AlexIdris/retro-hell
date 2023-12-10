@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PowerUpHealth : MonoBehaviour
+public class PowerUpHealthT : MonoBehaviour
 {
     [SerializeField] GameObject IW_Health;
     public GameObject player;
@@ -10,16 +10,20 @@ public class PowerUpHealth : MonoBehaviour
     public PowerUpIconAnimator animator;
     public HealthDisplay healthDisplay;
 
-    public float HealthTimer;
-
     public void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<Player_Control>();
-        animatorObject = GameObject.FindGameObjectWithTag("Animator");
-        animator = animatorObject.GetComponent<PowerUpIconAnimator>();
+
+
         healthDisplay = player.GetComponent<HealthDisplay>();
         bool FullHealth = healthDisplay.fullHealth;
+    }
+
+    public void Start()
+    {
+        animatorObject = GameObject.FindGameObjectWithTag("Animator");
+        animator = animatorObject.GetComponent<PowerUpIconAnimator>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,17 +34,7 @@ public class PowerUpHealth : MonoBehaviour
             playerHealth.playercurrentHealth += extraHealth;
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
             animator.HealthAnimation();
-            //IW_Health.SetActive(false);
-            Destroy(gameObject);
-        }
-    }
-
-    public void FixedUpdate()
-    {
-        HealthTimer += Time.deltaTime;
-
-        if (HealthTimer > 5)
-        {
+            IW_Health.SetActive(false);
             Destroy(gameObject);
         }
     }

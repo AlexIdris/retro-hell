@@ -9,7 +9,7 @@ public class turretshooting : MonoBehaviour
     [SerializeField] float nextFireTime = 0f;
     public PauseSystem pause;
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (Time.time > nextFireTime && pause.gamePaused == false)
         {
