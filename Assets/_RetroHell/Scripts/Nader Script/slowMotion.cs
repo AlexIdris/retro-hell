@@ -29,7 +29,7 @@ public class slowMotion : MonoBehaviour
     }
 
     // Update is called once per frame
-    public async void FixedUpdate()
+    public void FixedUpdate()
     {
         if (isCooldown)
         {
@@ -61,7 +61,7 @@ public class slowMotion : MonoBehaviour
             slowMo = true;
             Time.timeScale = slowMoSpeed;
             EText.gameObject.SetActive(false);
-            await Task.Delay(2000);
+            await Task.Delay(3000);
 
             slowMo = false;
             Time.timeScale = normSpeed;

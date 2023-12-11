@@ -3,39 +3,48 @@ using UnityEngine.SceneManagement;
 
 public class PauseSystem : MonoBehaviour
 {
-    public bool gamePaused;
+    public bool gamePaused = false;
     public GameObject pauseScreen;
 
-    void Start()
+    public void Start()
     {
         Time.timeScale = 1;
     }
-    public void IngamePauseIn()
+    public void BacktoGame()
     {
 
-        if (gamePaused == false)
-        {
-            Time.timeScale = 0;
-            pauseScreen.SetActive(true);
-            Debug.Log("Game Paused!");
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1;
+        pauseScreen.SetActive(false);
+        Debug.Log("Game Resumed!");
+
     }
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape) && gamePaused == false)
         {
-            if (gamePaused == false)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                Time.timeScale = 0;
-                pauseScreen.SetActive(true);
-                Debug.Log("Game Paused!");
-            }
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0;
+            pauseScreen.SetActive(true);
+            Debug.Log("Game Paused!");
+            gamePaused = true;
+
         }
+        /* else if (Input.GetKey(KeyCode.Escape) && gamePaused == true)
+         {
+
+             Cursor.lockState = CursorLockMode.Locked;
+             Cursor.visible = false;
+             Time.timeScale = 1;
+             pauseScreen.SetActive(false);
+             gamePaused = false;
+
+
+         }*/
     }
 
     public void Resume()

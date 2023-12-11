@@ -20,7 +20,7 @@ public class Move : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "Hi my nameis Orxic & i will be your guard\n" +
+            TutorText.text = "Hi my nameis Orxic & i will be your guide\n" +
                 "<Press WASD for Movement>";
 
 
@@ -34,8 +34,8 @@ public class Move : MonoBehaviour
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "<Use the WASD keys to move.>\n" +
-                "Advance past the cylinders.";
+            TutorText.text = "Hi my nameis Orxic & i will be your guide\n" +
+            "<Press WASD for Movement>";
 
         }
     }

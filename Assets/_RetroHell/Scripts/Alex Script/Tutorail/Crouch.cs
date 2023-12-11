@@ -22,8 +22,8 @@ public class Crouch : MonoBehaviour
             crouchBullet.SetActive(true);
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "<Press Control to Crouch.>\n" +
-                "Don't let the lasers hit you.";
+            TutorText.text = "Now we learn Crouching, Do you know behind every door is a trap.\n" +
+                "<Press Control to Crouch.>";
 
         }
 
@@ -37,9 +37,9 @@ public class Crouch : MonoBehaviour
             Frame.SetActive(true);
             crouchBullet.SetActive(true);
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "<Press Control to Crouch.>\n" +
-           "Don't let the lasers hit you.";
 
+            TutorText.text = "Now we learn Crouching, Do you know behind every door is a trap.\n" +
+                "<Press Control to Crouch.>";
         }
     }
     void OnTriggerExit(Collider other)

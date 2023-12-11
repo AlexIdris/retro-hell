@@ -20,9 +20,9 @@ public class Avoid : MonoBehaviour
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
+            TutorText.text = " This Kills, try not to die :)\n" +
+     "<Avoid Getting Hit by the Turret>";
 
-            TutorText.text = "<Avoid Getting Hit by the Turret>\n" +
-                " This Kills, try not to die";
 
         }
 
@@ -35,8 +35,8 @@ public class Avoid : MonoBehaviour
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "<Press Control to Crouch>\n" +
-           "Avoid Getting Hit by the Turret";
+            TutorText.text = " This Kills, try not to die :)\n" +
+                "<Avoid Getting Hit by the Turret>";
 
         }
     }

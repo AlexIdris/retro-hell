@@ -7,6 +7,7 @@ public class Goodluck : MonoBehaviour
     [SerializeField] GameObject Frame;
     [SerializeField] GameObject TutorailPopups;
     [SerializeField] GameObject BossEnemyHealth;
+    [SerializeField] GameObject TutorailMinibossHealth;
     private void Awake()
     {
         TutorailPopups.SetActive(false);
@@ -23,8 +24,9 @@ public class Goodluck : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
             BossEnemyHealth.SetActive(true);
-            TutorText.text = "<Descend downward and face your enemy.>\n" +
-                "Good Luck, Soldier.";
+            TutorailMinibossHealth.SetActive(false);
+            TutorText.text = "Yikes. Well I am sure you do not want a guardian angel in your ear, so Goodluck.\n" +
+     "<Descend downward and face your enemy.>";
         }
 
 
@@ -37,14 +39,15 @@ public class Goodluck : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
             BossEnemyHealth.SetActive(true);
-            TutorText.text = "<Descend downward and face your enemy.>\n" +
-                "Good Luck, Soldier.";
+            TutorailMinibossHealth.SetActive(false);
+            TutorText.text = "Yikes. Well I am sure you do not want a guardian angel in your ear, so Goodluck.\n" +
+                 "<Descend downward and face your enemy.>";
 
         }
     }
     void OnTriggerExit(Collider other)
     {
-
+        TutorailMinibossHealth.SetActive(false);
         TutorailPopups.SetActive(false);
 
     }

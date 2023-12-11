@@ -2273,9 +2273,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Play, Assembly-CSharp
-        m_MethodName: ToGame
+      - m_Target: {fileID: 871170462}
+        m_TargetAssemblyTypeName: Audio, Assembly-CSharp
+        m_MethodName: Music
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

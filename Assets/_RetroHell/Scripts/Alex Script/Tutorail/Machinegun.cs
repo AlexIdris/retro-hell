@@ -20,8 +20,8 @@ public class Machinegun : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "<Pick up the Machine Gun panel.>\n" +
-                "Each panel adds 30 bullets of rapid-fire.";
+            TutorText.text = "Automatic Rifle Time!!\n" +
+                "<Each panel adds 30 bullets of rapid-fire>";
         }
 
 
@@ -33,8 +33,8 @@ public class Machinegun : MonoBehaviour
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "<Pick up the Machine Gun panel.>\n" +
-                "Each panel adds 30 bullets of rapid-fire.";
+            TutorText.text = "Automatic Rifle Time!!\n" +
+                "<Each panel adds 30 bullets of rapid-fire>";
         }
     }
     void OnTriggerExit(Collider other)

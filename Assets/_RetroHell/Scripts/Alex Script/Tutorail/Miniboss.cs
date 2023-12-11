@@ -23,12 +23,15 @@ public class Miniboss : MonoBehaviour
         if (other.tag == "Player")
         {
             TutorailPopups.SetActive(true);
+            TutorailMinibossHealth.SetActive(true);
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
             MiniminiBoss.SetActive(true);
             BossEnemyHealth.SetActive(false);
-            TutorText.text = "<Right-Click to fire the Machine Gun.>\n" +
-                "Use your new weapon to defeat the enemy.";
+            TutorText.text = "Time to play with our new toys, defeat the enemy.\n" +
+                "<Right-Click to fire the Machine Gun>";
+
+
         }
 
 
@@ -43,17 +46,16 @@ public class Miniboss : MonoBehaviour
             TutorailMinibossHealth.SetActive(true);
             MiniminiBoss.SetActive(true);
             BossEnemyHealth.SetActive(false);
-            TutorText.text = "<Right-Click to fire the Machine Gun.>\n" +
-                "Use your new weapon to defeat the enemy.";
+            TutorText.text = "Time to play with our new toys, defeat the enemy.\n" +
+                "<Right-Click to fire the Machine Gun>";
 
 
         }
     }
     void OnTriggerExit(Collider other)
     {
-        TutorailMinibossHealth.SetActive(false);
+        TutorailMinibossHealth.SetActive(true);
         TutorailPopups.SetActive(false);
 
     }
-
 }
