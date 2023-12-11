@@ -55,12 +55,12 @@ public class slowMotion : MonoBehaviour
         SlowmoFrame.SetActive(true);
         EText.gameObject.SetActive(true);
 
-        if (Input.GetKey(KeyCode.E) && !isCooldown)
+        if (Input.GetKey(KeyCode.LeftShift) && !isCooldown)
         {
 
             slowMo = true;
             Time.timeScale = slowMoSpeed;
-
+            EText.gameObject.SetActive(false);
             await Task.Delay(2000);
 
             slowMo = false;

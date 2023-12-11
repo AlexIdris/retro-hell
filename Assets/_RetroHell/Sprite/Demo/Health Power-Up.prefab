@@ -120,14 +120,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bc323adfe9fd442bada352ebe12084e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IW_Health: {fileID: 0}
   player: {fileID: 0}
   playerHealth: {fileID: 0}
   extraHealth: 50
   animatorObject: {fileID: 0}
   animator: {fileID: 0}
-  healthDisplay: {fileID: 0}
-  timer: 0
+  healthDisplay: {fileID: 6389215037849965411, guid: 5b9d82a06e1a02642a3ccd4c95a9bee0, type: 3}
+  HealthTimer: 0
 --- !u!1 &4672470727393737718
 GameObject:
   m_ObjectHideFlags: 0

@@ -232,11 +232,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25cd7f268ca224445b81e3b40474edeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   currentDistance: 0
   shooting: 0
   target: {fileID: 7993760622433033731, guid: 773bf92cb9b6e034698ab12e7a03b12f, type: 3}
-  playerDistance: 8
+  playerDistance: 6
   bulletSpawner: {fileID: 8860167558980297040}
   bullet: {fileID: 3433909382595134065, guid: 3badc861733fc7944b9bebe36ca86aba, type: 3}
   pause: {fileID: 8076986344663354662, guid: 01a686858f8eb624aa4b3dfa061f9066, type: 3}

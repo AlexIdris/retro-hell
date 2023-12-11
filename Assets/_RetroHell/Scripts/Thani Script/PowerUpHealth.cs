@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PowerUpHealth : MonoBehaviour
 {
-    [SerializeField] GameObject IW_Health;
-    [SerializeField] bool FullHealth;
+
+
     public GameObject player;
     public Player_Control playerHealth;
     public int extraHealth;
@@ -19,8 +19,12 @@ public class PowerUpHealth : MonoBehaviour
         playerHealth = player.GetComponent<Player_Control>();
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
-        
-        FullHealth = healthDisplay.fullHealth;
+        bool FullHealth = healthDisplay.fullHealth;
+
+    }
+    private void Start()
+    {
+        HealthTimer = 0;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,14 +35,14 @@ public class PowerUpHealth : MonoBehaviour
             playerHealth.playercurrentHealth += extraHealth;
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
             animator.HealthAnimation();
-            //IW_Health.SetActive(false);
             Destroy(gameObject);
         }
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
         HealthTimer += Time.deltaTime;
+
 
         if (HealthTimer > 5)
         {

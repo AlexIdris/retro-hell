@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 
 public class PowerUpSpawner : MonoBehaviour
@@ -17,7 +16,7 @@ public class PowerUpSpawner : MonoBehaviour
         {
             randomPowerUp = Random.Range(0, 2);
 
-            Vector3 position = new Vector3(Random.Range(-30, 30), 0, Random.Range(-30, 30));
+            Vector3 position = new Vector3(Random.Range(-30, 30), -1, Random.Range(-30, 30) - 1);
             Instantiate(PowerUps[randomPowerUp], position, Quaternion.identity);
             timer = 0;
         }
