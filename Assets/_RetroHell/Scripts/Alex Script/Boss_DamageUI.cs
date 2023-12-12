@@ -155,7 +155,7 @@ public class Boss_DamageUI : MonoBehaviour
     }
     void OnDeath()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(5);
     }
     public void EnemyTakeDamage(int damage)
     {
