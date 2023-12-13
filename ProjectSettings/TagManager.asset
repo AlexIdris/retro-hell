@@ -22,6 +22,8 @@ TagManager:
   - Player Heart
   - Gun
   - GunHUD
+  - health drop
+  - Health
   layers:
   - Default
   - TransparentFX
