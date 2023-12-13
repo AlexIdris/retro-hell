@@ -1,21 +1,31 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ToMenu : MonoBehaviour
 {
+    [SerializeField] GameObject SettingPanel;
+    [SerializeField] GameObject Audio;
+    [SerializeField] GameObject Control;
+    [SerializeField] GameObject Brief;
 
-    private void Awake()
-    {
 
-    }
     public void Menu()
     {
-        SceneManager.LoadScene(0);
+
+        SettingPanel.SetActive(false);
+        Audio.SetActive(false);
+        Brief.SetActive(false);
+        Control.SetActive(false);
     }
-    private void Update()
+    public void SettingMenu()
     {
-
-
+        SettingPanel.SetActive(false);
+        Audio.SetActive(false);
+        Brief.SetActive(false);
+        Control.SetActive(false);
     }
+
+
+
+
 
 }

@@ -1,15 +1,32 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Next_Previous : MonoBehaviour
 {
-    public void Next()
+    [SerializeField] GameObject audio;
+    [SerializeField] GameObject control;
+    [SerializeField] GameObject brief;
+    [SerializeField] GameObject settingPanel;
+    public void Control()
     {
-        SceneManager.LoadScene(3);
+        audio.SetActive(false);
+        brief.SetActive(false);
+        control.SetActive(true);
+        settingPanel.SetActive(false);
     }
-    public void Previous()
+    public void Brief()
     {
-        SceneManager.LoadScene(2);
+        audio.SetActive(false);
+        brief.SetActive(true);
+        control.SetActive(false);
+        settingPanel.SetActive(false);
     }
+    public void Audio()
+    {
+        audio.SetActive(true);
+        brief.SetActive(false);
+        control.SetActive(false);
+        settingPanel.SetActive(false);
+    }
+
 
 }
