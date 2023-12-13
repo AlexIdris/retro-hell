@@ -1,6 +1,4 @@
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
@@ -23,6 +21,7 @@ public class Player_Control : MonoBehaviour
 
     public int maxHealth = 100;
     public int playercurrentHealth;
+    public ScreenShake shakeDetector;
     public HealthDisplay health;
     private void Start()
     {
@@ -35,7 +34,6 @@ public class Player_Control : MonoBehaviour
 
     void Update()
     {
-       
         Movement();
         Jump();
         Crouch();
@@ -129,11 +127,6 @@ public class Player_Control : MonoBehaviour
                 OnDeath();
             }
         }
-        else if (other.tag == "Health")
-        {
-            takingDamageEffect.vignetteColor.value = new Color(0, 255, 0);
-            StartCoroutine(takingDamageEffect.BloodScreenEffect());
-        }
     }
     private void OnTriggerStay(Collider other)
     {
@@ -157,7 +150,8 @@ public class Player_Control : MonoBehaviour
     {
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
-        takingDamageEffect.vignetteColor.value = new Color(255, 0, 0);
+        shakeDetector.hit = true;
+
         StartCoroutine(takingDamageEffect.BloodScreenEffect());
     }
 
@@ -166,5 +160,5 @@ public class Player_Control : MonoBehaviour
         if (collision.gameObject.CompareTag(Ground))
             isGrounded = true;
     }
-    
+
 }
