@@ -127,6 +127,10 @@ public class Player_Control : MonoBehaviour
                 OnDeath();
             }
         }
+        else if (other.tag == "Health")
+        {
+            StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.green));
+        }
     }
     private void OnTriggerStay(Collider other)
     {
@@ -148,11 +152,10 @@ public class Player_Control : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
         shakeDetector.hit = true;
-
-        StartCoroutine(takingDamageEffect.BloodScreenEffect());
     }
 
     private void OnCollisionEnter(Collision collision)

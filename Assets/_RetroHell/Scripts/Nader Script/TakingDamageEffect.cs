@@ -11,7 +11,6 @@ public class TakingDamageEffect : MonoBehaviour
     public float intensity = 0f;
     PostProcessVolume PPVolume;
     public Vignette vignette;
-    public ColorParameter vignetteColor;
     public Color vignetterColor = Color.red;
     // Start is called before the first frame update
     void Start()
@@ -21,10 +20,10 @@ public class TakingDamageEffect : MonoBehaviour
 
         vignette.enabled.Override(false);
     }
-    public IEnumerator BloodScreenEffect()
+    public IEnumerator BloodScreenEffect(Color vignetteColor)
     {
         intensity = 0.5f;
-
+        vignette.color.Override(vignetteColor);
         vignette.enabled.Override(true);
         vignette.intensity.Override(0.4f);
         yield return new WaitForSeconds(0.5f);
