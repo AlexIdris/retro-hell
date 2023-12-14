@@ -13,12 +13,19 @@ public class GameStart : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        TutorailAudio.SetActive(false);
-        IngameAudio.SetActive(true);
+        if (other.tag == "Player")
+        {
+            TutorailAudio.SetActive(false);
+            IngameAudio.SetActive(true);
+        }
+
     }
     private void OnTriggerStay(Collider other)
     {
-        TutorailAudio.SetActive(false);
-        IngameAudio.SetActive(true);
+        if (other.tag == "Player")
+        {
+            TutorailAudio.SetActive(false);
+            IngameAudio.SetActive(true);
+        }
     }
 }

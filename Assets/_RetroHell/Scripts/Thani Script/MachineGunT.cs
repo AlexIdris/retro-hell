@@ -9,6 +9,7 @@ public class MachineGunT : MonoBehaviour
     public GameObject animatorObject;
     public PowerUpIconAnimator animator;
     [SerializeField] GameObject IW_MachineGun;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] TMP_Text bullettext;
     public GameObject machineGun;
     [SerializeField] int maxAmmo = 50;
@@ -20,6 +21,8 @@ public class MachineGunT : MonoBehaviour
         machineGun = GameObject.FindGameObjectWithTag("GunHUD");
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
+        machineGun.SetActive(false);
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,11 +31,18 @@ public class MachineGunT : MonoBehaviour
         {
             playerControls.machineGunObtained = true;
             playerControls.machineGunBullets = maxAmmo;
+
             animator.MGAnimation();
             machineGun.SetActive(true);
             bullettext.text = playerControls.machineGunBullets.ToString();
             IW_MachineGun.SetActive(false);
             Destroy(gameObject);
         }
+
+
+    }
+    private void OnDestroy()
+    {
+        audioSource.Play();
     }
 }

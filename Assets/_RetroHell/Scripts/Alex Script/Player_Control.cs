@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
 {
@@ -8,7 +7,9 @@ public class Player_Control : MonoBehaviour
     [SerializeField] float cooldownTime = 1f;
     [SerializeField] float cooldownTimer = 0f;
     [SerializeField] bool isCooldown = true;
-
+    public AudioSource DamageAudioSource;
+    public AudioSource HeartBeatAudioSource;
+    [SerializeField] GameObject audio;
     [SerializeField] float speed;
     [SerializeField] float jump;
     [SerializeField] float Gravity;
@@ -29,6 +30,9 @@ public class Player_Control : MonoBehaviour
         health.MaxHealth(maxHealth);
         isGrounded = true;
         pp_Volume.SetActive(true);
+        DamageAudioSource.Stop();
+        HeartBeatAudioSource.Stop();
+
     }
 
     void Update()
@@ -53,6 +57,13 @@ public class Player_Control : MonoBehaviour
         {
             playercurrentHealth = maxHealth;
         }
+        if (playercurrentHealth >= 50)
+        {
+            audio.SetActive(false);
+            HeartBeatAudioSource.Stop();
+
+        }
+
     }
     void Movement()
     {
@@ -111,40 +122,68 @@ public class Player_Control : MonoBehaviour
     {
         if (other.tag == "EnemyBullets")
         {
+
+
+            DamageAudioSource.Play();
             TakeDamage(10);
+            if (playercurrentHealth <= 50)
+            {
+                audio.SetActive(true);
+                HeartBeatAudioSource.Play();
+
+            }
+
             if (playercurrentHealth <= 0)
             {
-                OnDeath();
+                Respawn();
             }
 
         }
         else if (other.tag == "Boss")
         {
+            DamageAudioSource.Play();
             TakeDamage(1);
+
+        }
+        else if (other.tag == "BouncingEnemyBullet")
+        {
+            DamageAudioSource.Play();
+            TakeDamage(20);
+
+
             if (playercurrentHealth <= 0)
             {
-                OnDeath();
+                Respawn();
             }
+
         }
+
+
+
     }
     private void OnTriggerStay(Collider other)
     {
         if (other.tag == "Boss" && !isCooldown)
         {
+            DamageAudioSource.Play();
             TakeDamage(1);
 
             if (playercurrentHealth <= 0)
             {
-                OnDeath();
+                Respawn();
             }
             isCooldown = true;
             cooldownTimer = cooldownTime;
         }
     }
-    void OnDeath()
+
+
+    public void Respawn()
     {
-        SceneManager.LoadScene(1);
+
+        GameManager.Instance.RespawnPlayer();
     }
+
     public void TakeDamage(int damage)
     {
         playercurrentHealth -= damage;
@@ -158,5 +197,6 @@ public class Player_Control : MonoBehaviour
         if (collision.gameObject.CompareTag(Ground))
             isGrounded = true;
     }
+
 
 }

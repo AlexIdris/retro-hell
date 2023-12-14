@@ -3,15 +3,16 @@ using UnityEngine;
 
 public class MachineGun : MonoBehaviour
 {
-    public Player_Control player;
-    public PlayerShooting playerControls;
+    [SerializeField] Player_Control player;
+    [SerializeField] PlayerShooting playerControls;
 
-    public GameObject animatorObject;
-    public PowerUpIconAnimator animator;
-    [SerializeField] GameObject IW_MachineGun;
+    [SerializeField] GameObject animatorObject;
+    [SerializeField] PowerUpIconAnimator animator;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] TMP_Text bullettext;
-    public GameObject machineGun;
+    [SerializeField] GameObject machineGun;
     [SerializeField] int maxAmmo = 50;
+    [SerializeField] float dispawntimer = 10;
 
     public float MGItemTimer;
 
@@ -22,6 +23,9 @@ public class MachineGun : MonoBehaviour
         machineGun = GameObject.FindGameObjectWithTag("GunHUD");
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
+
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,19 +34,22 @@ public class MachineGun : MonoBehaviour
         {
             playerControls.machineGunObtained = true;
             playerControls.machineGunBullets = maxAmmo;
-            animator.MGAnimation();
             machineGun.SetActive(true);
+            animator.MGAnimation();
             bullettext.text = playerControls.machineGunBullets.ToString();
-            IW_MachineGun.SetActive(false);
             Destroy(gameObject);
         }
     }
 
+    private void OnDestroy()
+    {
+        audioSource.Play();
+    }
     public void FixedUpdate()
     {
         MGItemTimer += Time.deltaTime;
 
-        if (MGItemTimer > 5)
+        if (MGItemTimer > dispawntimer)
         {
             Destroy(gameObject);
         }

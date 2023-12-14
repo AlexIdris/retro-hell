@@ -5,14 +5,15 @@ public class PowerUpSpawner : MonoBehaviour
 {
     public List<GameObject> PowerUps;
 
-    public float timer;
+    [SerializeField] float timer;
+    [SerializeField] float nexttimer;
     public int randomPowerUp;
 
     public void FixedUpdate()
     {
         timer += Time.deltaTime;
 
-        if (timer > 5)
+        if (timer >= nexttimer)
         {
             randomPowerUp = Random.Range(0, 2);
 

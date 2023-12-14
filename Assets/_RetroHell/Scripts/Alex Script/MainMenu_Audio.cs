@@ -1,26 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class DoNotDelete : MonoBehaviour
+public class MainMenu_Audio : MonoBehaviour
 {
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] public Slider menuVolumeSlider;
     [SerializeField] GameObject audioDetector;
-    private static DoNotDelete instance;
+
     enum State { On, Off };
     State state;
 
 
-    private void Awake()
-    {
 
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-
-    }
     void Start()
     {
         menuVolumeSlider.value = menuVolumeSlider.maxValue;

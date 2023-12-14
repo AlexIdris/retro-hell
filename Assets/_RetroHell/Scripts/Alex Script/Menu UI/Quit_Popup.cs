@@ -19,7 +19,7 @@ public class Quit_Popup : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape))
         {
             Exitpopup.SetActive(true);
 
