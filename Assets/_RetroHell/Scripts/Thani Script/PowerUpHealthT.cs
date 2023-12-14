@@ -17,7 +17,7 @@ public class PowerUpHealthT : MonoBehaviour
 
 
         healthDisplay = player.GetComponent<HealthDisplay>();
-        bool FullHealth = healthDisplay.fullHealth;
+
     }
 
     public void Start()
