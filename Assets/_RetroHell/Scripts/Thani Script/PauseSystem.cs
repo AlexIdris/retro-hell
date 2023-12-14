@@ -16,6 +16,7 @@ public class PauseSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
+        gamePaused= false;
         pauseScreen.SetActive(false);
         Debug.Log("Game Resumed!");
 
@@ -52,6 +53,7 @@ public class PauseSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
+        gamePaused = false;
         pauseScreen.SetActive(false);
         Debug.Log("Game Resumed!");
     }
