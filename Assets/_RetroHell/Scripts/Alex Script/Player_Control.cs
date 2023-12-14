@@ -22,6 +22,7 @@ public class Player_Control : MonoBehaviour
 
     public int maxHealth = 100;
     public int playercurrentHealth;
+    public ScreenShake shakeDetector;
     public HealthDisplay health;
     private void Start()
     {
@@ -188,6 +189,7 @@ public class Player_Control : MonoBehaviour
     {
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
+        shakeDetector.hit = true;
 
         StartCoroutine(takingDamageEffect.BloodScreenEffect());
     }

@@ -8,6 +8,7 @@ public class PowerUpSpawner : MonoBehaviour
     [SerializeField] float timer;
     [SerializeField] float nexttimer;
     public int randomPowerUp;
+    public int randomPosition;
 
     public void FixedUpdate()
     {
@@ -16,10 +17,35 @@ public class PowerUpSpawner : MonoBehaviour
         if (timer >= nexttimer)
         {
             randomPowerUp = Random.Range(0, 2);
+            randomPosition = Random.Range(0, 4);
 
-            Vector3 position = new Vector3(Random.Range(-30, 30), -1, Random.Range(-30, 30) - 1);
-            Instantiate(PowerUps[randomPowerUp], position, Quaternion.identity);
-            timer = 0;
+            if (randomPosition == 0)
+            {
+                Vector3 position = new Vector3(Random.Range(25, 30), -1, Random.Range(-30, 30));
+                Instantiate(PowerUps[randomPowerUp], position, Quaternion.identity);
+                timer = 0;
+            }
+
+            if (randomPosition == 1)
+            {
+                Vector3 position = new Vector3(Random.Range(-30, 30), -1, Random.Range(25, 30));
+                Instantiate(PowerUps[randomPowerUp], position, Quaternion.identity);
+                timer = 0;
+            }
+
+            if (randomPosition == 2)
+            {
+                Vector3 position = new Vector3(Random.Range(-25, -30), -1, Random.Range(-30, 30));
+                Instantiate(PowerUps[randomPowerUp], position, Quaternion.identity);
+                timer = 0;
+            }
+
+            if (randomPosition == 3)
+            {
+                Vector3 position = new Vector3(Random.Range(-30, 30), -1, Random.Range(-25, -30));
+                Instantiate(PowerUps[randomPowerUp], position, Quaternion.identity);
+                timer = 0;
+            }
         }
     }
 }

@@ -33,6 +33,7 @@ public class PowerUpHealth : MonoBehaviour
 
         if (other.tag == "Player")
         {
+           
             playerHealth.playercurrentHealth += extraHealth;
 
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);

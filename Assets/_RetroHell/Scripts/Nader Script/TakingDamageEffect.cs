@@ -10,21 +10,23 @@ public class TakingDamageEffect : MonoBehaviour
     public Player_Control Player_Control;
     public float intensity = 0f;
     PostProcessVolume PPVolume;
-    Vignette BloodScreen;
+    public Vignette vignette;
+    public ColorParameter vignetteColor;
+    public Color vignetterColor = Color.red;
     // Start is called before the first frame update
     void Start()
     {
-        PPVolume= GetComponent<PostProcessVolume>();
-        PPVolume.profile.TryGetSettings<Vignette>(out BloodScreen);
+        PPVolume = GetComponent<PostProcessVolume>();
+        PPVolume.profile.TryGetSettings<Vignette>(out vignette);
 
-       BloodScreen.enabled.Override(false);
+        vignette.enabled.Override(false);
     }
     public IEnumerator BloodScreenEffect()
     {
         intensity = 0.5f;
 
-        BloodScreen.enabled.Override(true);
-        BloodScreen.intensity.Override(0.4f);
+        vignette.enabled.Override(true);
+        vignette.intensity.Override(0.4f);
         yield return new WaitForSeconds(0.5f);
         while (intensity> 0f) 
         {
@@ -35,11 +37,11 @@ public class TakingDamageEffect : MonoBehaviour
                 intensity = 0f;
             }
 
-            BloodScreen.intensity.Override(intensity);
+            vignette.intensity.Override(intensity);
             yield return new WaitForSeconds(0.1f);
         }
 
-        BloodScreen.enabled.Override(false);
+        vignette.enabled.Override(false);
         yield break;
     }
 }
