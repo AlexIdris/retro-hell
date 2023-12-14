@@ -22,6 +22,8 @@ TagManager:
   - Player Heart
   - Gun
   - GunHUD
+  - Checkpoint
+  - BouncingEnemyBullet
   layers:
   - Default
   - TransparentFX
