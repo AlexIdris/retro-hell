@@ -8,9 +8,9 @@ public class TakingDamageEffect : MonoBehaviour
 {
     
     public Player_Control Player_Control;
-    public float intensity = 0f;
+    float intensity = 0f;
     PostProcessVolume PPVolume;
-    public Vignette vignette;
+    Vignette vignette;
     public Color vignetterColor = Color.red;
     [SerializeField] float masseffect;
     // Start is called before the first frame update
