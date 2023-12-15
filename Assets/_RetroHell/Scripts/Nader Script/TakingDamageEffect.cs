@@ -11,9 +11,11 @@ public class TakingDamageEffect : MonoBehaviour
     public float intensity = 0f;
     PostProcessVolume PPVolume;
     public Vignette vignette;
-    public ColorParameter vignetteColor;
     public Color vignetterColor = Color.red;
+    [SerializeField] float masseffect;
     // Start is called before the first frame update
+
+    Color lhjdfj;
     void Start()
     {
         PPVolume = GetComponent<PostProcessVolume>();
@@ -21,13 +23,13 @@ public class TakingDamageEffect : MonoBehaviour
 
         vignette.enabled.Override(false);
     }
-    public IEnumerator BloodScreenEffect()
+    public IEnumerator BloodScreenEffect(Color vignetteColor)
     {
-        intensity = 0.5f;
-
+        intensity = masseffect;
+        vignette.color.Override(vignetteColor);
         vignette.enabled.Override(true);
-        vignette.intensity.Override(0.4f);
-        yield return new WaitForSeconds(0.5f);
+        vignette.intensity.Override(masseffect);
+        yield return new WaitForSeconds(masseffect);
         while (intensity> 0f) 
         {
             intensity -= 0.05f;

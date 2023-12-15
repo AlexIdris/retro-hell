@@ -1,26 +1,18 @@
+using System.Collections;
+using System.Collections.Generic; 
 using UnityEngine;
 
 public class mouseRotationTest : MonoBehaviour
 {
     [SerializeField] public float Speed = 1;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
 
     void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Mouse X");
-        transform.Rotate(0, horizontal * Speed * Time.deltaTime, 0);
-        /*   float Vertical = Input.GetAxis("Mouse Y");
+        transform.Rotate(0,horizontal*Speed*Time.deltaTime, 0);
 
-           Vertical = Mathf.Clamp(Vertical, -10, 10);*/
-
-        // transform.Rotate(Vertical * Speed * Time.deltaTime, 0, 0);
-
-
-
+        /*float Vertical = Input.GetAxis("Mouse Y");
+        transform.Rotate(Vertical * Speed * Time.deltaTime, 0, 0);*/
     }
 }

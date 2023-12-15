@@ -17,7 +17,9 @@ public class PowerUpHealthT : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<Player_Control>();
 
-        bool FullHealth = healthDisplay.fullHealth;
+
+        healthDisplay = player.GetComponent<HealthDisplay>();
+
     }
 
     public void Start()
