@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class Boss_DamageUI : MonoBehaviour
 {
-    [SerializeField] int maxHealth = 2000;
-    [SerializeField] int firstHealth = 1600;
-    [SerializeField] int halfHealth = 1200;
-    [SerializeField] int lasthealth = 800;
-    [SerializeField] int lasthealthsecorndpattern = 400;
+    public int maxHealth = 2000;
+    public int firstHealth = 1600;
+    public int halfHealth = 1200;
+    public int lasthealth = 800;
+    public int lasthealthsecorndpattern = 400;
     private int dead = 0;
     public int currentHealth;
 
@@ -69,6 +69,7 @@ public class Boss_DamageUI : MonoBehaviour
             second = false;
             third = true;
         }
+
         if (currentHealth <= lasthealth && third)
         {
             Fourthpattern();

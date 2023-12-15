@@ -33,18 +33,16 @@ public class PowerUpHealth : MonoBehaviour
 
         if (other.tag == "Player")
         {
-           
+
             playerHealth.playercurrentHealth += extraHealth;
 
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
             animator.HealthAnimation();
+            audioSource.Play();
             Destroy(gameObject);
         }
     }
-    private void OnDestroy()
-    {
-        audioSource.Play();
-    }
+
     public void Update()
     {
         HealthTimer += Time.deltaTime;

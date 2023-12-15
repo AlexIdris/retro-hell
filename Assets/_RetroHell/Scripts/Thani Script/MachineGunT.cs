@@ -13,15 +13,16 @@ public class MachineGunT : MonoBehaviour
     [SerializeField] TMP_Text bullettext;
     public GameObject machineGun;
     [SerializeField] int maxAmmo = 50;
+    [SerializeField] WeaponManager weaponManager;
 
     public void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Control>();
         playerControls = GameObject.FindGameObjectWithTag("Gun").GetComponent<PlayerShooting>();
-        machineGun = GameObject.FindGameObjectWithTag("GunHUD");
+        weaponManager.gamestart();
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
-        machineGun.SetActive(false);
+
 
     }
 
@@ -29,20 +30,19 @@ public class MachineGunT : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+
             playerControls.machineGunObtained = true;
             playerControls.machineGunBullets = maxAmmo;
-
+            weaponManager.assult();
             animator.MGAnimation();
-            machineGun.SetActive(true);
+
             bullettext.text = playerControls.machineGunBullets.ToString();
             IW_MachineGun.SetActive(false);
+            audioSource.Play();
             Destroy(gameObject);
         }
 
 
     }
-    private void OnDestroy()
-    {
-        audioSource.Play();
-    }
+
 }

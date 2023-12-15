@@ -21,7 +21,7 @@ public class SlowDownTime : MonoBehaviour
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "Pick up the PocketWatch-Orxic-, no relation :|\n" +
+            TutorText.text = "Pick up the time watch, this slows down time, try using it to pass the turrent\n" +
                 "<Press Shift to slow down time for 3 seconds>";
         }
 
@@ -34,8 +34,8 @@ public class SlowDownTime : MonoBehaviour
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "Pick up the PocketWatch-Orxic-, no relation :|\n" +
-                "<Press Shift to slow down time for 3 seconds>";
+            TutorText.text = "Pick up the time watch, this slows down time, try using it to pass the turrent\n" +
+                 "<Press Shift to slow down time for 3 seconds>";
         }
     }
     void OnTriggerExit(Collider other)

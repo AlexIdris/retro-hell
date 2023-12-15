@@ -26,12 +26,9 @@ public class PickupTiimeWatch : MonoBehaviour
         PocketWatch?.SetActive(true);
         StopWatch?.SetActive(true);
         IW_PocketWatch.SetActive(false);
-
+        audioSource.Play();
         Destroy(gameObject);
     }
-    private void OnDestroy()
-    {
-        audioSource.Play();
-    }
+
 
 }

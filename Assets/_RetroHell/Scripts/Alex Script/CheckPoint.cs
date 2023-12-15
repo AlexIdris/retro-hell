@@ -6,18 +6,24 @@ public class Checkpoint : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.Instance.SetCheckpoint(transform.position);
+            PlayerPrefs.SetFloat("PlayerPosX", transform.position.x);
+            PlayerPrefs.SetFloat("PlayerPosY", transform.position.y);
+            PlayerPrefs.SetFloat("PlayerPosZ", transform.position.z);
 
-            gameObject.SetActive(false);
+            PlayerPrefs.Save();
+            Debug.Log("Player position saved.");
         }
     }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.Instance.SetCheckpoint(transform.position);
+            PlayerPrefs.SetFloat("PlayerPosX", transform.position.x);
+            PlayerPrefs.SetFloat("PlayerPosY", transform.position.y);
+            PlayerPrefs.SetFloat("PlayerPosZ", transform.position.z);
 
-            gameObject.SetActive(false);
+            PlayerPrefs.Save();
+            Debug.Log("Player position saved.");
         }
     }
 }

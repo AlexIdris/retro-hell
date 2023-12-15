@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class MachineGun : MonoBehaviour
 {
-    [SerializeField] Player_Control player;
+    [SerializeField] private Player_Control player;
     [SerializeField] PlayerShooting playerControls;
-
+    [SerializeField] WeaponManager weaponManager;
     [SerializeField] GameObject animatorObject;
     [SerializeField] PowerUpIconAnimator animator;
     [SerializeField] AudioSource audioSource;
@@ -16,35 +16,33 @@ public class MachineGun : MonoBehaviour
 
     public float MGItemTimer;
 
+
+
     public void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Control>();
         playerControls = GameObject.FindGameObjectWithTag("Gun").GetComponent<PlayerShooting>();
-        machineGun = GameObject.FindGameObjectWithTag("GunHUD");
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
-
-
+        weaponManager.gamestart();
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag is "Player")
         {
+            weaponManager.assult();
             playerControls.machineGunObtained = true;
             playerControls.machineGunBullets = maxAmmo;
-            machineGun.SetActive(true);
             animator.MGAnimation();
             bullettext.text = playerControls.machineGunBullets.ToString();
+            audioSource.Play();
             Destroy(gameObject);
         }
     }
 
-    private void OnDestroy()
-    {
-        audioSource.Play();
-    }
+
     public void FixedUpdate()
     {
         MGItemTimer += Time.deltaTime;

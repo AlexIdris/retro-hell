@@ -1,7 +1,12 @@
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Player_Control : MonoBehaviour
 {
+    public Transform player;
+    public Vector3 respawnPosition;
+    [SerializeField] bool respawned;
+
     public TakingDamageEffect takingDamageEffect;
     [SerializeField] GameObject pp_Volume;
     [SerializeField] float cooldownTime = 1f;
@@ -9,7 +14,7 @@ public class Player_Control : MonoBehaviour
     [SerializeField] bool isCooldown = true;
     public AudioSource DamageAudioSource;
     public AudioSource HeartBeatAudioSource;
-    [SerializeField] GameObject audio;
+    [SerializeField] GameObject Heartaudio;
     [SerializeField] float speed;
     [SerializeField] float jump;
     [SerializeField] float Gravity;
@@ -42,6 +47,10 @@ public class Player_Control : MonoBehaviour
         Jump();
         Crouch();
 
+
+        OnDestroy();
+
+
         if (isCooldown)
         {
 
@@ -60,7 +69,7 @@ public class Player_Control : MonoBehaviour
         }
         if (playercurrentHealth >= 50)
         {
-            audio.SetActive(false);
+            Heartaudio.SetActive(false);
             HeartBeatAudioSource.Stop();
 
         }
@@ -70,10 +79,8 @@ public class Player_Control : MonoBehaviour
     {
         var horizontalInput = Input.GetAxis("Horizontal");
         var verticalInput = Input.GetAxis("Vertical");
-
-        Vector3 moveDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
-
-        rb.velocity = transform.forward * verticalInput * speed + transform.right * horizontalInput * speed;
+        _ = new Vector3(horizontalInput, 0, verticalInput).normalized;
+        rb.velocity = speed * verticalInput * transform.forward + horizontalInput * speed * transform.right;
         float move = rb.velocity.magnitude;
 
         if (move > 0)
@@ -84,7 +91,7 @@ public class Player_Control : MonoBehaviour
         {
             //anim.SetBool("run", false);
         }
-        controller.Move(rb.velocity * speed * Time.deltaTime + velocity * Time.deltaTime);
+        controller.Move(speed * Time.deltaTime * rb.velocity + velocity * Time.deltaTime);
     }
 
     void Jump()
@@ -121,7 +128,7 @@ public class Player_Control : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "EnemyBullets")
+        if (other.tag is "EnemyBullets")
         {
 
 
@@ -129,33 +136,31 @@ public class Player_Control : MonoBehaviour
             TakeDamage(10);
             if (playercurrentHealth <= 50)
             {
-                audio.SetActive(true);
+                Heartaudio.SetActive(true);
                 HeartBeatAudioSource.Play();
 
             }
 
             if (playercurrentHealth <= 0)
             {
+                LoadCheckpoint();
                 Respawn();
             }
 
         }
-        else if (other.tag == "Boss")
+        else if (other.tag is "Boss")
         {
             DamageAudioSource.Play();
             TakeDamage(1);
 
         }
-        else if (other.tag == "BouncingEnemyBullet")
+        else if (other.tag is "BouncingEnemyBullet")
         {
             DamageAudioSource.Play();
             TakeDamage(20);
 
 
-            if (playercurrentHealth <= 0)
-            {
-                Respawn();
-            }
+
 
         }
 
@@ -164,7 +169,7 @@ public class Player_Control : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Boss" && !isCooldown)
+        if (other.tag is "Boss" && !isCooldown)
         {
             DamageAudioSource.Play();
             TakeDamage(1);
@@ -178,18 +183,42 @@ public class Player_Control : MonoBehaviour
         }
     }
 
+    private async void OnDestroy()
+    {
+        if (playercurrentHealth <= 0 && respawned == true)
+        {
+            Respawn();
+            await Task.Delay(50);
+            playercurrentHealth = maxHealth;
+            health.MaxHealth(maxHealth);
 
+        }
+    }
+    void LoadCheckpoint()
+    {
+        float posX = PlayerPrefs.GetFloat("PlayerPosX", 0f);
+        float posY = PlayerPrefs.GetFloat("PlayerPosY", 0f);
+        float posZ = PlayerPrefs.GetFloat("PlayerPosZ", 0f);
+
+        Vector3 playerPosition = new(posX, posY, posZ);
+        transform.position = playerPosition;
+
+        Debug.Log("Player position loaded.");
+    }
     public void Respawn()
     {
+        player.position = respawnPosition;
 
-        GameManager.Instance.RespawnPlayer();
+        Debug.Log("Player respawned!");
+
+        respawned = true;
     }
 
     public void TakeDamage(int damage)
     {
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
-        shakeDetector.hit = true;
+        //shakeDetector.hit = true;
 
         StartCoroutine(takingDamageEffect.BloodScreenEffect());
     }
