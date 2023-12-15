@@ -20,6 +20,7 @@ public class MachineGun : MonoBehaviour
         playerControls = GameObject.FindGameObjectWithTag("Gun").GetComponent<PlayerShooting>();
 
         machineGun = FindInActiveObjectByTag("GunHUD");
+        bullettext = FindInActiveObjectByTag("MG Bullet Counter").GetComponent<TMP_Text>();
 
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
