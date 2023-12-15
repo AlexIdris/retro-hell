@@ -5,12 +5,11 @@ public class MachineGun : MonoBehaviour
 {
     public Player_Control player;
     public PlayerShooting playerControls;
-
+    public GameObject machineGun;
     public GameObject animatorObject;
     public PowerUpIconAnimator animator;
-    [SerializeField] GameObject IW_MachineGun;
-    [SerializeField] TMP_Text bullettext;
-    public GameObject machineGun;
+
+    public TMP_Text bullettext;
     [SerializeField] int maxAmmo = 50;
 
     public float MGItemTimer;
@@ -19,9 +18,27 @@ public class MachineGun : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Control>();
         playerControls = GameObject.FindGameObjectWithTag("Gun").GetComponent<PlayerShooting>();
-        machineGun = GameObject.FindGameObjectWithTag("GunHUD");
+
+        machineGun = FindInActiveObjectByTag("GunHUD");
+
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
+    }
+
+    GameObject FindInActiveObjectByTag(string tag)
+    {
+        Transform[] objs = Resources.FindObjectsOfTypeAll<Transform>();
+        for (int i = 0; i < objs.Length; i++)
+        {
+            if (objs[i].hideFlags == HideFlags.None)
+            {
+                if (objs[i].CompareTag(tag))
+                {
+                    return objs[i].gameObject;
+                }
+            }
+        }
+        return null;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,7 +50,6 @@ public class MachineGun : MonoBehaviour
             animator.MGAnimation();
             machineGun.SetActive(true);
             bullettext.text = playerControls.machineGunBullets.ToString();
-            IW_MachineGun.SetActive(false);
             Destroy(gameObject);
         }
     }
