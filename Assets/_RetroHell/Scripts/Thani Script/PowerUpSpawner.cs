@@ -7,6 +7,7 @@ public class PowerUpSpawner : MonoBehaviour
 
     public float timer;
     public int PowerUpList = 0;
+    public int randomPowerUp = 0;
     public int randomPosition;
 
     public void FixedUpdate()
@@ -15,12 +16,18 @@ public class PowerUpSpawner : MonoBehaviour
 
         if (timer > 5)
         {
-            if (PowerUpList == 4)
+            randomPowerUp = Random.Range(0, 10);
+            randomPosition = Random.Range(0, 4);
+
+            if (randomPowerUp > 5)
             {
+                PowerUpList = 1;
+            } else {
                 PowerUpList = 0;
             }
 
-            randomPosition = Random.Range(0, 4);
+            Debug.Log(randomPowerUp);
+            Debug.Log(PowerUpList);
 
             if (randomPosition == 0)
             {
@@ -49,9 +56,6 @@ public class PowerUpSpawner : MonoBehaviour
                 Instantiate(PowerUps[PowerUpList], position, Quaternion.identity);
                 timer = 0;
             }
-
-            PowerUpList++;
-            Debug.Log(PowerUpList);
         }
     }
 }
