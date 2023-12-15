@@ -13,13 +13,13 @@ public class MachineGunT : MonoBehaviour
     [SerializeField] TMP_Text bullettext;
     public GameObject machineGun;
     [SerializeField] int maxAmmo = 50;
-    [SerializeField] WeaponManager weaponManager;
+
 
     public void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Control>();
         playerControls = GameObject.FindGameObjectWithTag("Gun").GetComponent<PlayerShooting>();
-        weaponManager.gamestart();
+
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
 
@@ -33,7 +33,7 @@ public class MachineGunT : MonoBehaviour
 
             playerControls.machineGunObtained = true;
             playerControls.machineGunBullets = maxAmmo;
-            weaponManager.assult();
+
             animator.MGAnimation();
 
             bullettext.text = playerControls.machineGunBullets.ToString();

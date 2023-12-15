@@ -27,7 +27,7 @@ public class MachineGun : MonoBehaviour
 
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
-        weaponManager.gamestart();
+
 
     }
 
@@ -51,7 +51,7 @@ public class MachineGun : MonoBehaviour
     {
         if (other.gameObject.tag is "Player")
         {
-            weaponManager.assult();
+
             playerControls.machineGunObtained = true;
             playerControls.machineGunBullets = maxAmmo;
             animator.MGAnimation();

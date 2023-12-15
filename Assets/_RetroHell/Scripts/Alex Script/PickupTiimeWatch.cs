@@ -15,16 +15,16 @@ public class PickupTiimeWatch : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        PocketWatch?.SetActive(true);
-        StopWatch?.SetActive(true);
+        PocketWatch.SetActive(true);
+        StopWatch.SetActive(true);
         IW_PocketWatch.SetActive(false);
 
         Destroy(gameObject);
     }
     private void OnTriggerStay(Collider other)
     {
-        PocketWatch?.SetActive(true);
-        StopWatch?.SetActive(true);
+        PocketWatch.SetActive(true);
+        StopWatch.SetActive(true);
         IW_PocketWatch.SetActive(false);
         audioSource.Play();
         Destroy(gameObject);

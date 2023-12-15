@@ -153,12 +153,12 @@ public class Player_Control : MonoBehaviour
             DamageAudioSource.Play();
             TakeDamage(1);
 
-        } 
+        }
         else if (other.tag == "Health")
         {
             StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.green));
         }
-       
+
         else if (other.tag is "BouncingEnemyBullet")
         {
             DamageAudioSource.Play();
@@ -227,7 +227,7 @@ public class Player_Control : MonoBehaviour
         shakeDetector.hit = true;
         //shakeDetector.hit = true;
 
-       
+    }
 
     private void OnCollisionEnter(Collision collision)
     {

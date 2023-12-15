@@ -1223,6 +1223,7 @@ MonoBehaviour:
   - {fileID: 2920219364118264063, guid: cd2d1b9aebb674608a0e02cb63cdbf48, type: 3}
   timer: 0
   nexttimer: 5
+  PowerUpList: 0
   randomPowerUp: 0
   randomPosition: 0
 --- !u!4 &36394184
@@ -2523,7 +2524,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3f80856f436beb44ba59d2d06db152d6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -11340,7 +11341,7 @@ MonoBehaviour:
   intensity: 0
   vignette: {fileID: 0}
   vignetterColor: {r: 1, g: 0, b: 0, a: 1}
-  masseffect: 0.6
+  masseffect: 0
 --- !u!1 &445690861
 GameObject:
   m_ObjectHideFlags: 0
@@ -25966,7 +25967,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1d8e943ce9788e9419847145574b96fc, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.459
   m_Pitch: 1
   Loop: 1
@@ -26441,6 +26442,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 554319795}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1207369174
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1207369176}
+  - component: {fileID: 1207369175}
+  m_Layer: 0
+  m_Name: Sound Swap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1207369175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207369174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d230a6f288ffe469aebc9eaf1f44ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TutorailAudio: {fileID: 1977237864}
+  IngameAudio: {fileID: 1173494835}
+--- !u!4 &1207369176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207369174}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.6135206, y: 11.06612, z: 37.449074}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1208491966
 GameObject:
   m_ObjectHideFlags: 0
@@ -27854,6 +27901,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8c241179fca6d4d8baad4faed8ee25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1240022008}
+  respawnPosition: {x: 0, y: 0, z: 0}
+  respawned: 0
   takingDamageEffect: {fileID: 439367273}
   pp_Volume: {fileID: 439367270}
   cooldownTime: 1
@@ -27861,7 +27911,7 @@ MonoBehaviour:
   isCooldown: 1
   DamageAudioSource: {fileID: 108301467}
   HeartBeatAudioSource: {fileID: 204401099}
-  audio: {fileID: 204401097}
+  Heartaudio: {fileID: 204401097}
   speed: 3
   jump: 2
   Gravity: -30
@@ -43451,7 +43501,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cb84316458e11e840840a027219fb7c2, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.564
   m_Pitch: 0.75
   Loop: 1
@@ -48305,3 +48355,6 @@ SceneRoots:
   - {fileID: 300237509}
   - {fileID: 1967808568510397555}
   - {fileID: 5433203110387863624}
+  - {fileID: 248575720}
+  - {fileID: 291202458}
+  - {fileID: 1207369176}
