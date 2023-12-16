@@ -17,15 +17,9 @@ public class GameStart : MonoBehaviour
         {
             TutorailAudio.Stop();
             IngameAudio.Play();
+            Destroy(gameObject);
         }
 
     }
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            TutorailAudio.Stop();
-            IngameAudio.Play();
-        }
-    }
+
 }

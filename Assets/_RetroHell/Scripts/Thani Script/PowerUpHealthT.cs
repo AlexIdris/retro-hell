@@ -4,7 +4,6 @@ public class PowerUpHealthT : MonoBehaviour
 {
     [SerializeField] GameObject IW_Health;
     [SerializeField] AudioSource audioSource;
-    [SerializeField] GameObject DropCollision;
     public GameObject player;
     public Player_Control playerHealth;
     public int extraHealth;

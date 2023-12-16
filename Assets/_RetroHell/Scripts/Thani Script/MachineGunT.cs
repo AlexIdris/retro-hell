@@ -19,7 +19,7 @@ public class MachineGunT : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Control>();
         playerControls = GameObject.FindGameObjectWithTag("Gun").GetComponent<PlayerShooting>();
-
+        machineGun.SetActive(false);
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
 
@@ -33,7 +33,7 @@ public class MachineGunT : MonoBehaviour
 
             playerControls.machineGunObtained = true;
             playerControls.machineGunBullets = maxAmmo;
-
+            machineGun.SetActive(true);
             animator.MGAnimation();
 
             bullettext.text = playerControls.machineGunBullets.ToString();

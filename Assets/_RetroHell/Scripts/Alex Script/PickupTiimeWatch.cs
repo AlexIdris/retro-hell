@@ -8,8 +8,7 @@ public class PickupTiimeWatch : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     private void Start()
     {
-        PocketWatch.SetActive(false);
-        StopWatch.SetActive(false);
+
         IW_PocketWatch.SetActive(true);
 
     }

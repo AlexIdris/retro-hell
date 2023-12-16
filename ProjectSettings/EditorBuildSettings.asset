@@ -9,17 +9,11 @@ EditorBuildSettings:
     path: Assets/_RetroHell/Scene/Menu.unity
     guid: e82bbb24790784d498a49fa3bdbc7f04
   - enabled: 1
-    path: Assets/_RetroHell/Scene/Level 1.unity
+    path: Assets/_RetroHell/Scene/Tutorial.unity
     guid: eddac9d9ad775a04a8018f12d3a8d4be
-  - enabled: 0
-    path: Assets/_RetroHell/Scene/Controls.unity
-    guid: c3b2f022ae2a661428e4134270bdc020
-  - enabled: 0
-    path: Assets/_RetroHell/Scene/Brief & Control.unity
-    guid: 104e0f6fe231fb74fa32e3678a53e6ab
-  - enabled: 0
-    path: Assets/_RetroHell/Scene/Audio.unity
-    guid: c242bbd7aa623b0479e6d7db73d532b3
+  - enabled: 1
+    path: Assets/_RetroHell/Scene/Level 1.unity
+    guid: 96357881a6e982444b9f64a482d517a6
   - enabled: 1
     path: Assets/_RetroHell/Scene/Win Condition.unity
     guid: 8fce06d561fdb074aa262b08af8e58de

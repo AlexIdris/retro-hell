@@ -46,7 +46,7 @@ public class Crouch : MonoBehaviour
     {
 
         TutorailPopups.SetActive(false);
-        crouchBullet.SetActive(false);
+
 
     }
 

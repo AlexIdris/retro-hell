@@ -1,12 +1,8 @@
-using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
 {
-    public Transform player;
-    public Vector3 respawnPosition;
-    [SerializeField] bool respawned;
-
     public TakingDamageEffect takingDamageEffect;
     [SerializeField] GameObject pp_Volume;
     [SerializeField] float cooldownTime = 1f;
@@ -143,7 +139,7 @@ public class Player_Control : MonoBehaviour
 
             if (playercurrentHealth <= 0)
             {
-                LoadCheckpoint();
+
                 Respawn();
             }
 
@@ -169,8 +165,6 @@ public class Player_Control : MonoBehaviour
 
         }
 
-
-
     }
     private void OnTriggerStay(Collider other)
     {
@@ -190,33 +184,15 @@ public class Player_Control : MonoBehaviour
 
     private async void OnDestroy()
     {
-        if (playercurrentHealth <= 0 && respawned == true)
+        if (playercurrentHealth <= 0)
         {
             Respawn();
-            await Task.Delay(50);
-            playercurrentHealth = maxHealth;
-            health.MaxHealth(maxHealth);
-
         }
     }
-    void LoadCheckpoint()
-    {
-        float posX = PlayerPrefs.GetFloat("PlayerPosX", 0f);
-        float posY = PlayerPrefs.GetFloat("PlayerPosY", 0f);
-        float posZ = PlayerPrefs.GetFloat("PlayerPosZ", 0f);
 
-        Vector3 playerPosition = new(posX, posY, posZ);
-        transform.position = playerPosition;
-
-        Debug.Log("Player position loaded.");
-    }
     public void Respawn()
     {
-        player.position = respawnPosition;
-
-        Debug.Log("Player respawned!");
-
-        respawned = true;
+        SceneManager.LoadScene(2);
     }
 
     public void TakeDamage(int damage)

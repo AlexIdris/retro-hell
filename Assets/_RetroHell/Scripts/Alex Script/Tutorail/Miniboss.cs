@@ -53,7 +53,7 @@ public class Miniboss : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
-        TutorailMinibossHealth.SetActive(true);
+        TutorailMinibossHealth.SetActive(false);
         TutorailPopups.SetActive(false);
 
     }
