@@ -11647,7 +11647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player_Control: {fileID: 1240022007}
   vignetterColor: {r: 1, g: 0, b: 0, a: 1}
-  masseffect: 0
+  masseffect: 0.65
 --- !u!4 &446938409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 275606476092078242, guid: 6b94ff5744bb751428c8381544ddf69e, type: 3}

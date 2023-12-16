@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +11,7 @@ public class Player_Control : MonoBehaviour
     [SerializeField] bool isCooldown = true;
     public AudioSource DamageAudioSource;
     public AudioSource HeartBeatAudioSource;
-    [SerializeField] GameObject Heartaudio;
+
     [SerializeField] float speed;
     [SerializeField] float jump;
     [SerializeField] float Gravity;
@@ -39,17 +40,20 @@ public class Player_Control : MonoBehaviour
 
     void Update()
     {
+
         Movement();
         Jump();
         Crouch();
 
+        if (playercurrentHealth <= 50)
+        {
+            Debug.Log("less than 50Hp");
+            pulse();
 
-        OnDestroy();
-
+        }
 
         if (isCooldown)
         {
-
             cooldownTimer -= Time.deltaTime;
 
             if (cooldownTimer <= 0)
@@ -63,12 +67,7 @@ public class Player_Control : MonoBehaviour
         {
             playercurrentHealth = maxHealth;
         }
-        if (playercurrentHealth >= 50)
-        {
-            Heartaudio.SetActive(false);
-            HeartBeatAudioSource.Stop();
 
-        }
 
     }
     void Movement()
@@ -127,22 +126,20 @@ public class Player_Control : MonoBehaviour
         if (other.tag is "EnemyBullets")
         {
 
-
             DamageAudioSource.Play();
             TakeDamage(10);
-            if (playercurrentHealth <= 50)
-            {
-                Heartaudio.SetActive(true);
-                HeartBeatAudioSource.Play();
 
-            }
+
 
             if (playercurrentHealth <= 0)
             {
-
                 Respawn();
             }
 
+        }
+        if (playercurrentHealth <= 50)
+        {
+            HeartBeatAudioSource.Play();
         }
         else if (other.tag is "Boss")
         {
@@ -159,10 +156,6 @@ public class Player_Control : MonoBehaviour
         {
             DamageAudioSource.Play();
             TakeDamage(20);
-
-
-
-
         }
 
     }
@@ -182,13 +175,6 @@ public class Player_Control : MonoBehaviour
         }
     }
 
-    private async void OnDestroy()
-    {
-        if (playercurrentHealth <= 0)
-        {
-            Respawn();
-        }
-    }
 
     public void Respawn()
     {
@@ -209,6 +195,12 @@ public class Player_Control : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(Ground))
             isGrounded = true;
+    }
+    private async void pulse()
+    {
+        StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
+        await Task.Delay(1000);
+        StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
     }
 
 

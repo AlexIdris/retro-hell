@@ -7,10 +7,10 @@ public class mouseRotationTest : MonoBehaviour
     [SerializeField] public float Speed = 1;
 
 
-    void FixedUpdate()
+    void Update()
     {
         float horizontal = Input.GetAxis("Mouse X");
-        transform.Rotate(0,horizontal*Speed*Time.deltaTime, 0);
+        transform.Rotate(0, horizontal * Speed * Time.deltaTime, 0);
 
         /*float Vertical = Input.GetAxis("Mouse Y");
         transform.Rotate(Vertical * Speed * Time.deltaTime, 0, 0);*/
