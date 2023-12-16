@@ -13,7 +13,7 @@ public class mouseController : MonoBehaviour
     private void Update()
     {      
         X -= Speed* Input.GetAxis("Mouse Y");
-        Y = Input.GetAxis("Mouse X");
+        Y += Speed* Input.GetAxis("Mouse X");
         X = Mathf.Clamp(X, minRotation, maxRotation);
         transform.eulerAngles = new Vector3(X,Y,0f);
         
