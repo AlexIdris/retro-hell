@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
@@ -11,7 +11,7 @@ public class Player_Control : MonoBehaviour
     [SerializeField] bool isCooldown = true;
     public AudioSource DamageAudioSource;
     public AudioSource HeartBeatAudioSource;
-    
+
     [SerializeField] float speed;
     [SerializeField] float jump;
     [SerializeField] float Gravity;
@@ -45,9 +45,6 @@ public class Player_Control : MonoBehaviour
         Jump();
         Crouch();
 
-
-        
-
         if (playercurrentHealth <= 50)
         {
             Debug.Log("less than 50Hp");
@@ -57,7 +54,6 @@ public class Player_Control : MonoBehaviour
 
         if (isCooldown)
         {
-
             cooldownTimer -= Time.deltaTime;
 
             if (cooldownTimer <= 0)
@@ -71,7 +67,7 @@ public class Player_Control : MonoBehaviour
         {
             playercurrentHealth = maxHealth;
         }
-        
+
 
     }
     void Movement()
@@ -130,21 +126,20 @@ public class Player_Control : MonoBehaviour
         if (other.tag is "EnemyBullets")
         {
 
-
             DamageAudioSource.Play();
             TakeDamage(10);
-            if (playercurrentHealth <= 50)
-            {
-                
-                HeartBeatAudioSource.Play();
-            }
 
-                if (playercurrentHealth <= 0)
-            {
 
+
+            if (playercurrentHealth <= 0)
+            {
                 Respawn();
             }
 
+        }
+        if (playercurrentHealth <= 50)
+        {
+            HeartBeatAudioSource.Play();
         }
         else if (other.tag is "Boss")
         {
@@ -161,10 +156,6 @@ public class Player_Control : MonoBehaviour
         {
             DamageAudioSource.Play();
             TakeDamage(20);
-
-
-
-
         }
 
     }
@@ -184,13 +175,6 @@ public class Player_Control : MonoBehaviour
         }
     }
 
-    private async void OnDestroy()
-    {
-        if (playercurrentHealth <= 0)
-        {
-            Respawn();
-        }
-    }
 
     public void Respawn()
     {
