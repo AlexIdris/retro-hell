@@ -11,7 +11,7 @@ public class Player_Control : MonoBehaviour
     [SerializeField] bool isCooldown = true;
     public AudioSource DamageAudioSource;
     public AudioSource HeartBeatAudioSource;
-    [SerializeField] GameObject Heartaudio;
+    
     [SerializeField] float speed;
     [SerializeField] float jump;
     [SerializeField] float Gravity;
@@ -50,8 +50,6 @@ public class Player_Control : MonoBehaviour
 
         if (playercurrentHealth <= 50)
         {
-            Heartaudio.SetActive(true);
-            HeartBeatAudioSource.Play();
             Debug.Log("less than 50Hp");
             pulse();
 
@@ -73,12 +71,7 @@ public class Player_Control : MonoBehaviour
         {
             playercurrentHealth = maxHealth;
         }
-        if (playercurrentHealth >= 50)
-        {
-            Heartaudio.SetActive(false);
-            HeartBeatAudioSource.Stop();
-
-        }
+        
 
     }
     void Movement()
@@ -140,9 +133,13 @@ public class Player_Control : MonoBehaviour
 
             DamageAudioSource.Play();
             TakeDamage(10);
-           
+            if (playercurrentHealth <= 50)
+            {
+                
+                HeartBeatAudioSource.Play();
+            }
 
-            if (playercurrentHealth <= 0)
+                if (playercurrentHealth <= 0)
             {
 
                 Respawn();
@@ -218,7 +215,7 @@ public class Player_Control : MonoBehaviour
     private async void pulse()
     {
         StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
-        await Task.Delay(10000);
+        await Task.Delay(1000);
         StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
     }
 
