@@ -10,7 +10,6 @@ public class Player_Control : MonoBehaviour
     [SerializeField] bool isCooldown = true;
     public AudioSource DamageAudioSource;
     public AudioSource HeartBeatAudioSource;
-    [SerializeField] GameObject Heartaudio;
     [SerializeField] float speed;
     [SerializeField] float jump;
     [SerializeField] float Gravity;
@@ -63,13 +62,13 @@ public class Player_Control : MonoBehaviour
         {
             playercurrentHealth = maxHealth;
         }
+
         if (playercurrentHealth >= 50)
         {
-            Heartaudio.SetActive(false);
-            HeartBeatAudioSource.Stop();
+
+            HeartBeatAudioSource.Play();
 
         }
-
     }
     void Movement()
     {
@@ -132,7 +131,6 @@ public class Player_Control : MonoBehaviour
             TakeDamage(10);
             if (playercurrentHealth <= 50)
             {
-                Heartaudio.SetActive(true);
                 HeartBeatAudioSource.Play();
 
             }
