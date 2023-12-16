@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10677705, g: 0.06954285, b: 0.129084, a: 1}
+  m_IndirectSpecularColor: {r: 0.10677707, g: 0.06954285, b: 0.12908399, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11338,8 +11338,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Player_Control: {fileID: 1240022007}
-  intensity: 0
-  vignette: {fileID: 0}
   vignetterColor: {r: 1, g: 0, b: 0, a: 1}
   masseffect: 0
 --- !u!1 &445690861
@@ -47853,6 +47851,10 @@ PrefabInstance:
     - target: {fileID: 5315160231192017223, guid: c97b5225bba9a5049aaac810c262beb9, type: 3}
       propertyPath: m_Name
       value: Bullet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5315160231192017223, guid: c97b5225bba9a5049aaac810c262beb9, type: 3}
+      propertyPath: m_TagString
+      value: MG Bullet Counter
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

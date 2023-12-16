@@ -24,6 +24,8 @@ TagManager:
   - GunHUD
   - Checkpoint
   - BouncingEnemyBullet
+  - Health
+  - MG Bullet Counter
   layers:
   - Default
   - TransparentFX
