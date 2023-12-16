@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
@@ -39,13 +40,22 @@ public class Player_Control : MonoBehaviour
 
     void Update()
     {
+
         Movement();
         Jump();
         Crouch();
 
 
-        OnDestroy();
+        
 
+        if (playercurrentHealth <= 50)
+        {
+            Heartaudio.SetActive(true);
+            HeartBeatAudioSource.Play();
+            Debug.Log("less than 50Hp");
+            pulse();
+
+        }
 
         if (isCooldown)
         {
@@ -130,12 +140,7 @@ public class Player_Control : MonoBehaviour
 
             DamageAudioSource.Play();
             TakeDamage(10);
-            if (playercurrentHealth <= 50)
-            {
-                Heartaudio.SetActive(true);
-                HeartBeatAudioSource.Play();
-
-            }
+           
 
             if (playercurrentHealth <= 0)
             {
@@ -209,6 +214,12 @@ public class Player_Control : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(Ground))
             isGrounded = true;
+    }
+    private async void pulse()
+    {
+        StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
+        await Task.Delay(10000);
+        StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
     }
 
 
