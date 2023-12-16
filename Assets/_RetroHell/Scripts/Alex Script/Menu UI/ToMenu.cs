@@ -6,6 +6,7 @@ public class ToMenu : MonoBehaviour
     [SerializeField] GameObject Audio;
     [SerializeField] GameObject Control;
     [SerializeField] GameObject Brief;
+    [SerializeField] GameObject QuitPopup;
 
 
     public void Menu()
@@ -15,6 +16,7 @@ public class ToMenu : MonoBehaviour
         Audio.SetActive(false);
         Brief.SetActive(false);
         Control.SetActive(false);
+        QuitPopup.SetActive(false);
     }
     public void SettingMenu()
     {

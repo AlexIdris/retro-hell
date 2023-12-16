@@ -3,6 +3,8 @@ using UnityEngine;
 public class PowerUpHealthT : MonoBehaviour
 {
     [SerializeField] GameObject IW_Health;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] GameObject DropCollision;
     public GameObject player;
     public Player_Control playerHealth;
     public int extraHealth;
@@ -31,12 +33,16 @@ public class PowerUpHealthT : MonoBehaviour
 
         if (other.tag == "Player")
         {
-            
+
             playerHealth.playercurrentHealth += extraHealth;
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
             animator.HealthAnimation();
+
             IW_Health.SetActive(false);
+            audioSource.Play();
             Destroy(gameObject);
+
         }
     }
+
 }

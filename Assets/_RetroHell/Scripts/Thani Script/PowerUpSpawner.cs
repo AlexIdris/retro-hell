@@ -6,6 +6,7 @@ public class PowerUpSpawner : MonoBehaviour
     public List<GameObject> PowerUps;
 
     public float timer;
+    public float nexttimer = 5;
     public int PowerUpList = 0;
     public int randomPowerUp = 0;
     public int randomPosition;
@@ -14,7 +15,7 @@ public class PowerUpSpawner : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > 5)
+        if (timer >= nexttimer)
         {
             randomPowerUp = Random.Range(0, 10);
             randomPosition = Random.Range(0, 4);
@@ -22,7 +23,9 @@ public class PowerUpSpawner : MonoBehaviour
             if (randomPowerUp > 5)
             {
                 PowerUpList = 1;
-            } else {
+            }
+            else
+            {
                 PowerUpList = 0;
             }
 

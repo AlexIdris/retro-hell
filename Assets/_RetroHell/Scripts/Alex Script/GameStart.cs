@@ -2,23 +2,30 @@ using UnityEngine;
 
 public class GameStart : MonoBehaviour
 {
-    [SerializeField] GameObject TutorailAudio;
-    [SerializeField] GameObject IngameAudio;
+    [SerializeField] AudioSource TutorailAudio;
+    [SerializeField] AudioSource IngameAudio;
 
     private void Start()
     {
-        TutorailAudio.SetActive(true);
-        IngameAudio.SetActive(false);
+        TutorailAudio.Play();
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        TutorailAudio.SetActive(false);
-        IngameAudio.SetActive(true);
+        if (other.tag == "Player")
+        {
+            TutorailAudio.Stop();
+            IngameAudio.Play();
+        }
+
     }
     private void OnTriggerStay(Collider other)
     {
-        TutorailAudio.SetActive(false);
-        IngameAudio.SetActive(true);
+        if (other.tag == "Player")
+        {
+            TutorailAudio.Stop();
+            IngameAudio.Play();
+        }
     }
 }

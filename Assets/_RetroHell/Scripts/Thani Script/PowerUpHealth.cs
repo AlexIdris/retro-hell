@@ -10,8 +10,9 @@ public class PowerUpHealth : MonoBehaviour
     public GameObject animatorObject;
     public PowerUpIconAnimator animator;
     public HealthDisplay healthDisplay;
-
+    [SerializeField] AudioSource audioSource;
     public float HealthTimer;
+    [SerializeField] float dispawntimer = 10;
 
     public void Awake()
     {
@@ -32,10 +33,12 @@ public class PowerUpHealth : MonoBehaviour
 
         if (other.tag == "Player")
         {
-           
+
             playerHealth.playercurrentHealth += extraHealth;
+
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
             animator.HealthAnimation();
+            audioSource.Play();
             Destroy(gameObject);
         }
     }
@@ -45,7 +48,7 @@ public class PowerUpHealth : MonoBehaviour
         HealthTimer += Time.deltaTime;
 
 
-        if (HealthTimer > 5)
+        if (HealthTimer > dispawntimer)
         {
             Destroy(gameObject);
         }

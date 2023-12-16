@@ -22,9 +22,8 @@ TagManager:
   - Player Heart
   - Gun
   - GunHUD
-  - health drop
-  - Health
-  - MG Bullet Counter
+  - Checkpoint
+  - BouncingEnemyBullet
   layers:
   - Default
   - TransparentFX

@@ -11,8 +11,11 @@ public class MachineGun : MonoBehaviour
 
     public TMP_Text bullettext;
     [SerializeField] int maxAmmo = 50;
+    [SerializeField] float dispawntimer = 10;
 
     public float MGItemTimer;
+
+
 
     public void Start()
     {
@@ -24,6 +27,8 @@ public class MachineGun : MonoBehaviour
 
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
+
+
     }
 
     GameObject FindInActiveObjectByTag(string tag)
@@ -44,22 +49,23 @@ public class MachineGun : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag is "Player")
         {
+
             playerControls.machineGunObtained = true;
             playerControls.machineGunBullets = maxAmmo;
             animator.MGAnimation();
-            machineGun.SetActive(true);
             bullettext.text = playerControls.machineGunBullets.ToString();
             Destroy(gameObject);
         }
     }
 
+
     public void FixedUpdate()
     {
         MGItemTimer += Time.deltaTime;
 
-        if (MGItemTimer > 5)
+        if (MGItemTimer > dispawntimer)
         {
             Destroy(gameObject);
         }

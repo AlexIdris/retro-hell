@@ -13,6 +13,7 @@ public class turretshooting : MonoBehaviour
     {
         if (Time.time > nextFireTime && pause.gamePaused == false)
         {
+
             Shoot();
             nextFireTime = Time.time + 1f / fireRate;
         }
@@ -23,5 +24,6 @@ public class turretshooting : MonoBehaviour
         GameObject bulletInstance = Instantiate(bulletPrefab, bulletBarrel.position, bulletBarrel.rotation);
         Rigidbody rb = bulletInstance.GetComponent<Rigidbody>();
         rb.velocity = bulletBarrel.forward * bulletSpeed;
+
     }
 }

@@ -44,7 +44,6 @@ public class Miniboss : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
             TutorailMinibossHealth.SetActive(true);
-            MiniminiBoss.SetActive(true);
             BossEnemyHealth.SetActive(false);
             TutorText.text = "Time to play with our new toys, defeat the enemy.\n" +
                 "<Right-Click to fire the Machine Gun>";

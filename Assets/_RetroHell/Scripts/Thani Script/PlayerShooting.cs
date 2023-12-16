@@ -1,10 +1,9 @@
-using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-    [SerializeField] GameObject Audio;
+    [SerializeField] AudioSource audioshooting;
 
     public GameObject bullet;
     [SerializeField] Transform bulletSpawner;
@@ -17,7 +16,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] TMP_Text bullettext;
     private void Awake()
     {
-        Audio.SetActive(false);
+        audioshooting.Stop();
     }
     private void Update()
     {
@@ -54,15 +53,12 @@ public class PlayerShooting : MonoBehaviour
         }
     }
 
-    public async void Shoot()
+    public void Shoot()
     {
         var bulletSample = Instantiate(bullet, bulletSpawner.position, bulletSpawner.rotation);
         bulletSample.GetComponent<Rigidbody>().velocity = bulletSpawner.forward * bulletSpeed;
-        Audio.SetActive(true);
-        await Task.Delay(50);
-        Audio.SetActive(false);
-        await Task.Delay(50);
-        Audio.SetActive(true);
+        audioshooting.Play();
+
     }
 
     private void OnCollisionEnter(Collision other)
@@ -70,7 +66,8 @@ public class PlayerShooting : MonoBehaviour
         if (other.gameObject.tag == "MachineGun")
         {
             machineGunObtained = true;
-            machineGunBullets = 50;
+            machineGunBullets = 30;
+            machineGun.SetActive(true);
         }
     }
 }
