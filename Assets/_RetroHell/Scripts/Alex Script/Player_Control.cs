@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
@@ -10,6 +11,7 @@ public class Player_Control : MonoBehaviour
     [SerializeField] bool isCooldown = true;
     public AudioSource DamageAudioSource;
     public AudioSource HeartBeatAudioSource;
+    
     [SerializeField] float speed;
     [SerializeField] float jump;
     [SerializeField] float Gravity;
@@ -38,13 +40,20 @@ public class Player_Control : MonoBehaviour
 
     void Update()
     {
+
         Movement();
         Jump();
         Crouch();
 
 
-        OnDestroy();
+        
 
+        if (playercurrentHealth <= 50)
+        {
+            Debug.Log("less than 50Hp");
+            pulse();
+
+        }
 
         if (isCooldown)
         {
@@ -62,13 +71,8 @@ public class Player_Control : MonoBehaviour
         {
             playercurrentHealth = maxHealth;
         }
+        
 
-        if (playercurrentHealth >= 50)
-        {
-
-            HeartBeatAudioSource.Play();
-
-        }
     }
     void Movement()
     {
@@ -131,11 +135,11 @@ public class Player_Control : MonoBehaviour
             TakeDamage(10);
             if (playercurrentHealth <= 50)
             {
+                
                 HeartBeatAudioSource.Play();
-
             }
 
-            if (playercurrentHealth <= 0)
+                if (playercurrentHealth <= 0)
             {
 
                 Respawn();
@@ -207,6 +211,12 @@ public class Player_Control : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(Ground))
             isGrounded = true;
+    }
+    private async void pulse()
+    {
+        StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
+        await Task.Delay(1000);
+        StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
     }
 
 
