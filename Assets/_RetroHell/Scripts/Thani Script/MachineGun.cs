@@ -23,6 +23,7 @@ public class MachineGun : MonoBehaviour
 
         machineGun = FindInActiveObjectByTag("GunHUD");
         bullettext = FindInActiveObjectByTag("MG Bullet Counter").GetComponent<TMP_Text>();
+        audioSource = GameObject.FindGameObjectWithTag("Drop Audio").GetComponent<AudioSource>();
 
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
@@ -53,8 +54,8 @@ public class MachineGun : MonoBehaviour
             playerControls.machineGunBullets = maxAmmo;
             machineGun.SetActive(true);
             animator.MGAnimation();
-            bullettext.text = playerControls.machineGunBullets.ToString();
             audioSource.Play();
+            bullettext.text = playerControls.machineGunBullets.ToString();
             Destroy(gameObject);
         }
     }
