@@ -24,6 +24,7 @@ TagManager:
   - GunHUD
   - health drop
   - Health
+  - MG Bullet Counter
   layers:
   - Default
   - TransparentFX
