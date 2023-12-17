@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10725129, g: 0.06962402, b: 0.12923376, a: 1}
+  m_IndirectSpecularColor: {r: 0.10725135, g: 0.06962402, b: 0.1292338, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -15575,6 +15575,7 @@ MonoBehaviour:
   distance: 6
   height: 3
   speed: 88.8
+  magnitude: 1
 --- !u!4 &702902835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 810744972087659155, guid: b7bda0d081a9f4a4cb7759ad2903c562, type: 3}
@@ -28036,7 +28037,6 @@ GameObject:
   - component: {fileID: 1217115966}
   - component: {fileID: 1217115965}
   - component: {fileID: 1217115968}
-  - component: {fileID: 1217115969}
   - component: {fileID: 1217115970}
   - component: {fileID: 1217115971}
   m_Layer: 0
@@ -28172,7 +28172,7 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
---- !u!114 &1217115969
+--- !u!114 &1217115970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -28181,33 +28181,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217115963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f0aa36b2e32ac8488b81047f00d36eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 878435246}
-  distance: 2
-  height: 0
-  speed: 88.8
-  magnitude: 1
---- !u!114 &1217115970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217115963}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 98f50f3e4c947432aaf14467d73f3d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 1
-  shakingSpeed:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1217115971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28916,7 +28892,7 @@ MonoBehaviour:
   maxHealth: 100
   playercurrentHealth: 100
   shakeDetector: {fileID: 1217115970}
-  health: {fileID: 0}
+  health: {fileID: 775070047}
 --- !u!4 &1240022008
 Transform:
   m_ObjectHideFlags: 0
