@@ -28292,6 +28292,7 @@ GameObject:
   - component: {fileID: 1217115965}
   - component: {fileID: 1217115968}
   - component: {fileID: 1217115969}
+  - component: {fileID: 1217115970}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -28438,9 +28439,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 388145225}
-  distance: 5
-  height: 2
-  speed: 100
+  distance: 6
+  height: 3
+  speed: 88.8
+--- !u!114 &1217115970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217115963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98f50f3e4c947432aaf14467d73f3d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hit: 0
+  timeLimit: 1
+  shakingSpeed:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1221567146
 PrefabInstance:
   m_ObjectHideFlags: 0
