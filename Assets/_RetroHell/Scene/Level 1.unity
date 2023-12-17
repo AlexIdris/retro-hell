@@ -7804,7 +7804,7 @@ MonoBehaviour:
   animatorObject: {fileID: 2088256153}
   animator: {fileID: 2088256155}
   IW_MachineGun: {fileID: 975142245}
-  audioSource: {fileID: 627935518}
+  audioSource: {fileID: 6306021704092272416}
   bullettext: {fileID: 1336903052}
   machineGun: {fileID: 1101921250}
   maxAmmo: 30
@@ -28456,7 +28456,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98f50f3e4c947432aaf14467d73f3d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hit: 0
   timeLimit: 1
   shakingSpeed:
     serializedVersion: 2
@@ -49354,6 +49353,11 @@ PrefabInstance:
 --- !u!224 &6306021704092272415 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3729145054871084794, guid: 4b2c392c430c54db79d6477bdd8a6adf, type: 3}
+  m_PrefabInstance: {fileID: 6306021704092272414}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &6306021704092272416 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8192272568690249689, guid: 4b2c392c430c54db79d6477bdd8a6adf, type: 3}
   m_PrefabInstance: {fileID: 6306021704092272414}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7134656072590723832
