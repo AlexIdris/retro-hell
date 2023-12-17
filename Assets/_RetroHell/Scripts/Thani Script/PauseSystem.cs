@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class PauseSystem : MonoBehaviour
 {
     public bool gamePaused = false;
+    [SerializeField] GameObject target;
     public GameObject pauseScreen;
 
     public void Start()
@@ -16,10 +17,10 @@ public class PauseSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
-        gamePaused= false;
+        gamePaused = false;
         pauseScreen.SetActive(false);
         Debug.Log("Game Resumed!");
-
+        target.SetActive(true);
     }
 
     public void Update()
@@ -33,6 +34,7 @@ public class PauseSystem : MonoBehaviour
             pauseScreen.SetActive(true);
             Debug.Log("Game Paused!");
             gamePaused = true;
+            target.SetActive(false);
 
         }
         /* else if (Input.GetKey(KeyCode.Escape) && gamePaused == true)
@@ -56,6 +58,7 @@ public class PauseSystem : MonoBehaviour
         gamePaused = false;
         pauseScreen.SetActive(false);
         Debug.Log("Game Resumed!");
+        target.SetActive(true);
     }
 
     public void Restart()
@@ -63,6 +66,7 @@ public class PauseSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneManager.LoadScene(1);
+        target.SetActive(true);
     }
 
     public void LoadMainMenu()
@@ -70,6 +74,7 @@ public class PauseSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneManager.LoadScene(0);
+        target.SetActive(false);
     }
 }
 
