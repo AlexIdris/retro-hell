@@ -6,7 +6,6 @@ public class VolumeSlider : MonoBehaviour
     public Slider menuVolumeSlider;
     public AudioSource menuAudioSource;
 
-
     void Start()
     {
         menuVolumeSlider.value = menuVolumeSlider.maxValue;

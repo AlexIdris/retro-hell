@@ -2,15 +2,12 @@ using UnityEngine;
 using UnityEngine.UI;
 public class MainMenu_Audio : MonoBehaviour
 {
-
     [SerializeField] private AudioSource audioSource;
     [SerializeField] public Slider menuVolumeSlider;
     [SerializeField] GameObject audioDetector;
 
-    enum State { On, Off };
+    enum State {On, Off};
     State state;
-
-
 
     void Start()
     {
@@ -22,7 +19,6 @@ public class MainMenu_Audio : MonoBehaviour
 
     public void Music(AudioClip clip)
     {
-
         if (state == State.On && audioSource != null && clip != null)
         {
 
@@ -39,12 +35,8 @@ public class MainMenu_Audio : MonoBehaviour
             state = State.On;
             audioSource.clip = clip;
             audioSource.Play();
-
         }
-
     }
-
-
 
     /* public void StopAudio(AudioClip clip)
      {
@@ -58,11 +50,9 @@ public class MainMenu_Audio : MonoBehaviour
          }
 
      }*/
+
     void ChangeVolume(float volume)
     {
-
         audioSource.volume = volume;
-
-
     }
 }
