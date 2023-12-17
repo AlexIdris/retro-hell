@@ -3,21 +3,21 @@ using UnityEngine.UI;
 
 public class VolumeSlider : MonoBehaviour
 {
-    public Slider menuVolumeSlider;
-    public AudioSource menuAudioSource;
+    public Slider volumeSlider;
+    public AudioSource audioSource;
 
     void Start()
     {
-        menuVolumeSlider.value = menuVolumeSlider.maxValue;
-        menuAudioSource.volume = menuVolumeSlider.value;
+        volumeSlider.value = volumeSlider.maxValue;
+        audioSource.volume = volumeSlider.value;
 
         // Add a listener to the slider
-        menuVolumeSlider.onValueChanged.AddListener(ChangeVolume);
+        volumeSlider.onValueChanged.AddListener(ChangeVolume);
     }
 
     void ChangeVolume(float volume)
     {
         // Update the audio source volume
-        menuAudioSource.volume = volume;
+        audioSource.volume = volume;
     }
 }
