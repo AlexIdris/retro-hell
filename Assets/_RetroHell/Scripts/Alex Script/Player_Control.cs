@@ -44,12 +44,12 @@ public class Player_Control : MonoBehaviour
         Jump();
         Crouch();
 
-        if (playercurrentHealth <= 50)
-        {
-            Debug.Log("less than 50Hp");
-            pulse();
+        /*        if (playercurrentHealth <= 50)
+                {
+                    Debug.Log("less than 50Hp");
+                    pulse();
 
-        }
+                }*/
 
         if (isCooldown)
         {
@@ -139,10 +139,10 @@ public class Player_Control : MonoBehaviour
 
 
         }
-        if (playercurrentHealth <= 50)
-        {
-            HeartBeatAudioSource.Play();
-        }
+        /*        if (playercurrentHealth <= 50)
+                {
+                    HeartBeatAudioSource.Play();
+                }*/
         if (playercurrentHealth <= 0)
         {
             Respawn();
