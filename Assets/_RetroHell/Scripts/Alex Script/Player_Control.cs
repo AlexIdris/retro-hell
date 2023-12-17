@@ -40,7 +40,6 @@ public class Player_Control : MonoBehaviour
 
     void Update()
     {
-
         Movement();
         Jump();
         Crouch();
@@ -80,11 +79,13 @@ public class Player_Control : MonoBehaviour
 
         if (move > 0)
         {
-            //anim.SetBool("run", true);
+            anim.SetBool("run", true);
+
         }
         else
         {
-            //anim.SetBool("run", false);
+            anim.SetBool("run", false);
+
         }
         controller.Move(speed * Time.deltaTime * rb.velocity + velocity * Time.deltaTime);
     }
@@ -94,15 +95,19 @@ public class Player_Control : MonoBehaviour
         if (Input.GetButton("Jump") && isGrounded)
         {
 
-            // anim.SetBool("jump", true);
+            anim.SetBool("jump", true);
             velocity.y = Mathf.Sqrt(jump * -2 * Gravity);
 
+        }
+        else
+        {
+            anim.SetBool("jump", false);
         }
         isGrounded = controller.isGrounded;
 
         if (isGrounded && velocity.y < 0)
         {
-            // anim.SetBool("Jump", false);
+            anim.SetBool("Jump", false);
             velocity.y = -2f;
         }
         velocity.y += Gravity * Time.deltaTime;
@@ -131,15 +136,16 @@ public class Player_Control : MonoBehaviour
 
 
 
-            if (playercurrentHealth <= 0)
-            {
-                Respawn();
-            }
+
 
         }
         if (playercurrentHealth <= 50)
         {
             HeartBeatAudioSource.Play();
+        }
+        if (playercurrentHealth <= 0)
+        {
+            Respawn();
         }
         else if (other.tag is "Boss")
         {
