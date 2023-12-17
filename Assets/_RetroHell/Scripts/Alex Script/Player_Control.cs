@@ -205,9 +205,7 @@ public class Player_Control : MonoBehaviour
     private async void pulse()
     {
         StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
-        await Task.Delay(1000);
+        await Task.Delay(10000);
         StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
     }
-
-
 }
