@@ -122,14 +122,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   playerControls: {fileID: 0}
+  machineGun: {fileID: 8978183641229693909, guid: 89a72b116fb342f4982f0fde85b3c06d, type: 3}
   animatorObject: {fileID: 0}
   animator: {fileID: 0}
-  IW_MachineGun: {fileID: 0}
-  audioSource: {fileID: 5381674734681401013, guid: adc649d590bfc1440bec7183bc5fd730, type: 3}
   bullettext: {fileID: 3554625731245179883, guid: c97b5225bba9a5049aaac810c262beb9, type: 3}
-  machineGun: {fileID: 8978183641229693909, guid: 89a72b116fb342f4982f0fde85b3c06d, type: 3}
   maxAmmo: 30
   dispawntimer: 10
+  audioSource: {fileID: 0}
   MGItemTimer: 0
 --- !u!1 &8210700002238439648
 GameObject:

@@ -18,8 +18,11 @@ public class PowerUpHealth : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<Player_Control>();
+
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
+        audioSource = GameObject.FindGameObjectWithTag("Drop Audio").GetComponent<AudioSource>();
+
         bool FullHealth = healthDisplay.fullHealth;
 
     }

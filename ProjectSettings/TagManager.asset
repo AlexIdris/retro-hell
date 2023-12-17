@@ -26,6 +26,7 @@ TagManager:
   - BouncingEnemyBullet
   - Health
   - MG Bullet Counter
+  - Drop Audio
   layers:
   - Default
   - TransparentFX

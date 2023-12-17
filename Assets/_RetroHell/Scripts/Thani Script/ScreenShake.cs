@@ -4,29 +4,22 @@ using UnityEngine;
 
 public class ScreenShake : MonoBehaviour
 {
-    public bool hit;
     public float timeLimit = 1f;
 
     public AnimationCurve shakingSpeed;
 
-    void Update()
+    public IEnumerator Shake(float timeLimit, float magnitude)
     {
-        if (hit == true)
-        {
-            hit = false;
-            StartCoroutine(Shake());
-        }
-    }
-
-    IEnumerator Shake()
-    {
-        Vector3 startPosition = transform.position;
-        float timePassed = 0f;
+        Vector3 startPosition = transform.localPosition;
+        float timePassed = 0.0f;
         while (timePassed < timeLimit)
         {
-            timePassed += Time.deltaTime;
-            float shakingStrength = shakingSpeed.Evaluate(timePassed / timeLimit);
-            transform.position = startPosition + Random.insideUnitSphere * shakingStrength;
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+
+            transform.localPosition = new Vector3(x, y, startPosition.z);
+
+            timePassed = Time.deltaTime;
             yield return null;
         }
 
