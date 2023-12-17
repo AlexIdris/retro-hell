@@ -15575,7 +15575,6 @@ MonoBehaviour:
   distance: 6
   height: 3
   speed: 88.8
-  magnitude: 1
 --- !u!4 &702902835 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 810744972087659155, guid: b7bda0d081a9f4a4cb7759ad2903c562, type: 3}
