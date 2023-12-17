@@ -28290,8 +28290,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1217115966}
   - component: {fileID: 1217115965}
-  - component: {fileID: 1217115967}
   - component: {fileID: 1217115968}
+  - component: {fileID: 1217115969}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -28365,40 +28365,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 8.325, y: -0.913, z: 0}
---- !u!114 &1217115967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217115963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShowDebugText: 0
-  m_ShowCameraFrustum: 1
-  m_IgnoreTimeScale: 0
-  m_WorldUpOverride: {fileID: 0}
-  m_UpdateMethod: 2
-  m_BlendUpdateMethod: 1
-  m_DefaultBlend:
-    m_Style: 1
-    m_Time: 2
-    m_CustomCurve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-  m_CustomBlends: {fileID: 0}
-  m_CameraCutEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_CameraActivatedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &1217115968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28459,6 +28425,22 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &1217115969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217115963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f0aa36b2e32ac8488b81047f00d36eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 388145225}
+  distance: 5
+  height: 2
+  speed: 100
 --- !u!1001 &1221567146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29126,7 +29108,7 @@ MonoBehaviour:
   speed: 3
   jump: 2
   Gravity: -30
-  isGrounded: 1
+  isGrounded: 0
   rb: {fileID: 1240022012}
   anim: {fileID: 1240022022}
   controller: {fileID: 1240022021}
@@ -29264,6 +29246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 50
+  gun: {fileID: 388145224}
   maxRotation: 60
   minRotation: -60
   X: 0
@@ -29934,7 +29917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1252182365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29942,7 +29925,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1252182364}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
   m_Name: 
