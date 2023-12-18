@@ -13,8 +13,9 @@ public class ScreenShake : MonoBehaviour
         {
             float x = (Random.value - 0.5f) * magnitude;
             float y = (Random.value - 0.5f) * magnitude;
+            float z = (Random.value - 0.5f) * magnitude;
 
-            transform.localPosition = new Vector3(x, y, 0);
+            transform.localPosition = new Vector3(x, y, z);
 
             timePassed += Time.deltaTime;
             magnitude = (1 - (timePassed / timeLimit) * 1 - (timePassed / timeLimit));
