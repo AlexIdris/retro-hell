@@ -29,7 +29,7 @@ public class Goodluck : MonoBehaviour
             RobotAudioSource.Play();
             TutorText.text = "Yikes! That looks scary...\n" +
                 "I mean, I just remembered, this is a single player game, So Goodluck :)\n" +
-                 "<You should know the longer you fight an enemy the stronger it becomes>";.> ";
+                 "<You should know the longer you fight an enemy the stronger it becomes>";
 
         }
 
