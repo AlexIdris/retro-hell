@@ -22,13 +22,14 @@ public class Player_Control : MonoBehaviour
     [SerializeField] CharacterController controller;
     private Vector3 velocity;
     [SerializeField] GameObject Gun;
-    public int maxHealth = 100;
+    public int maxHealth;
     public int playercurrentHealth;
     public ScreenShake shakeDetector;
     public HealthDisplay health;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        maxHealth = 100;
         playercurrentHealth = maxHealth;
         health.MaxHealth(maxHealth);
         isGrounded = true;
