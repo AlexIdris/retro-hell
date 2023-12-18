@@ -192,7 +192,7 @@ public class Player_Control : MonoBehaviour
         StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
-        StartCoroutine(shakeDetector.Shake(1f, 2f));
+        StartCoroutine(shakeDetector.Shake(1f));
         //shakeDetector.hit = true;
 
     }
