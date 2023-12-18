@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,12 +5,10 @@ public class Player_Control : MonoBehaviour
 {
     public TakingDamageEffect takingDamageEffect;
     [SerializeField] GameObject pp_Volume;
-    [SerializeField] float cooldownTime = 1f;
+    [SerializeField] float cooldownTime = 5f;
     [SerializeField] float cooldownTimer = 0f;
     [SerializeField] bool isCooldown = true;
     public AudioSource DamageAudioSource;
-    //public AudioSource HeartBeatAudioSource;
-
     [SerializeField] float speed;
     [SerializeField] float jump;
     [SerializeField] float Gravity;
@@ -44,28 +41,28 @@ public class Player_Control : MonoBehaviour
         Jump();
         Crouch();
 
-        /*        if (playercurrentHealth <= 50)
-                {
-                    Debug.Log("less than 50Hp");
-                    pulse();
 
-                }*/
 
-        if (isCooldown)
+        /*if (isCooldown)
         {
             cooldownTimer -= Time.deltaTime;
 
             if (cooldownTimer <= 0)
             {
+                anim.SetBool("crouch", false);
                 isCooldown = false;
                 cooldownTimer = 0f;
             }
+        }*/
+
+        if (!isCooldown)
+        {
+            Crouch();
+
+
+
         }
 
-        if (playercurrentHealth > maxHealth)
-        {
-            playercurrentHealth = maxHealth;
-        }
 
 
     }
@@ -114,17 +111,20 @@ public class Player_Control : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
-    async void Crouch()
+    void Crouch()
     {
         if (Input.GetKey(KeyCode.LeftControl))
         {
             anim.SetBool("crouch", true);
-            await Task.Delay(5000);
-            anim.SetBool("crouch", false);
+            isCooldown = true;
+            cooldownTimer = 0f;
+
         }
+
         else
         {
             anim.SetBool("crouch", false);
+
         }
     }
     private void OnTriggerEnter(Collider other)

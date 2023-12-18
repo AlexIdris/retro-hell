@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ToMenu : MonoBehaviour
 {
@@ -25,7 +26,10 @@ public class ToMenu : MonoBehaviour
         Brief.SetActive(false);
         Control.SetActive(false);
     }
-
+    public void WinMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
 
 
 

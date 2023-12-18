@@ -23,7 +23,7 @@ public class ReadyUP : MonoBehaviour
 
             TutorText.gameObject.SetActive(true);
             RobotAudioSource.Play();
-            TutorText.text = "Your Training is over, Heal up and go towards the light\n" +
+            TutorText.text = "Your Training is over, Heal up and move towards the light\n" +
                 "<White light teleport you to new scenes>";
 
         }
@@ -39,7 +39,7 @@ public class ReadyUP : MonoBehaviour
 
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "Your Training is over, Heal up and go towards the light\n" +
+            TutorText.text = "Your Training is over, Heal up and move towards the light\n" +
                 "<White light teleport you to new scenes>";
 
         }

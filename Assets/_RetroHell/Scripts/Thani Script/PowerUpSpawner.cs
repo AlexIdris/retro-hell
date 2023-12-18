@@ -32,30 +32,31 @@ public class PowerUpSpawner : MonoBehaviour
             Debug.Log(randomPowerUp);
             Debug.Log(PowerUpList);
 
-            if (randomPosition == 0)
+            if (randomPosition == 1860)
             {
-                Vector3 position = new Vector3(Random.Range(28, 30), -1, Random.Range(-30, 30));
+                Vector3 position = new Vector3(Random.Range(1828, 1910), -1, Random.Range(450, 540));
+
                 Instantiate(PowerUps[PowerUpList], position, Quaternion.identity);
                 timer = 0;
             }
 
             if (randomPosition == 1)
             {
-                Vector3 position = new Vector3(Random.Range(-30, 30), -1, Random.Range(28, 30));
+                Vector3 position = new Vector3(Random.Range(1828, 1910), -1, Random.Range(450, 540));
                 Instantiate(PowerUps[PowerUpList], position, Quaternion.identity);
                 timer = 0;
             }
 
             if (randomPosition == 2)
             {
-                Vector3 position = new Vector3(Random.Range(-28, -30), -1, Random.Range(-30, 30));
+                Vector3 position = new Vector3(Random.Range(1828, 1910), -1, Random.Range(450, 540));
                 Instantiate(PowerUps[PowerUpList], position, Quaternion.identity);
                 timer = 0;
             }
 
             if (randomPosition == 3)
             {
-                Vector3 position = new Vector3(Random.Range(-30, 30), -1, Random.Range(-28, -30));
+                Vector3 position = new Vector3(Random.Range(1828, 1910), -1, Random.Range(450, 540));
                 Instantiate(PowerUps[PowerUpList], position, Quaternion.identity);
                 timer = 0;
             }

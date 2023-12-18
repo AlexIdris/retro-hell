@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5013538362305668764}
   - component: {fileID: 5306994859032865431}
   - component: {fileID: 4460115701064704959}
+  - component: {fileID: -260458322538456246}
   m_Layer: 0
   m_Name: minion
   m_TagString: Untagged
@@ -80,6 +81,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-260458322538456246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7086794730355671215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3a55ca83d882140862bb39d6b9a9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeAwake: 0
 --- !u!1001 &3296515675931270767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,7 +148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4692246283155198832, guid: 01853821ef0cd5c42b2cf57f9ede163c, type: 3}
       propertyPath: startDelay.scalar
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4692246283155198832, guid: 01853821ef0cd5c42b2cf57f9ede163c, type: 3}
       propertyPath: InitialModule.startSpeed.scalar

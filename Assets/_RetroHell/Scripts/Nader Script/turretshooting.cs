@@ -18,18 +18,9 @@ public class turretshooting : MonoBehaviour
             Shoot();
             nextFireTime = Time.time + 1f / fireRate;
 
-            loop += Time.timeScale;
-            while (loop <= 10)
-            {
-                bulletSpeed++;
-                fireRate++;
-                loop = 0;
-
-            }
         }
     }
-
-    async void Shoot()
+    void Shoot()
     {
         GameObject bulletInstance = Instantiate(bulletPrefab, bulletBarrel.position, bulletBarrel.rotation);
         Rigidbody rb = bulletInstance.GetComponent<Rigidbody>();
@@ -39,4 +30,7 @@ public class turretshooting : MonoBehaviour
 
 
     }
+
+
+
 }

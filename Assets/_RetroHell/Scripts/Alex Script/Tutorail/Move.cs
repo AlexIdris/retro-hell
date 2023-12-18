@@ -33,7 +33,7 @@ public class Move : MonoBehaviour
         }
 
     }
-    async void OnTriggerStay(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
