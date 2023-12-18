@@ -64,6 +64,11 @@ public class Player_Control : MonoBehaviour
 
         }
 
+        if (playercurrentHealth > maxHealth)
+        {
+            playercurrentHealth = maxHealth;
+        }
+
 
 
     }
