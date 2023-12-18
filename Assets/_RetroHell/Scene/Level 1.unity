@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.10725129, g: 0.06962402, b: 0.12923376, a: 1}
+  m_IndirectSpecularColor: {r: 0.10725135, g: 0.06962402, b: 0.1292338, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1310,7 +1310,7 @@ MonoBehaviour:
   nexttimer: 5
   PowerUpList: 0
   randomPowerUp: 0
-  randomPosition: 1860
+  randomPosition: 0
 --- !u!4 &36394184
 Transform:
   m_ObjectHideFlags: 0
@@ -2763,7 +2763,7 @@ MonoBehaviour:
   TutorText: {fileID: 1566937287}
   Frame: {fileID: 547820923}
   TutorailPopups: {fileID: 1742644493}
-  RobotAudioSource: {fileID: 1049872579}
+  RobotAudioSource: {fileID: 0}
 --- !u!65 &115897827
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4613,7 +4613,7 @@ MonoBehaviour:
   Frame: {fileID: 547820923}
   TutorailPopups: {fileID: 1742644493}
   crouchBullet: {fileID: 1012346595}
-  RobotAudioSource: {fileID: 1049872579}
+  RobotAudioSource: {fileID: 0}
 --- !u!65 &206947662
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7786,10 +7786,10 @@ MonoBehaviour:
   rotationDelay: 1
   rotateValue: 0
   cooldownTime: 5
-  cooldownTimer: 0
+  cooldownTimer: 5
   isCooldown: 1
   loop: 0
-  difficultyincrease: 0.01
+  difficultyincrease: 0.1
   pause: {fileID: 1045979058}
 --- !u!1001 &320766255
 PrefabInstance:
@@ -10773,7 +10773,7 @@ MonoBehaviour:
   TutorText: {fileID: 1566937287}
   Frame: {fileID: 547820923}
   TutorailPopups: {fileID: 1742644493}
-  RobotAudioSource: {fileID: 1049872579}
+  RobotAudioSource: {fileID: 0}
 --- !u!65 &390325044
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12430,6 +12430,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 463591463}
   m_Mesh: {fileID: 5650848451787114459, guid: b7bda0d081a9f4a4cb7759ad2903c562, type: 3}
+--- !u!1 &471284859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 471284860}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &471284860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471284859}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -1, z: 0, w: 0}
+  m_LocalPosition: {x: 1895, y: 0, z: 520}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &475469828
 GameObject:
   m_ObjectHideFlags: 0
@@ -14523,10 +14554,10 @@ MonoBehaviour:
   rotationDelay: 1
   rotateValue: 0
   cooldownTime: 5
-  cooldownTimer: 0
+  cooldownTimer: 5
   isCooldown: 1
   loop: 0
-  difficultyincrease: 0.01
+  difficultyincrease: 0.1
   pause: {fileID: 1045979058}
 --- !u!1 &589798867 stripped
 GameObject:
@@ -15433,10 +15464,10 @@ MonoBehaviour:
   rotationDelay: 1
   rotateValue: 0
   cooldownTime: 5
-  cooldownTimer: 0
+  cooldownTimer: 5
   isCooldown: 1
   loop: 0
-  difficultyincrease: 0.01
+  difficultyincrease: 0.1
   pause: {fileID: 1045979058}
 --- !u!4 &674342089 stripped
 Transform:
@@ -15874,7 +15905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 878435246}
-  distance: 2
+  distance: -1
   height: 0
   speed: 88.8
   zoomSpeed: 2
@@ -16382,7 +16413,7 @@ MonoBehaviour:
   TutorText: {fileID: 1566937287}
   Frame: {fileID: 547820923}
   TutorailPopups: {fileID: 1742644493}
-  RobotAudioSource: {fileID: 1049872579}
+  RobotAudioSource: {fileID: 0}
 --- !u!1 &725483585
 GameObject:
   m_ObjectHideFlags: 0
@@ -18915,7 +18946,7 @@ MonoBehaviour:
   TutorText: {fileID: 1566937287}
   Frame: {fileID: 547820923}
   TutorailPopups: {fileID: 1742644493}
-  RobotAudioSource: {fileID: 1049872579}
+  RobotAudioSource: {fileID: 0}
 --- !u!1 &830013757
 GameObject:
   m_ObjectHideFlags: 0
@@ -22603,10 +22634,10 @@ MonoBehaviour:
   rotationDelay: 3
   rotateValue: 0
   cooldownTime: 5
-  cooldownTimer: 0
+  cooldownTimer: 5
   isCooldown: 1
   loop: 0
-  difficultyincrease: 0.01
+  difficultyincrease: 0.1
   pause: {fileID: 1045979058}
 --- !u!4 &988399752
 Transform:
@@ -22818,7 +22849,7 @@ MonoBehaviour:
   TutorText: {fileID: 1566937287}
   Frame: {fileID: 547820923}
   TutorailPopups: {fileID: 1742644493}
-  RobotAudioSource: {fileID: 1049872579}
+  RobotAudioSource: {fileID: 0}
 --- !u!1 &992949727
 GameObject:
   m_ObjectHideFlags: 0
@@ -28668,8 +28699,8 @@ MonoBehaviour:
   height: 0
   speed: 50
   zoomSpeed: 2
-  maxZoom: 1
-  minZoom: 0
+  maxZoom: 5
+  minZoom: 1
 --- !u!114 &1217115971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28713,7 +28744,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217115963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ace63b4f20e1c4f6a873bad5bb4495fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 98f50f3e4c947432aaf14467d73f3d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1221567146
@@ -29388,7 +29419,7 @@ MonoBehaviour:
   Gun: {fileID: 54549042}
   maxHealth: 100
   playercurrentHealth: 100
-  shakeDetector: {fileID: 0}
+  shakeDetector: {fileID: 1217115972}
   health: {fileID: 775070047}
 --- !u!4 &1240022008
 Transform:
@@ -38504,8 +38535,8 @@ MonoBehaviour:
   TutorText: {fileID: 1566937287}
   Frame: {fileID: 547820923}
   TutorailPopups: {fileID: 1742644493}
-  RobotAudioSource: {fileID: 1049872579}
-  playerControl: {fileID: 1240022007}
+  RobotAudioSource: {fileID: 0}
+  playerControl: {fileID: 0}
 --- !u!1 &1689112303
 GameObject:
   m_ObjectHideFlags: 0
@@ -40105,7 +40136,7 @@ MonoBehaviour:
   TutorText: {fileID: 1566937287}
   Frame: {fileID: 547820923}
   TutorailPopups: {fileID: 1742644493}
-  RobotAudioSource: {fileID: 1049872579}
+  RobotAudioSource: {fileID: 0}
 --- !u!65 &1799300281
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43750,7 +43781,7 @@ MonoBehaviour:
   TutorailPopups: {fileID: 1742644493}
   BossEnemyHealth: {fileID: 342196771}
   TutorailMinibossHealth: {fileID: 1522935895}
-  RobotAudioSource: {fileID: 1049872579}
+  RobotAudioSource: {fileID: 0}
 --- !u!65 &1938341052
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -47601,10 +47632,10 @@ MonoBehaviour:
   rotationDelay: 1
   rotateValue: 0
   cooldownTime: 5
-  cooldownTimer: 0
+  cooldownTimer: 5
   isCooldown: 1
   loop: 0
-  difficultyincrease: 0.01
+  difficultyincrease: 0.1
   pause: {fileID: 1045979058}
 --- !u!1001 &2087727526
 PrefabInstance:
@@ -47794,7 +47825,7 @@ MonoBehaviour:
   TutorailMinibossHealth: {fileID: 1522935895}
   MiniminiBoss: {fileID: 1033261609}
   BossEnemyHealth: {fileID: 342196771}
-  RobotAudioSource: {fileID: 1049872579}
+  RobotAudioSource: {fileID: 0}
 --- !u!1001 &2098306937
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48285,10 +48316,10 @@ MonoBehaviour:
   rotationDelay: 1
   rotateValue: 0
   cooldownTime: 5
-  cooldownTimer: 0
+  cooldownTimer: 5
   isCooldown: 1
   loop: 0
-  difficultyincrease: 0.01
+  difficultyincrease: 0.1
   pause: {fileID: 1045979058}
 --- !u!1 &2128004590
 GameObject:
@@ -49358,3 +49389,4 @@ SceneRoots:
   - {fileID: 248575720}
   - {fileID: 1207369176}
   - {fileID: 1298588732}
+  - {fileID: 471284860}
