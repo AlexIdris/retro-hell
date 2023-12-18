@@ -9,6 +9,7 @@ public class Miniboss : MonoBehaviour
     [SerializeField] GameObject TutorailMinibossHealth;
     [SerializeField] GameObject MiniminiBoss;
     [SerializeField] GameObject BossEnemyHealth;
+    [SerializeField] AudioSource RobotAudioSource;
     private void Start()
     {
         TutorailPopups.SetActive(false);
@@ -28,8 +29,11 @@ public class Miniboss : MonoBehaviour
             TutorText.gameObject.SetActive(true);
             MiniminiBoss.SetActive(true);
             BossEnemyHealth.SetActive(false);
-            TutorText.text = "Time to play with our new toys, defeat the enemy.\n" +
-                "<Right-Click to fire the Machine Gun>";
+            RobotAudioSource.Play();
+            TutorText.text = "Time to play with our new toys.\n" +
+                "<Right-Click to fire the Machine Gun>\n" +
+                "<Your Bullet destroys other enemy's bullets>";
+
 
 
         }
@@ -45,8 +49,10 @@ public class Miniboss : MonoBehaviour
             TutorText.gameObject.SetActive(true);
             TutorailMinibossHealth.SetActive(true);
             BossEnemyHealth.SetActive(false);
-            TutorText.text = "Time to play with our new toys, defeat the enemy.\n" +
-                "<Right-Click to fire the Machine Gun>";
+            TutorText.text = "Time to play with our new toys.\n" +
+                 "<Right-Click to fire the Machine Gun>\n" +
+                 "<Your Bullet destroys other enemy's bullets>";
+
 
 
         }

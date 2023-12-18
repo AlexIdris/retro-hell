@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,12 +5,10 @@ public class Player_Control : MonoBehaviour
 {
     public TakingDamageEffect takingDamageEffect;
     [SerializeField] GameObject pp_Volume;
-    [SerializeField] float cooldownTime = 1f;
+    [SerializeField] float cooldownTime = 5f;
     [SerializeField] float cooldownTimer = 0f;
     [SerializeField] bool isCooldown = true;
     public AudioSource DamageAudioSource;
-    public AudioSource HeartBeatAudioSource;
-
     [SerializeField] float speed;
     [SerializeField] float jump;
     [SerializeField] float Gravity;
@@ -35,7 +32,7 @@ public class Player_Control : MonoBehaviour
         isGrounded = true;
         pp_Volume.SetActive(true);
         DamageAudioSource.Stop();
-        HeartBeatAudioSource.Stop();
+        //HeartBeatAudioSource.Stop();
 
     }
 
@@ -45,28 +42,28 @@ public class Player_Control : MonoBehaviour
         Jump();
         Crouch();
 
-        /*        if (playercurrentHealth <= 50)
-                {
-                    Debug.Log("less than 50Hp");
-                    pulse();
 
-                }*/
 
-        if (isCooldown)
+        /*if (isCooldown)
         {
             cooldownTimer -= Time.deltaTime;
 
             if (cooldownTimer <= 0)
             {
+                anim.SetBool("crouch", false);
                 isCooldown = false;
                 cooldownTimer = 0f;
             }
+        }*/
+
+        if (!isCooldown)
+        {
+            Crouch();
+
+
+
         }
 
-        if (playercurrentHealth > maxHealth)
-        {
-            playercurrentHealth = maxHealth;
-        }
 
 
     }
@@ -80,12 +77,12 @@ public class Player_Control : MonoBehaviour
 
         if (move > 0)
         {
-            anim.SetBool("run", true);
+            //anim.SetBool("run", true);
 
         }
         else
         {
-            anim.SetBool("run", false);
+            // anim.SetBool("run", false);
 
         }
         controller.Move(speed * Time.deltaTime * rb.velocity + velocity * Time.deltaTime);
@@ -96,19 +93,19 @@ public class Player_Control : MonoBehaviour
         if (Input.GetButton("Jump") && isGrounded)
         {
 
-            anim.SetBool("jump", true);
+            // anim.SetBool("jump", true);
             velocity.y = Mathf.Sqrt(jump * -2 * Gravity);
 
         }
         else
         {
-            anim.SetBool("jump", false);
+            //anim.SetBool("jump", false);
         }
         isGrounded = controller.isGrounded;
 
         if (isGrounded && velocity.y < 0)
         {
-            anim.SetBool("Jump", false);
+            //anim.SetBool("Jump", false);
             velocity.y = -2f;
         }
         velocity.y += Gravity * Time.deltaTime;
@@ -120,11 +117,15 @@ public class Player_Control : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl))
         {
             anim.SetBool("crouch", true);
+            isCooldown = true;
+            cooldownTimer = 0f;
 
         }
+
         else
         {
             anim.SetBool("crouch", false);
+
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -203,10 +204,10 @@ public class Player_Control : MonoBehaviour
         if (collision.gameObject.CompareTag(Ground))
             isGrounded = true;
     }
-    private async void pulse()
+    /*private async void pulse()
     {
         StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
         await Task.Delay(10000);
         StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
-    }
+    }*/
 }

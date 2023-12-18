@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class Boss_DamageUI : MonoBehaviour
 {
-    public int maxHealth = 2000;
-    public int firstHealth = 1600;
-    public int halfHealth = 1200;
-    public int lasthealth = 800;
-    public int lasthealthsecorndpattern = 400;
+    public int maxHealth = 4000;
+    public int firstHealth = 3000;
+    public int halfHealth = 2500;
+    public int lasthealth = 2010;
+    public int lasthealthsecorndpattern = 2000;
     private int dead = 0;
     public int currentHealth;
 
@@ -32,14 +32,13 @@ public class Boss_DamageUI : MonoBehaviour
     bool third = false;
     bool fourth = false;
     bool fiveth = false;
-
     public Enemy_Health health;
     void Start()
     {
 
-        first = true;
         currentHealth = maxHealth;
-        health.SetMaxHealth(maxHealth);
+        //health.SetHealth(maxHealth);
+        first = true;
 
         firsthealthpattern.SetActive(true);
         secondhealthpattern.SetActive(false);
@@ -156,7 +155,11 @@ public class Boss_DamageUI : MonoBehaviour
     }
     void OnDeath()
     {
-        SceneManager.LoadScene(2);
+
+        SceneManager.LoadScene(3);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
     }
     public void EnemyTakeDamage(int damage)
     {

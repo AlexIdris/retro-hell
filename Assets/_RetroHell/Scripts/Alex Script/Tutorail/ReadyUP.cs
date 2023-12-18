@@ -1,29 +1,31 @@
 using TMPro;
 using UnityEngine;
 
-public class Machinegun : MonoBehaviour
+public class ReadyUP : MonoBehaviour
 {
     [SerializeField] TMP_Text TutorText;
     [SerializeField] GameObject Frame;
     [SerializeField] GameObject TutorailPopups;
+
     [SerializeField] AudioSource RobotAudioSource;
-    private void Start()
+    private void Awake()
     {
         TutorailPopups.SetActive(false);
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.tag == "Player")
         {
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
-            TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "Automatic Rifle Time!!\n" +
-                "<Each mag holds 30 bullets of rapid-fire!!!>";
+            TutorText.gameObject.SetActive(true);
             RobotAudioSource.Play();
+            TutorText.text = "Your Training is over, Heal up and move towards the light\n" +
+                "<White light teleport you to new scenes>";
+
         }
 
 
@@ -34,16 +36,19 @@ public class Machinegun : MonoBehaviour
         {
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
+
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "Automatic Rifle Time!!\n" +
-                "<Each mag holds 30 bullets of rapid-fire!!!>";
-            RobotAudioSource.Play();
+
+            TutorText.text = "Your Training is over, Heal up and move towards the light\n" +
+                "<White light teleport you to new scenes>";
+
         }
     }
     void OnTriggerExit(Collider other)
     {
 
         TutorailPopups.SetActive(false);
+
 
     }
 

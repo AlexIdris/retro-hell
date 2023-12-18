@@ -7,6 +7,7 @@ public class Crouch : MonoBehaviour
     [SerializeField] GameObject Frame;
     [SerializeField] GameObject TutorailPopups;
     [SerializeField] GameObject crouchBullet;
+    [SerializeField] AudioSource RobotAudioSource;
     private void Awake()
     {
         TutorailPopups.SetActive(false);
@@ -21,8 +22,9 @@ public class Crouch : MonoBehaviour
             Frame.SetActive(true);
             crouchBullet.SetActive(true);
             TutorText.gameObject.SetActive(true);
-
-            TutorText.text = "Now we learn Crouching, Do you know behind every door is a trap.\n" +
+            RobotAudioSource.Play();
+            TutorText.text = "Now we learn Crouching \n" +
+                "And you know what they say, behind every small space is a trap.\n" +
                 "<Press Control to Crouch.>";
 
         }
@@ -38,8 +40,10 @@ public class Crouch : MonoBehaviour
             crouchBullet.SetActive(true);
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "Now we learn Crouching, Do you know behind every door is a trap.\n" +
+            TutorText.text = "Now we learn Crouching \n" +
+                "And you know what they say, behind every small space is a trap.\n" +
                 "<Press Control to Crouch.>";
+
         }
     }
     void OnTriggerExit(Collider other)

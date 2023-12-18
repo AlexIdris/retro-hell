@@ -11,6 +11,7 @@ public class Tutorial_Level1 : MonoBehaviour
         if (other.tag is "Player")
         {
             SceneManager.LoadScene(2);
+
         }
     }
 }

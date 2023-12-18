@@ -63,8 +63,8 @@ public class PauseSystem : MonoBehaviour
 
     public void Restart()
     {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         SceneManager.LoadScene(1);
         target.SetActive(true);
     }

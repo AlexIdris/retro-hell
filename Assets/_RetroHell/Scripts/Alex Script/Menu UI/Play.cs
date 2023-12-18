@@ -8,10 +8,11 @@ public class Play : MonoBehaviour
 
     public void ToGame()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+
         mainMenuAudio.SetActive(false);
         SceneManager.LoadScene(1);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
 
     }
     private void Update()
