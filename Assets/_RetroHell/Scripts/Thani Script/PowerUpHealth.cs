@@ -13,7 +13,7 @@ public class PowerUpHealth : MonoBehaviour
     [SerializeField] AudioSource audioSource;
     public float HealthTimer;
     [SerializeField] float dispawntimer = 10;
-
+    [SerializeField] bool FullHealth;
     public void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -23,7 +23,7 @@ public class PowerUpHealth : MonoBehaviour
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
         audioSource = GameObject.FindGameObjectWithTag("Drop Audio").GetComponent<AudioSource>();
 
-        bool FullHealth = healthDisplay.fullHealth;
+        FullHealth = healthDisplay.fullHealth;
 
     }
     private void Start()
@@ -40,7 +40,9 @@ public class PowerUpHealth : MonoBehaviour
             playerHealth.playercurrentHealth += extraHealth;
 
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
+            audioSource.Play();
             animator.HealthAnimation();
+
             audioSource.Play();
             Destroy(gameObject);
         }

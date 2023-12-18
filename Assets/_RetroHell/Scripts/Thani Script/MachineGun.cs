@@ -24,9 +24,10 @@ public class MachineGun : MonoBehaviour
         machineGun = FindInActiveObjectByTag("GunHUD");
         bullettext = FindInActiveObjectByTag("MG Bullet Counter").GetComponent<TMP_Text>();
         audioSource = FindInActiveObjectByTag("Drop Audio").GetComponent<AudioSource>();
-
+        audioSource.Stop();
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
+
     }
 
     GameObject FindInActiveObjectByTag(string tag)

@@ -22,6 +22,7 @@ public class MachineGunT : MonoBehaviour
         machineGun.SetActive(false);
         animatorObject = GameObject.FindGameObjectWithTag("Animator");
         animator = animatorObject.GetComponent<PowerUpIconAnimator>();
+        audioSource.Stop();
 
 
     }

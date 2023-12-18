@@ -21,7 +21,7 @@ public class Player_Control : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] CharacterController controller;
     private Vector3 velocity;
-
+    [SerializeField] GameObject Gun;
     public int maxHealth = 100;
     public int playercurrentHealth;
     public ScreenShake shakeDetector;
@@ -74,7 +74,7 @@ public class Player_Control : MonoBehaviour
         var horizontalInput = Input.GetAxis("Horizontal");
         var verticalInput = Input.GetAxis("Vertical");
         _ = new Vector3(horizontalInput, 0, verticalInput).normalized;
-        rb.velocity = speed * verticalInput * transform.forward + horizontalInput * speed * transform.right;
+        rb.velocity = speed * verticalInput * Gun.transform.forward + horizontalInput * speed * Gun.transform.right;
         float move = rb.velocity.magnitude;
 
         if (move > 0)

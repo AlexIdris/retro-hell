@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class mouseController : MonoBehaviour
 {
@@ -12,13 +9,13 @@ public class mouseController : MonoBehaviour
     [SerializeField] float X;
     [SerializeField] float Y;
     private void Update()
-    {      
-        X -= Speed* Input.GetAxis("Mouse Y");
-        Y += Speed* Input.GetAxis("Mouse X");
+    {
+        X -= Speed * Input.GetAxis("Mouse Y");
+        Y += Speed * Input.GetAxis("Mouse X");
         X = Mathf.Clamp(X, minRotation, maxRotation);
-        transform.eulerAngles = new Vector3(0f,Y,0f);
-        gun.transform.eulerAngles = new Vector3(X,Y,0f);
-        
-        
+        transform.eulerAngles = new Vector3(X, Y, 0f);
+        gun.transform.eulerAngles = new Vector3(X, Y, 0f);
+
+
     }
 }

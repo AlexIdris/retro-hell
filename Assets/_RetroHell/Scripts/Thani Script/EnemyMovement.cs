@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -23,12 +22,12 @@ public class EnemyMovement : MonoBehaviour
 
     public void FixedUpdate()
     {
-       
+
 
         shooting = true;
         invincibilityFrame += Time.deltaTime;
 
-       
+
 
         if (shooting == true && invincibilityFrame > 0.2 && Time.time > nextFireTime && pause.gamePaused == false)
         {
@@ -49,7 +48,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (other.tag == "Bullets")
         {
-            
+
             Destroy(gameObject);
 
         }

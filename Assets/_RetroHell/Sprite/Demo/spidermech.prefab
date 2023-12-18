@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1869926949534615724}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.011, y: 1.2, z: 5.96}
+  m_LocalPosition: {x: -0.011, y: 1.2, z: 5.16}
   m_LocalScale: {x: 1.1707156, y: 2, z: 0.9707463}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -297,17 +297,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25cd7f268ca224445b81e3b40474edeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
   smoke: {fileID: 7816606536174749446, guid: 01853821ef0cd5c42b2cf57f9ede163c, type: 3}
-  currentDistance: 0
   shooting: 0
-  target: {fileID: 7993760622433033731, guid: 773bf92cb9b6e034698ab12e7a03b12f, type: 3}
-  playerDistance: 6
   bulletSpawner: {fileID: 8860167558980297040}
   bullet: {fileID: 3433909382595134065, guid: 3badc861733fc7944b9bebe36ca86aba, type: 3}
   pause: {fileID: 8076986344663354662, guid: 01a686858f8eb624aa4b3dfa061f9066, type: 3}
   bulletSpeed: 6
   invincibilityFrame: 0
+  minion_Shooting: {fileID: 0}
   nextFireTime: 2
   fireRate: 3
 --- !u!65 &7754753311228501894

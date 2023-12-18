@@ -128,6 +128,8 @@ MonoBehaviour:
   healthDisplay: {fileID: 6389215037849965411, guid: 5b9d82a06e1a02642a3ccd4c95a9bee0, type: 3}
   audioSource: {fileID: 5381674734681401013, guid: adc649d590bfc1440bec7183bc5fd730, type: 3}
   HealthTimer: 0
+  dispawntimer: 10
+  FullHealth: 0
 --- !u!1 &4672470727393737718
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +230,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

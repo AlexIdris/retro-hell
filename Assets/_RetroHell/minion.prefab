@@ -50,8 +50,8 @@ MonoBehaviour:
   speed: 1
   currentDistance: 0
   movement: 0
-  target: {fileID: 0}
-  playerDistance: 5
+  target: {fileID: 9098500438498494592}
+  playerDistance: 6
   enemyMovement: {fileID: 4936337928744549897}
 --- !u!54 &4460115701064704959
 Rigidbody:
@@ -266,5 +266,10 @@ MonoBehaviour:
 --- !u!4 &8603935419965368808 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2418504031628150327, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+  m_PrefabInstance: {fileID: 6266496336919801823}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9098500438498494592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2932772199747315551, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
   m_PrefabInstance: {fileID: 6266496336919801823}
   m_PrefabAsset: {fileID: 0}
