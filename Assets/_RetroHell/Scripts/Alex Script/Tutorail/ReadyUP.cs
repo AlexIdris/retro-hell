@@ -1,14 +1,14 @@
 using TMPro;
 using UnityEngine;
 
-public class SlowDownTime : MonoBehaviour
+public class ReadyUP : MonoBehaviour
 {
     [SerializeField] TMP_Text TutorText;
     [SerializeField] GameObject Frame;
     [SerializeField] GameObject TutorailPopups;
-    [SerializeField] AudioSource RobotAudioSource;
 
-    private void Start()
+    [SerializeField] AudioSource RobotAudioSource;
+    private void Awake()
     {
         TutorailPopups.SetActive(false);
 
@@ -16,15 +16,16 @@ public class SlowDownTime : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
         if (other.tag == "Player")
         {
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
+
             TutorText.gameObject.SetActive(true);
             RobotAudioSource.Play();
-            TutorText.text = "Pick up the time watch, this slows down time, try using it to pass the turrent\n" +
-                "<Press Shift to slow down time for 3 seconds>";
+            TutorText.text = "Your Training is over, Heal up and go towards the light\n" +
+                "<White light teleport you to new scenes>";
+
         }
 
 
@@ -35,16 +36,19 @@ public class SlowDownTime : MonoBehaviour
         {
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
+
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "Pick up the time watch, this slows down time, try using it to pass the turrent\n" +
-                 "<Press Shift to slow down time for 3 seconds>";
+            TutorText.text = "Your Training is over, Heal up and go towards the light\n" +
+                "<White light teleport you to new scenes>";
+
         }
     }
     void OnTriggerExit(Collider other)
     {
 
         TutorailPopups.SetActive(false);
+
 
     }
 

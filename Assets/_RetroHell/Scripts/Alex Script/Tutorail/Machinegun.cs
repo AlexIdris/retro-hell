@@ -6,6 +6,7 @@ public class Machinegun : MonoBehaviour
     [SerializeField] TMP_Text TutorText;
     [SerializeField] GameObject Frame;
     [SerializeField] GameObject TutorailPopups;
+    [SerializeField] AudioSource RobotAudioSource;
     private void Start()
     {
         TutorailPopups.SetActive(false);
@@ -22,6 +23,7 @@ public class Machinegun : MonoBehaviour
 
             TutorText.text = "Automatic Rifle Time!!\n" +
                 "<Each panel adds 30 bullets of rapid-fire>";
+            RobotAudioSource.Play();
         }
 
 
@@ -35,6 +37,7 @@ public class Machinegun : MonoBehaviour
             TutorText.gameObject.SetActive(true);
             TutorText.text = "Automatic Rifle Time!!\n" +
                 "<Each panel adds 30 bullets of rapid-fire>";
+            RobotAudioSource.Play();
         }
     }
     void OnTriggerExit(Collider other)

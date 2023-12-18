@@ -8,6 +8,7 @@ public class Goodluck : MonoBehaviour
     [SerializeField] GameObject TutorailPopups;
     [SerializeField] GameObject BossEnemyHealth;
     [SerializeField] GameObject TutorailMinibossHealth;
+    [SerializeField] AudioSource RobotAudioSource;
     private void Awake()
     {
         TutorailPopups.SetActive(false);
@@ -25,8 +26,10 @@ public class Goodluck : MonoBehaviour
             TutorText.gameObject.SetActive(true);
             BossEnemyHealth.SetActive(true);
             TutorailMinibossHealth.SetActive(false);
+            RobotAudioSource.Play();
             TutorText.text = "Yikes. Well I am sure you do not want a guardian angel in your ear, so Goodluck.\n" +
      "<Descend downward and face your enemy.>";
+
         }
 
 
@@ -40,7 +43,8 @@ public class Goodluck : MonoBehaviour
             TutorText.gameObject.SetActive(true);
             BossEnemyHealth.SetActive(true);
             TutorailMinibossHealth.SetActive(false);
-            TutorText.text = "Yikes. Well I am sure you do not want a guardian angel in your ear, so Goodluck.\n" +
+            TutorText.text = "Yikes! That looks scary...\n" +
+                "I mean i just realised this is a single player game, So Goodluck :)\n" +
                  "<Descend downward and face your enemy.>";
 
         }
