@@ -25,8 +25,8 @@ public class Move : MonoBehaviour
             TutorText.gameObject.SetActive(true);
             RobotAudioSource.Play();
             TutorText.text = "Hi, am Orxic, your old relaible\n" +
-               " & today i will be your guide\n" +
-           "<Press WASD for Movement>";
+                " & today I will be your guide\n" +
+            "<Press WASD for Movement>";
 
 
 
@@ -42,7 +42,7 @@ public class Move : MonoBehaviour
             TutorText.gameObject.SetActive(true);
 
             TutorText.text = "Hi, am Orxic, your old relaible\n" +
-                " & today i will be your guide\n" +
+                " & today I will be your guide\n" +
             "<Press WASD for Movement>";
         }
     }

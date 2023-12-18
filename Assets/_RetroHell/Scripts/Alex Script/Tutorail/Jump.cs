@@ -18,7 +18,7 @@ public class Jump : MonoBehaviour
         Frame.SetActive(true);
         TutorText.gameObject.SetActive(true);
         RobotAudioSource.Play();
-        TutorText.text = "Oh good you can move, now Jump over the bumps\n" +
+        TutorText.text = "Oh good! you can move, now Jump over the bumps\n" +
             "<Press Space to Jump.>";
 
 
@@ -31,8 +31,8 @@ public class Jump : MonoBehaviour
             TutorailPopups.SetActive(true);
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
-            TutorText.text = "Oh good you can move, now Jump over the bumps\n" +
-                "<Press Space to Jump.>";
+            TutorText.text = "Oh good! you can move, now Jump over the bumps\n" +
+            "<Press Space to Jump.>";
 
         }
     }

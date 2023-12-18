@@ -27,8 +27,9 @@ public class Goodluck : MonoBehaviour
             BossEnemyHealth.SetActive(true);
             TutorailMinibossHealth.SetActive(false);
             RobotAudioSource.Play();
-            TutorText.text = "Yikes. Well I am sure you do not want a guardian angel in your ear, so Goodluck.\n" +
-     "<Descend downward and face your enemy.>";
+            TutorText.text = "Yikes! That looks scary...\n" +
+                "I mean, I just remembered, this is a single player game, So Goodluck :)\n" +
+                 "<You should know the longer you fight an enemy the stronger it becomes>";.> ";
 
         }
 
@@ -44,8 +45,8 @@ public class Goodluck : MonoBehaviour
             BossEnemyHealth.SetActive(true);
             TutorailMinibossHealth.SetActive(false);
             TutorText.text = "Yikes! That looks scary...\n" +
-                "I mean i just realised this is a single player game, So Goodluck :)\n" +
-                 "<Descend downward and face your enemy.>";
+                "I mean, I just remembered, this is a single player game, So Goodluck :)\n" +
+                 "<You should know the longer you fight an enemy the stronger it becomes>";
 
         }
     }

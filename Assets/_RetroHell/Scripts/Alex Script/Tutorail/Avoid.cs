@@ -22,7 +22,7 @@ public class Avoid : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
             RobotAudioSource.Play();
-            TutorText.text = " Those Balls hurts so try not to get hit \n" +
+            TutorText.text = " Those Balls hurts, so try not to get hit \n" +
      "<Avoid Getting hit by the Turret Bullets>";
 
 
@@ -38,7 +38,7 @@ public class Avoid : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = " Those Balls hurts so try not to get hit \n" +
+            TutorText.text = " Those Balls hurts, so try not to get hit \n" +
      "<Avoid Getting hit by the Turret Bullets>";
 
 

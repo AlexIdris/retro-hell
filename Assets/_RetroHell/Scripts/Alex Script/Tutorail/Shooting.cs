@@ -21,7 +21,7 @@ public class Shooting : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
             RobotAudioSource.Play();
-            TutorText.text = "Now this is a breakable wall, break it :) \n" +
+            TutorText.text = "Now this is a breakable wall, break it \n" +
                 "<Left-Click to Fire your Gun.>";
 
         }
@@ -35,7 +35,7 @@ public class Shooting : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
 
-            TutorText.text = "Now this is a breakable wall, break it :) \n" +
+            TutorText.text = "Now this is a breakable wall, break it \n" +
                 "<Left-Click to Fire your Gun.>";
 
         }

@@ -23,7 +23,8 @@ public class Crouch : MonoBehaviour
             crouchBullet.SetActive(true);
             TutorText.gameObject.SetActive(true);
             RobotAudioSource.Play();
-            TutorText.text = "Now we learn Crouching, Do you know behind every door is a trap.\n" +
+            TutorText.text = "Now we learn Crouching \n" +
+                "And you know what they say, behind every small space is a trap.\n" +
                 "<Press Control to Crouch.>";
 
         }
@@ -40,7 +41,7 @@ public class Crouch : MonoBehaviour
             TutorText.gameObject.SetActive(true);
 
             TutorText.text = "Now we learn Crouching \n" +
-                " and you know what they say, behind every small space is a trap.\n" +
+                "And you know what they say, behind every small space is a trap.\n" +
                 "<Press Control to Crouch.>";
 
         }

@@ -22,7 +22,7 @@ public class Machinegun : MonoBehaviour
             TutorText.gameObject.SetActive(true);
 
             TutorText.text = "Automatic Rifle Time!!\n" +
-                "<Each panel adds 30 bullets of rapid-fire>";
+                "<Each mag holds 30 bullets of rapid-fire!!!>";
             RobotAudioSource.Play();
         }
 
@@ -36,7 +36,7 @@ public class Machinegun : MonoBehaviour
             Frame.SetActive(true);
             TutorText.gameObject.SetActive(true);
             TutorText.text = "Automatic Rifle Time!!\n" +
-                "<Each panel adds 30 bullets of rapid-fire>";
+                "<Each mag holds 30 bullets of rapid-fire!!!>";
             RobotAudioSource.Play();
         }
     }

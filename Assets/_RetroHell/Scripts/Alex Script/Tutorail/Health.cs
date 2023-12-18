@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
             }
             else if (playerControl.playercurrentHealth >= 90)
             {
-                TutorText.text = "Okey tough guy, i guess you wont be needing the Health Essence, but you should know what it does.\n" +
+                TutorText.text = "Okey, tough guy, i guess you wont be needing the Health Essence, but you should know what it does.\n" +
               "<It recovers 50 Health Points.>";
             }
 
@@ -51,7 +51,7 @@ public class Health : MonoBehaviour
             }
             else if (playerControl.playercurrentHealth >= 90)
             {
-                TutorText.text = "Okey tough guy, i guess you wont be needing the Health Essence, but you should know what it does.\n" +
+                TutorText.text = "Okey, tough guy, i guess you wont be needing the Health Essence, but you should know what it does.\n" +
               "<It recovers 50 Health Points.>";
             }
 
