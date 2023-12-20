@@ -207,7 +207,7 @@ MonoBehaviour:
   m_FreeGlyphRects:
   - m_X: 0
     m_Y: 0
-    m_Width: 511
+    m_Width: 157
     m_Height: 511
   m_fontInfo:
     Name: Liberation Sans
