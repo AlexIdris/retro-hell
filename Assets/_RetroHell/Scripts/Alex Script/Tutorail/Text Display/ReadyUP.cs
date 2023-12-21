@@ -21,8 +21,8 @@ public class ReadyUP : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
             robotAudioSource.Play();
-            tutorText.text = "Your Training is over, Heal up and move towards the light\n" +
-                "<White light teleport you to new scenes>";
+            tutorText.text = "Your training is over. Heal up and move towards the portal.\n" +
+                "<The portal teleports you to new scenes.>";
 
         }
 
@@ -37,8 +37,8 @@ public class ReadyUP : MonoBehaviour
 
             tutorText.gameObject.SetActive(true);
             robotAudioSource.Play();
-            tutorText.text = "Your Training is over, Heal up and move towards the light\n" +
-                "<White light teleport you to new scenes>";
+            tutorText.text = "Your training is over. Heal up and move towards the portal.\n" +
+                "<The portal teleports you to new scenes.>";
 
         }
     }

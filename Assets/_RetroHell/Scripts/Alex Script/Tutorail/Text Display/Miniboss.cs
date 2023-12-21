@@ -32,8 +32,8 @@ public class Miniboss : MonoBehaviour
             miniMiniBoss.SetActive(true);
             tutorailMinibossHealth.SetActive(true);
             tutorText.text = "Time to play with our new toys.\n" +
-                 "<Right-Click to fire the Machine Gun>\n" +
-                 "<Your Bullet destroys other enemy's bullets>";
+                 "<Hold Right-Click to fire the Machine Gun.>\n" +
+                 "<Your bullets destroys other enemy bullets.>";
 
 
 
@@ -52,8 +52,8 @@ public class Miniboss : MonoBehaviour
             miniMiniBoss.SetActive(true);
             tutorailMinibossHealth.SetActive(true);
             tutorText.text = "Time to play with our new toys.\n" +
-                 "<Right-Click to fire the Machine Gun>\n" +
-                 "<Your Bullet destroys other enemy's bullets>";
+                 "<Hold Right-Click to fire the Machine Gun.>\n" +
+                 "<Your bullets destroys other enemy bullets.>";
 
 
 

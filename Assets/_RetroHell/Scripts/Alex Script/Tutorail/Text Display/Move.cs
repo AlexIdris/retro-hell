@@ -24,9 +24,9 @@ public class Move : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
             robotAudioSource.Play();
-            tutorText.text = "Hi, my name is old relaible Orxic \n" +
-              " & today I will be your guide\n" +
-          "<Press WASD for Movement>";
+            tutorText.text = "Hi, I'm your old relaible Orxic \n" +
+              " & today I will be your guide.\n" +
+          "<Use WASD for Movement>";
 
 
 
@@ -40,9 +40,9 @@ public class Move : MonoBehaviour
             tutorailPopups.SetActive(true);
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
-            tutorText.text = "Hi, my name is old relaible Orxic \n" +
-                " & today I will be your guide\n" +
-            "<Press WASD for Movement>";
+            tutorText.text = "Hi, I'm your old relaible Orxic \n" +
+                " & today I will be your guide.\n" +
+            "<Use WASD for Movement>";
         }
     }
     void OnTriggerExit(Collider other)

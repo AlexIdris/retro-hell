@@ -22,8 +22,8 @@ public class Avoid : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
             robotAudioSource.Play();
-            tutorText.text = " Those Balls hurts, so try not to get hit \n" +
-      "<Avoid Getting hit by the Turret Bullets, All Red Bullet can be Destroyed>";
+            tutorText.text = " Those balls hurt, so try not to get hit. \n" +
+      "<Avoid getting hit by the bullets, all red bullets can be destroyed.>";
 
 
         }
@@ -38,8 +38,8 @@ public class Avoid : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
 
-            tutorText.text = " Those Balls hurts, so try not to get hit \n" +
-     "<Avoid Getting hit by the Turret Bullets, All Red Bullet can be Destroyed>";
+            tutorText.text = " Those balls hurt, so try not to get hit. \n" +
+     "<Avoid getting hit by the bullets, all red bullets can be destroyed.>";
 
 
         }

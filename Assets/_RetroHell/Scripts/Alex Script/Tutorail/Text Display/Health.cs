@@ -24,12 +24,12 @@ public class Health : MonoBehaviour
             robotAudioSource.Play();
             if (playerControl.playercurrentHealth <= 90)
             {
-                tutorText.text = "Awn poor baby you took damage,now heal your self, Pick up the Health Essence.\n" +
+                tutorText.text = "Aw... poor baby! You took damage, now heal your self. Pick up the Life Essence.\n" +
                "<It recovers 50 Health Points.>";
             }
             else if (playerControl.playercurrentHealth >= 90)
             {
-                tutorText.text = "Okey, tough guy, i guess you wont be needing the Health Essence, but you should know what it does.\n" +
+                tutorText.text = "Okay, tough guy. I guess you won't be needing the Life Essence, but you should know what it does.\n" +
               "<It recovers 50 Health Points.>";
             }
 
@@ -47,12 +47,12 @@ public class Health : MonoBehaviour
 
             if (playerControl.playercurrentHealth <= 90)
             {
-                tutorText.text = "Awn poor baby you took damage,now heal your self, Pick up the Health Essence.\n" +
+                tutorText.text = "Aw... poor baby! You took damage, now heal your self. Pick up the Life Essence.\n" +
                "<It recovers 50 Health Points.>";
             }
             else if (playerControl.playercurrentHealth >= 90)
             {
-                tutorText.text = "Okey, tough guy, i guess you wont be needing the Health Essence, but you should know what it does.\n" +
+                tutorText.text = "Okay, tough guy. I guess you won't be needing the Life Essence, but you should know what it does.\n" +
               "<It recovers 50 Health Points.>";
             }
 
