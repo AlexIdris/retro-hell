@@ -10,6 +10,7 @@ public class PauseSystem : MonoBehaviour
     public void Start()
     {
         Time.timeScale = 1;
+        pauseScreen.SetActive(false);
     }
     public void BacktoGame()
     {

@@ -46,13 +46,13 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Bullets")
+        if (other.tag is "Bullets")
         {
 
             Destroy(gameObject);
 
         }
-        if (other.tag == "EnemyBullets")
+        if (other.tag is "EnemyBullets")
         {
             Destroy(other.gameObject);
         }

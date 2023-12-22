@@ -20,24 +20,24 @@ public class Boss_DamageUI : MonoBehaviour
     [SerializeField] GameObject thirdhealthpattern;
     [SerializeField] GameObject fourthhealthpattern;
     [SerializeField] GameObject miniturrenthealth;
-    [SerializeField] BossShield ShieldCode;
-    [SerializeField] GameObject ShieldObject;
-    [SerializeField] GameObject FirstForm;
-    [SerializeField] GameObject LastForm;
-    [SerializeField] Animator animator;
+    [SerializeField] BossShield shieldCode;
+    [SerializeField] GameObject shieldObject;
+    [SerializeField] GameObject firstForm;
+    [SerializeField] GameObject lastForm;
+
 
 
     bool first = false;
     bool second = false;
     bool third = false;
     bool fourth = false;
-    bool fiveth = false;
-    public Enemy_Health health;
+
+    public EnemyHealth health;
     void Start()
     {
 
         currentHealth = maxHealth;
-        //health.SetHealth(maxHealth);
+        health.SetHealth(maxHealth);
         first = true;
 
         firsthealthpattern.SetActive(true);
@@ -46,9 +46,9 @@ public class Boss_DamageUI : MonoBehaviour
         fourthhealthpattern.SetActive(false);
         miniturrenthealth.SetActive(false);
 
-        ShieldCode = ShieldObject.GetComponent<BossShield>();
-        FirstForm.SetActive(true);
-        LastForm.SetActive(false);
+        shieldCode = shieldObject.GetComponent<BossShield>();
+        firstForm.SetActive(true);
+        lastForm.SetActive(false);
     }
 
     private void Update()
@@ -77,7 +77,7 @@ public class Boss_DamageUI : MonoBehaviour
             third = false;
             fourth = true;
 
-            ShieldCode.Activate();
+            shieldCode.Activate();
         }
         if (currentHealth <= lasthealthsecorndpattern && fourth)
         {
@@ -88,15 +88,7 @@ public class Boss_DamageUI : MonoBehaviour
 
             SceneManager.LoadScene(5);
         }
-        if (currentHealth <= firstHealth && currentHealth > lasthealth)
-        {
-            animator.enabled = true;
-            timer += Time.deltaTime;
-            if (timer >= delay)
-            {
-                animator.enabled = false;
-            }
-        }
+
     }
     void Secondpattern()
     {
@@ -113,18 +105,18 @@ public class Boss_DamageUI : MonoBehaviour
     {
         firsthealthpattern.SetActive(false);
         secondhealthpattern.SetActive(false);
-        animator.enabled = false;
+
         thirdhealthpattern.SetActive(true);
         fourthhealthpattern.SetActive(false);
         miniturrenthealth.SetActive(false);
     }
     void Fourthpattern()
     {
-        FirstForm.SetActive(false);
-        LastForm.SetActive(true);
+        firstForm.SetActive(false);
+        lastForm.SetActive(true);
         firsthealthpattern.SetActive(true);
         secondhealthpattern.SetActive(false);
-        animator.enabled = false;
+
         thirdhealthpattern.SetActive(false);
         fourthhealthpattern.SetActive(true);
         miniturrenthealth.SetActive(true);
@@ -133,16 +125,16 @@ public class Boss_DamageUI : MonoBehaviour
     {
         firsthealthpattern.SetActive(true);
         secondhealthpattern.SetActive(true);
-        animator.enabled = true;
+
         thirdhealthpattern.SetActive(true);
         fourthhealthpattern.SetActive(false);
         miniturrenthealth.SetActive(false);
-        animator.enabled = false;
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Bullets" && ShieldCode.activated == false)
+        if (other.tag is "Bullets" && shieldCode.activated == false)
         {
             EnemyTakeDamage(10);
 

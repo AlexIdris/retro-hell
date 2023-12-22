@@ -6,7 +6,7 @@ public class MainMenu_Audio : MonoBehaviour
     [SerializeField] public Slider menuVolumeSlider;
     [SerializeField] GameObject audioDetector;
 
-    enum State {On, Off};
+    enum State { On, Off };
     State state;
 
     void Start()
@@ -38,18 +38,6 @@ public class MainMenu_Audio : MonoBehaviour
         }
     }
 
-    /* public void StopAudio(AudioClip clip)
-     {
-         if (audioSource != null && audioSource.isPlaying)
-         {
-             if (audioSource != null && clip != null)
-             {
-                 audioSource.clip = clip;
-                 audioSource.Stop();
-             }
-         }
-
-     }*/
 
     void ChangeVolume(float volume)
     {

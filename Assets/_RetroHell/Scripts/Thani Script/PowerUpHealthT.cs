@@ -36,7 +36,6 @@ public class PowerUpHealthT : MonoBehaviour
             playerHealth.playercurrentHealth += extraHealth;
             playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
             animator.HealthAnimation();
-
             IW_Health.SetActive(false);
             audioSource.Play();
             Destroy(gameObject);

@@ -5,9 +5,9 @@ public class Player_Control : MonoBehaviour
 {
     public TakingDamageEffect takingDamageEffect;
     [SerializeField] GameObject pp_Volume;
-    [SerializeField] float cooldownTime = 5f;
+    /*[SerializeField] float cooldownTime = 5f;
     [SerializeField] float cooldownTimer = 0f;
-    [SerializeField] bool isCooldown = true;
+    [SerializeField] bool isCooldown = true;*/
     public AudioSource DamageAudioSource;
     [SerializeField] float speed;
     [SerializeField] float jump;
@@ -18,7 +18,7 @@ public class Player_Control : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] CharacterController controller;
     private Vector3 velocity;
-    [SerializeField] GameObject Gun;
+    [SerializeField] GameObject gun;
     public int maxHealth;
     public int playercurrentHealth;
     public ScreenShake shakeDetector;
@@ -32,7 +32,6 @@ public class Player_Control : MonoBehaviour
         isGrounded = true;
         pp_Volume.SetActive(true);
         DamageAudioSource.Stop();
-        //HeartBeatAudioSource.Stop();
 
     }
 
@@ -53,22 +52,18 @@ public class Player_Control : MonoBehaviour
                 anim.SetBool("crouch", false);
                 isCooldown = false;
                 cooldownTimer = 0f;
-            }
-        }*/
-
-        if (!isCooldown)
-        {
-            Crouch();
-
-
-
-        }
-
-        if (playercurrentHealth > maxHealth)
+          if (playercurrentHealth > maxHealth)
         {
             playercurrentHealth = maxHealth;
         }
+            }
+          if (!isCooldown)
+                {
+                    Crouch();
 
+
+
+                }*/
 
 
     }
@@ -77,19 +72,7 @@ public class Player_Control : MonoBehaviour
         var horizontalInput = Input.GetAxis("Horizontal");
         var verticalInput = Input.GetAxis("Vertical");
         _ = new Vector3(horizontalInput, 0, verticalInput).normalized;
-        rb.velocity = speed * verticalInput * Gun.transform.forward + horizontalInput * speed * Gun.transform.right;
-        float move = rb.velocity.magnitude;
-
-        if (move > 0)
-        {
-            //anim.SetBool("run", true);
-
-        }
-        else
-        {
-            // anim.SetBool("run", false);
-
-        }
+        rb.velocity = speed * verticalInput * gun.transform.forward + horizontalInput * speed * gun.transform.right;
         controller.Move(speed * Time.deltaTime * rb.velocity + velocity * Time.deltaTime);
     }
 
@@ -97,20 +80,14 @@ public class Player_Control : MonoBehaviour
     {
         if (Input.GetButton("Jump") && isGrounded)
         {
-
-            // anim.SetBool("jump", true);
             velocity.y = Mathf.Sqrt(jump * -2 * Gravity);
 
-        }
-        else
-        {
-            //anim.SetBool("jump", false);
         }
         isGrounded = controller.isGrounded;
 
         if (isGrounded && velocity.y < 0)
         {
-            //anim.SetBool("Jump", false);
+
             velocity.y = -2f;
         }
         velocity.y += Gravity * Time.deltaTime;
@@ -122,9 +99,9 @@ public class Player_Control : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl))
         {
             anim.SetBool("crouch", true);
-            isCooldown = true;
+            /*isCooldown = true;
             cooldownTimer = 0f;
-
+*/
         }
 
         else
@@ -141,26 +118,15 @@ public class Player_Control : MonoBehaviour
             DamageAudioSource.Play();
             TakeDamage(10);
 
-
-
-
-
         }
-        /*        if (playercurrentHealth <= 50)
-                {
-                    HeartBeatAudioSource.Play();
-                }*/
-        if (playercurrentHealth <= 0)
-        {
-            Respawn();
-        }
+
         else if (other.tag is "Boss")
         {
             DamageAudioSource.Play();
             TakeDamage(1);
 
         }
-        else if (other.tag == "Health")
+        else if (other.tag is "Health")
         {
             StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.green));
         }
@@ -170,11 +136,14 @@ public class Player_Control : MonoBehaviour
             DamageAudioSource.Play();
             TakeDamage(20);
         }
-
+        if (playercurrentHealth <= 0)
+        {
+            Respawn();
+        }
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag is "Boss" && !isCooldown)
+        if (other.tag is "Boss" /*&& !isCooldown*/)
         {
             DamageAudioSource.Play();
             TakeDamage(1);
@@ -183,8 +152,8 @@ public class Player_Control : MonoBehaviour
             {
                 Respawn();
             }
-            isCooldown = true;
-            cooldownTimer = cooldownTime;
+            /* isCooldown = true;
+             cooldownTimer = cooldownTime;*/
         }
     }
 
@@ -199,9 +168,7 @@ public class Player_Control : MonoBehaviour
         StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
-        StartCoroutine(shakeDetector.Shake(1f));
-        //shakeDetector.hit = true;
-
+        StartCoroutine(shakeDetector.Shake(0.2f));
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -209,10 +176,5 @@ public class Player_Control : MonoBehaviour
         if (collision.gameObject.CompareTag(Ground))
             isGrounded = true;
     }
-    /*private async void pulse()
-    {
-        StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
-        await Task.Delay(10000);
-        StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
-    }*/
+
 }

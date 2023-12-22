@@ -42,7 +42,7 @@ public class BulletPhysics : MonoBehaviour
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
-        if (other.tag == "Bullets")
+        if (other.tag == "EnemyBullets")
         {
             Destroy(other.gameObject);
             Destroy(gameObject);

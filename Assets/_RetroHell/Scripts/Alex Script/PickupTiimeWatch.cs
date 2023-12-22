@@ -2,29 +2,29 @@ using UnityEngine;
 
 public class PickupTiimeWatch : MonoBehaviour
 {
-    [SerializeField] GameObject PocketWatch;
-    [SerializeField] GameObject StopWatch;
-    [SerializeField] GameObject IW_PocketWatch;
+    [SerializeField] GameObject pocketWatch;
+    [SerializeField] GameObject stopWatch;
+    [SerializeField] GameObject iw_PocketWatch;
     [SerializeField] AudioSource audioSource;
     private void Start()
     {
 
-        IW_PocketWatch.SetActive(true);
+        iw_PocketWatch.SetActive(true);
 
     }
     private void OnTriggerEnter(Collider other)
     {
-        PocketWatch.SetActive(true);
-        StopWatch.SetActive(true);
-        IW_PocketWatch.SetActive(false);
+        pocketWatch.SetActive(true);
+        stopWatch.SetActive(true);
+        iw_PocketWatch.SetActive(false);
 
         Destroy(gameObject);
     }
     private void OnTriggerStay(Collider other)
     {
-        PocketWatch.SetActive(true);
-        StopWatch.SetActive(true);
-        IW_PocketWatch.SetActive(false);
+        pocketWatch.SetActive(true);
+        stopWatch.SetActive(true);
+        iw_PocketWatch.SetActive(false);
         audioSource.Play();
         Destroy(gameObject);
     }

@@ -10,10 +10,10 @@ EditorBuildSettings:
     guid: e82bbb24790784d498a49fa3bdbc7f04
   - enabled: 1
     path: Assets/_RetroHell/Scene/Tutorial.unity
-    guid: 909e9ef2fd9603f4782a3f07e0c48ab9
+    guid: 27736833fd8e6164ea131966e8ee51f4
   - enabled: 1
     path: Assets/_RetroHell/Scene/Level 1.unity
-    guid: 96357881a6e982444b9f64a482d517a6
+    guid: 6718bd15ded8d4c4daa08fa79f392ef1
   - enabled: 1
     path: Assets/_RetroHell/Scene/Win Condition.unity
     guid: 8fce06d561fdb074aa262b08af8e58de

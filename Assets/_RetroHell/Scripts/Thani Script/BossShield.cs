@@ -6,10 +6,10 @@ public class BossShield : MonoBehaviour
     public GameObject miniBoss2;
     public GameObject miniBoss3;
     public GameObject miniBoss4;
-    public Miniboss_Damage miniBoss1Health;
-    public Miniboss_Damage miniBoss2Health;
-    public Miniboss_Damage miniBoss3Health;
-    public Miniboss_Damage miniBoss4Health;
+    public MiniBossDamage miniBoss1Health;
+    public MiniBossDamage miniBoss2Health;
+    public MiniBossDamage miniBoss3Health;
+    public MiniBossDamage miniBoss4Health;
 
     public GameObject mainBoss;
     public Boss_DamageUI mainBossHealth;
@@ -18,10 +18,10 @@ public class BossShield : MonoBehaviour
 
     void Start()
     {
-        miniBoss1Health = miniBoss1.GetComponent<Miniboss_Damage>();
-        miniBoss2Health = miniBoss2.GetComponent<Miniboss_Damage>();
-        miniBoss3Health = miniBoss3.GetComponent<Miniboss_Damage>();
-        miniBoss4Health = miniBoss4.GetComponent<Miniboss_Damage>();
+        miniBoss1Health = miniBoss1.GetComponent<MiniBossDamage>();
+        miniBoss2Health = miniBoss2.GetComponent<MiniBossDamage>();
+        miniBoss3Health = miniBoss3.GetComponent<MiniBossDamage>();
+        miniBoss4Health = miniBoss4.GetComponent<MiniBossDamage>();
         mainBossHealth = mainBoss.GetComponent<Boss_DamageUI>();
     }
 
