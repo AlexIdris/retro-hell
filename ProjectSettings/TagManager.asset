@@ -27,6 +27,7 @@ TagManager:
   - Health
   - MG Bullet Counter
   - Drop Audio
+  - BlueBullets
   layers:
   - Default
   - TransparentFX

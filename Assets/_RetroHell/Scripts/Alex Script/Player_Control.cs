@@ -21,7 +21,7 @@ public class Player_Control : MonoBehaviour
     [SerializeField] GameObject gun;
     public int maxHealth;
     public int playercurrentHealth;
-    public ScreenShake shakeDetector;
+    // public ScreenShake shakeDetector;
     public HealthDisplay health;
     private void Start()
     {
@@ -41,7 +41,10 @@ public class Player_Control : MonoBehaviour
         Jump();
         Crouch();
 
-
+        if (playercurrentHealth <= 0)
+        {
+            Respawn();
+        }
 
         /*if (isCooldown)
         {
@@ -119,6 +122,13 @@ public class Player_Control : MonoBehaviour
             TakeDamage(10);
 
         }
+        if (other.tag is "BlueBullets")
+        {
+
+            DamageAudioSource.Play();
+            TakeDamage(10);
+
+        }
 
         else if (other.tag is "Boss")
         {
@@ -136,10 +146,7 @@ public class Player_Control : MonoBehaviour
             DamageAudioSource.Play();
             TakeDamage(20);
         }
-        if (playercurrentHealth <= 0)
-        {
-            Respawn();
-        }
+
     }
     private void OnTriggerStay(Collider other)
     {
@@ -160,7 +167,7 @@ public class Player_Control : MonoBehaviour
 
     public void Respawn()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void TakeDamage(int damage)
@@ -168,7 +175,7 @@ public class Player_Control : MonoBehaviour
         StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
-        StartCoroutine(shakeDetector.Shake(0.2f));
+        //StartCoroutine(shakeDetector.Shake(0.2f));
     }
 
     private void OnCollisionEnter(Collision collision)

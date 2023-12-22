@@ -112,8 +112,6 @@ public class Boss_DamageUI : MonoBehaviour
     }
     void Fourthpattern()
     {
-        firstForm.SetActive(false);
-        lastForm.SetActive(true);
         firsthealthpattern.SetActive(true);
         secondhealthpattern.SetActive(false);
 
@@ -123,6 +121,8 @@ public class Boss_DamageUI : MonoBehaviour
     }
     void Fivethpattern()
     {
+        firstForm.SetActive(false);
+        lastForm.SetActive(true);
         firsthealthpattern.SetActive(true);
         secondhealthpattern.SetActive(true);
 
