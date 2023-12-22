@@ -23,8 +23,8 @@ public class SlowDownTime : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
             robotAudioSource.Play();
-            tutorText.text = "Pick up the time watch. It slows down time\n" +
-                "<Press Shift to slow down time for 3 seconds>";
+            tutorText.text = "Pick up the time watch, it slows down time.\n" +
+                "<Press Shift to slow down time for 3 seconds.>";
         }
 
 
@@ -37,8 +37,8 @@ public class SlowDownTime : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
 
-            tutorText.text = "Pick up the time watch. It slows down time\n" +
-              "<Press Shift to slow down time for 3 seconds>";
+            tutorText.text = "Pick up the time watch, it slows down time.\n" +
+              "<Press Shift to slow down time for 3 seconds.>";
         }
     }
 

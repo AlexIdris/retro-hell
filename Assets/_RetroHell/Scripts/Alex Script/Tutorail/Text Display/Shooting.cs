@@ -22,8 +22,8 @@ public class Shooting : MonoBehaviour
             tutorText.gameObject.SetActive(true);
             robotAudioSource.Play();
             tutorText.text = "Let test what you have learned so far,\n" +
-                "this is a breakable wall, break it \n" +
-                "<Left-Click to Fire your Gun.>";
+                "this is a breakable wall, break it.\n" +
+                "<Left-Click to fire your Gun.>";
 
         }
 
@@ -36,8 +36,8 @@ public class Shooting : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
             tutorText.text = "Let test what you have learned so far,\n" +
-               "this is a breakable wall, break it \n" +
-               "<Left-Click to Fire your Gun.>";
+               "this is a breakable wall, break it.\n" +
+               "<Left-Click to fire your Gun.>";
 
 
         }

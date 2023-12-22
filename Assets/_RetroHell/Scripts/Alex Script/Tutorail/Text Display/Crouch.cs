@@ -23,9 +23,9 @@ public class Crouch : MonoBehaviour
             crouchBullet.SetActive(true);
             tutorText.gameObject.SetActive(true);
             robotAudioSource.Play();
-            tutorText.text = "Now we learn Jumping & Crouching with Deadly Bullets\n" +
-             "Blue Balls can only Jumped Over, " +
-             "While Red Balls Need to be crouched passed\n" +
+            tutorText.text = "Now we'll learn jumping & crouching with deadlier balls.\n" +
+             "Blue bullets can only jumped over, " +
+             "while red bullets need to be crouched to pass.\n" +
              "<Press Control to Crouch.>";
         }
 
@@ -40,9 +40,9 @@ public class Crouch : MonoBehaviour
             crouchBullet.SetActive(true);
             tutorText.gameObject.SetActive(true);
 
-            tutorText.text = "Now we learn Jumping & Crouching with Deadly Bullets\n" +
-                "Blue Balls can only Jumped Over, " +
-                "While Red Balls Need to be crouched passed\n" +
+            tutorText.text = "Now we'll learn jumping & crouching with deadlier balls.\n" +
+                "Blue bullets can only jumped over, " +
+                "while red bullets need to be crouched to pass.\n" +
                 "<Press Control to Crouch.>";
 
         }

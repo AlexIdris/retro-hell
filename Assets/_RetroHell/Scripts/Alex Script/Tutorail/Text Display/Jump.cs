@@ -18,7 +18,7 @@ public class Jump : MonoBehaviour
         frame.SetActive(true);
         tutorText.gameObject.SetActive(true);
         robotAudioSource.Play();
-        tutorText.text = "Oh good! you can move, now Jump over the bumps\n" +
+        tutorText.text = "Oh, good! You can move. Now Jump over the bumps.\n" +
             "<Press Space to Jump.>";
 
 
@@ -32,7 +32,7 @@ public class Jump : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
 
-            tutorText.text = "Oh good! you can move, now Jump over the bumps\n" +
+            tutorText.text = "Oh, good! You can move. Now Jump over the bumps.\n" +
                 "<Press Space to Jump.>";
 
         }
