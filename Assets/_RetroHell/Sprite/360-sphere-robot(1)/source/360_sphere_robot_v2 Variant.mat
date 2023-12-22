@@ -7,27 +7,31 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: bullets
+  m_Name: 360_sphere_robot_v2 Variant
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_Parent: {fileID: 2100000, guid: c6d1caab4a010ab4088c23d3b6b103d1, type: 2}
-  m_ModifiedSerializedProperties: 0
+  m_Parent: {fileID: -7027274146935359480, guid: ec7a84740eaa21548adc1df8014f8856, type: 3}
+  m_ModifiedSerializedProperties: 16
   m_ValidKeywords:
-  - _METALLICGLOSSMAP
-  - _NORMALMAP
+  - _ALPHABLEND_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses: []
-  m_LockedProperties: _Glossiness
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _Metallic: 0.659
+    - _DstBlend: 10
+    - _Glossiness: 0.257
+    - _Mode: 2
+    - _SrcBlend: 5
+    - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.45854396, g: 0.8773585, b: 0.4794586, a: 1}
   m_BuildTextureStacks: []
