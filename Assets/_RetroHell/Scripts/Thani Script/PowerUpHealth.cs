@@ -36,15 +36,30 @@ public class PowerUpHealth : MonoBehaviour
 
         if (other.tag == "Player")
         {
+            if (playerHealth.playercurrentHealth < 100)
+            {
+                playerHealth.playercurrentHealth += extraHealth;
 
-            playerHealth.playercurrentHealth += extraHealth;
+                playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
+                audioSource.Play();
+                animator.HealthAnimation();
 
-            playerHealth.health.ChangeHealth(playerHealth.playercurrentHealth);
-            audioSource.Play();
-            animator.HealthAnimation();
+                audioSource.Play();
+                Destroy(gameObject);
+                if (playerHealth.playercurrentHealth > 100)
+                {
+                    playerHealth.playercurrentHealth = 100;
+                }
+            }
 
-            audioSource.Play();
-            Destroy(gameObject);
+            else if (playerHealth.playercurrentHealth > 99)
+            {
+                audioSource.Play();
+                animator.HealthAnimation();
+
+                audioSource.Play();
+                Destroy(gameObject);
+            }
         }
     }
 

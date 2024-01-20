@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5013538362305668764}
   - component: {fileID: 5306994859032865431}
   - component: {fileID: 4460115701064704959}
-  - component: {fileID: -260458322538456246}
   m_Layer: 0
   m_Name: minion
   m_TagString: Untagged
@@ -48,11 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3cc32989e7f2544f809392747a67d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 3
   currentDistance: 0
   movement: 0
   target: {fileID: 9098500438498494592}
-  playerDistance: 6
+  playerDistance: 4
   enemyMovement: {fileID: 4936337928744549897}
 --- !u!54 &4460115701064704959
 Rigidbody:
@@ -81,19 +80,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-260458322538456246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7086794730355671215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a3a55ca83d882140862bb39d6b9a9df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeAwake: 0
 --- !u!1001 &3296515675931270767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -189,10 +175,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5013538362305668764}
     m_Modifications:
+    - target: {fileID: 264830773309694418, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 264830773309694418, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.92
+      objectReference: {fileID: 0}
     - target: {fileID: 1330378311913640406, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
       propertyPath: smoke
       value: 
       objectReference: {fileID: 4739398355519707497}
+    - target: {fileID: 1330378311913640406, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 3433909382595134065, guid: 3badc861733fc7944b9bebe36ca86aba, type: 3}
+    - target: {fileID: 1330378311913640406, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+      propertyPath: fireRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330378311913640406, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+      propertyPath: shooting
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330378311913640406, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+      propertyPath: bulletSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330378311913640406, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+      propertyPath: nextFireTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1330378311913640406, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+      propertyPath: bulletSpawner
+      value: 
+      objectReference: {fileID: 1725828375320089923}
     - target: {fileID: 1330378311913640406, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
       propertyPath: minion_Shooting
       value: 
@@ -261,11 +279,32 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5735113486203292069, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735113486203292069, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.779
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849206624436565864, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849206624436565864, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+--- !u!1 &1725828375320089923 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4684956326048725660, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}
+  m_PrefabInstance: {fileID: 6266496336919801823}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4936337928744549897 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1330378311913640406, guid: cf7ca8358b443d243b3c15b99b429433, type: 3}

@@ -10495,7 +10495,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.0021, y: -3.6194}
+  m_AnchoredPosition: {x: -2.0021, y: -45}
   m_SizeDelta: {x: 1442.3359, y: 718.3218}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2140372269
@@ -10518,14 +10518,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ' In 2912, they came, and Earth was taken, put in an unknown territory
-    with a verse number of planets. They were advised to summon their best fighter
-    to represent their home on the Neon Interstellar Arena, known only as Retro Hell,
-    with the promise of freedom if victorious and complete annelation if defeated.
-    Humanity among other planets struggled to accept this faint and tried to fight
-    back but they were outnumbered and overpowered, forces stronger than anything
-    they had ever faced before, they had no choice but to yield and play along, for
-    now.'
+  m_text: "  In 2912, they came, and Earth was taken, put in an unknown territory
+    with a verse number of planets. All planets were advised to summon their best
+    fighter to represent their home on the Neon Interstellar Arena, known only as
+    Retro Hell, with the promise of freedom if victorious and complete annelation
+    if defeated. \r\n\r\nHumanity, among other planets, fought back, but they were
+    weak, outnumbered, and overpowered. They yielded and were played with like puppets,
+    forced to battle those they once called comrades like Beast \u201CThey think
+    they can tame us, we will make them regret it! But for now, you are the best
+    Earth has to offer. You represent us all. Good luck soldier for I do not envy
+    you.\u201D Those were the last words you heard from your commander before you
+    were shoved into the interstellar portal."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

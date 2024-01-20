@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class turretshooting : MonoBehaviour
 {
-    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] GameObject[] bulletPrefab;
+    [SerializeField] int index;
     [SerializeField] Transform bulletBarrel;
     [SerializeField] float fireRate = 1.0f;
     [SerializeField] float bulletSpeed = 10f;
@@ -22,7 +23,8 @@ public class turretshooting : MonoBehaviour
     }
     void Shoot()
     {
-        GameObject bulletInstance = Instantiate(bulletPrefab, bulletBarrel.position, bulletBarrel.rotation);
+        int indexspace = Random.Range(0, index);
+        GameObject bulletInstance = Instantiate(bulletPrefab[indexspace], bulletBarrel.position, bulletBarrel.rotation);
         Rigidbody rb = bulletInstance.GetComponent<Rigidbody>();
         rb.velocity = bulletBarrel.forward * bulletSpeed;
 

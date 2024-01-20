@@ -1,13 +1,12 @@
+using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Player_Control : MonoBehaviour
 {
     public TakingDamageEffect takingDamageEffect;
     [SerializeField] GameObject pp_Volume;
-    /*[SerializeField] float cooldownTime = 5f;
-    [SerializeField] float cooldownTimer = 0f;
-    [SerializeField] bool isCooldown = true;*/
+    [SerializeField] GameObject defeatPanel;
+
     public AudioSource DamageAudioSource;
     [SerializeField] float speed;
     [SerializeField] float jump;
@@ -23,8 +22,14 @@ public class Player_Control : MonoBehaviour
     public int playercurrentHealth;
     // public ScreenShake shakeDetector;
     public HealthDisplay health;
+
+    private void Awake()
+    {
+        gun.SetActive(true);
+    }
     private void Start()
     {
+        defeatPanel.SetActive(false);
         rb = GetComponent<Rigidbody>();
         maxHealth = 100;
         playercurrentHealth = maxHealth;
@@ -50,23 +55,12 @@ public class Player_Control : MonoBehaviour
         {
             cooldownTimer -= Time.deltaTime;
 
-            if (cooldownTimer <= 0)
-            {
-                anim.SetBool("crouch", false);
-                isCooldown = false;
-                cooldownTimer = 0f;
           if (playercurrentHealth > maxHealth)
         {
             playercurrentHealth = maxHealth;
         }
             }
-          if (!isCooldown)
-                {
-                    Crouch();
-
-
-
-                }*/
+        */
 
 
     }
@@ -102,9 +96,7 @@ public class Player_Control : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl))
         {
             anim.SetBool("crouch", true);
-            /*isCooldown = true;
-            cooldownTimer = 0f;
-*/
+
         }
 
         else
@@ -148,13 +140,13 @@ public class Player_Control : MonoBehaviour
         }
 
     }
-    private void OnTriggerStay(Collider other)
+    async private void OnTriggerStay(Collider other)
     {
         if (other.tag is "Boss" /*&& !isCooldown*/)
         {
             DamageAudioSource.Play();
             TakeDamage(1);
-
+            await Task.Delay(1000);
             if (playercurrentHealth <= 0)
             {
                 Respawn();
@@ -162,12 +154,27 @@ public class Player_Control : MonoBehaviour
             /* isCooldown = true;
              cooldownTimer = cooldownTime;*/
         }
+        if (other.tag is "DamageBorder")
+        {
+            DamageAudioSource.Play();
+            TakeDamage(2);
+            await Task.Delay(3000);
+            if (playercurrentHealth <= 0)
+            {
+                Respawn();
+            }
+        }
     }
 
 
     public void Respawn()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        gun.SetActive(false);
+        defeatPanel.SetActive(true);
+        Time.timeScale = 0;
+
     }
 
     public void TakeDamage(int damage)
@@ -175,7 +182,7 @@ public class Player_Control : MonoBehaviour
         StartCoroutine(takingDamageEffect.BloodScreenEffect(Color.red));
         playercurrentHealth -= damage;
         health.ChangeHealth(playercurrentHealth);
-        //StartCoroutine(shakeDetector.Shake(0.2f));
+
     }
 
     private void OnCollisionEnter(Collision collision)

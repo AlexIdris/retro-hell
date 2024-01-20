@@ -126,7 +126,7 @@ MonoBehaviour:
   animatorObject: {fileID: 0}
   animator: {fileID: 0}
   healthDisplay: {fileID: 6389215037849965411, guid: 5b9d82a06e1a02642a3ccd4c95a9bee0, type: 3}
-  audioSource: {fileID: 5381674734681401013, guid: adc649d590bfc1440bec7183bc5fd730, type: 3}
+  audioSource: {fileID: 2134070683789055245, guid: 517c91f6fe1304e4aba2eb391b372cdb, type: 3}
   HealthTimer: 0
   dispawntimer: 15
 --- !u!1 &4672470727393737718

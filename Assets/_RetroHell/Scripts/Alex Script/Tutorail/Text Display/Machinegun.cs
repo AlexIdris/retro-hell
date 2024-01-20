@@ -21,8 +21,8 @@ public class Machinegun : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
             robotAudioSource.Play();
-            tutorText.text = "Automatic Rifle Time!!\n" +
-                "<Each mag holds 30 bullets of rapid-fire!!!>";
+            tutorText.text = "Behind me lies the Hellraiser 30K\n" +
+                "With each round only holding 30 clips of rapid-hell";
 
         }
 
@@ -36,8 +36,8 @@ public class Machinegun : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
 
-            tutorText.text = "Automatic Rifle Time!!\n" +
-                "<Each mag holds 30 bullets of rapid-fire!!!>";
+            tutorText.text = "Behind me lies the Hellraiser 30K\n" +
+               "With each round only holding 30 clips of rapid-hell";
 
         }
     }

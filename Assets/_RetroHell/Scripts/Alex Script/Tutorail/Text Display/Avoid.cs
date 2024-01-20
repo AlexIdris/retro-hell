@@ -22,33 +22,33 @@ public class Avoid : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
             robotAudioSource.Play();
-            tutorText.text = " Those balls hurt, so try not to get hit. \n" +
-      "<Avoid getting hit by the bullets, all red bullets can be destroyed.>";
-
+            tutorText.text = " Have you Heard of the one with the chicken and the road \n" +
+          "Well, you are it";
 
         }
 
 
     }
-    void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.tag is "Player")
         {
             tutorailPopups.SetActive(true);
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
-
-            tutorText.text = " Those balls hurt, so try not to get hit. \n" +
-     "<Avoid getting hit by the bullets, all red bullets can be destroyed.>";
-
-
+            tutorText.text = " Have you Heard of the one with the chicken and the road \n" +
+          "Well, you are it";
         }
     }
-    void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
+        if (other.tag is "Player")
+        {
+            tutorailPopups.SetActive(false);
 
-        tutorailPopups.SetActive(false);
+        }
 
     }
+
 
 }

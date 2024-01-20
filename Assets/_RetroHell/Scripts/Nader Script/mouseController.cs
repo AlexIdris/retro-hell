@@ -10,12 +10,16 @@ public class mouseController : MonoBehaviour
     [SerializeField] float X;
     [SerializeField] float Y;
 
-    private void Update()
+
+    public void Update()
     {
         X -= Speed * Input.GetAxis("Mouse Y");
         Y += Speed * Input.GetAxis("Mouse X");
         X = Mathf.Clamp(X, minRotation, maxRotation);
+
         transform.eulerAngles = new Vector3(X, Y, 0f);
         gun.transform.eulerAngles = new Vector3(X, Y, 0f);
     }
+
+
 }

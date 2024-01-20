@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -8,9 +9,10 @@ public class Crouch : MonoBehaviour
     [SerializeField] GameObject tutorailPopups;
     [SerializeField] GameObject crouchBullet;
     [SerializeField] AudioSource robotAudioSource;
+
     private void Awake()
     {
-        tutorailPopups.SetActive(false);
+
         crouchBullet.SetActive(true);
     }
 
@@ -23,36 +25,31 @@ public class Crouch : MonoBehaviour
             crouchBullet.SetActive(true);
             tutorText.gameObject.SetActive(true);
             robotAudioSource.Play();
-            tutorText.text = "Now we'll learn jumping & crouching with deadlier balls.\n" +
-             "Blue bullets can only jumped over, " +
-             "while red bullets need to be crouched to pass.\n" +
-             "<Press Control to Crouch.>";
+            tutorText.text = "Well that was Fun you wanna do it again\n" +
+             "Or are you going to be boring and crouch.";
+
+
         }
 
 
     }
-    void OnTriggerStay(Collider other)
+    async private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player")
+        await Task.Delay(3000);
+        top();
+    }
+
+
+
+
+    async void top()
+    {
+        if (Input.anyKey && !Input.GetKey(KeyCode.LeftControl) || Input.anyKeyDown && !Input.GetKey(KeyCode.LeftControl))
         {
-            tutorailPopups.SetActive(true);
-            frame.SetActive(true);
-            crouchBullet.SetActive(true);
-            tutorText.gameObject.SetActive(true);
+            tutorText.text = "crouch with Left-Control Noob";
+            await Task.Delay(2000);
 
-            tutorText.text = "Now we'll learn jumping & crouching with deadlier balls.\n" +
-                "Blue bullets can only jumped over, " +
-                "while red bullets need to be crouched to pass.\n" +
-                "<Press Control to Crouch.>";
-
+            tutorailPopups.SetActive(false);
         }
     }
-    void OnTriggerExit(Collider other)
-    {
-
-        tutorailPopups.SetActive(false);
-
-
-    }
-
 }

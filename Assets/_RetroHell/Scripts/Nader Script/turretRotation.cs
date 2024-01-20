@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class turretRotation : MonoBehaviour
 {
-    public float speed = 10;
+    public float speed = 0.1f;
     public float rotationDelay = 0.5f;
+    public float speedlimit = 3f;
+    public float rotationDelaylimit = 5;
     public float rotateValue;
     [SerializeField] float cooldownTime = 5f;
     [SerializeField] float cooldownTimer = 5f;
@@ -28,6 +30,10 @@ public class turretRotation : MonoBehaviour
                     isCooldown = false;
                     cooldownTimer = 0f;
                 }
+            }
+            if (speed > speedlimit && rotationDelay > rotationDelaylimit)
+            {
+                isCooldown = true;
             }
             if (!isCooldown)
             {

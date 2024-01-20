@@ -7,19 +7,20 @@ public class Jump : MonoBehaviour
     [SerializeField] GameObject frame;
     [SerializeField] GameObject tutorailPopups;
     [SerializeField] AudioSource robotAudioSource;
-    private void Start()
+    private void Awake()
     {
         tutorailPopups.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+
         tutorailPopups.SetActive(true);
         frame.SetActive(true);
         tutorText.gameObject.SetActive(true);
         robotAudioSource.Play();
-        tutorText.text = "Oh, good! You can move. Now Jump over the bumps.\n" +
-            "<Press Space to Jump.>";
+
+
 
 
 
@@ -31,9 +32,8 @@ public class Jump : MonoBehaviour
             tutorailPopups.SetActive(true);
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
-
-            tutorText.text = "Oh, good! You can move. Now Jump over the bumps.\n" +
-                "<Press Space to Jump.>";
+            tutorText.text = "It seems you know how to move, but can you jump\n" +
+             "Press Space to Jump";
 
         }
     }

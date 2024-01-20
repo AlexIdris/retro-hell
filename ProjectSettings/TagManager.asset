@@ -28,6 +28,7 @@ TagManager:
   - MG Bullet Counter
   - Drop Audio
   - BlueBullets
+  - DamageBorder
   layers:
   - Default
   - TransparentFX

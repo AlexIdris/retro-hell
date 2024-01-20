@@ -27,10 +27,10 @@ public class Goodluck : MonoBehaviour
             bossEnemyHealth.SetActive(true);
             tutorailMinibossHealth.SetActive(false);
             robotAudioSource.Play();
-            tutorText.text = "Yikes! That looks scary... Wait, I just remembered\n" +
-" this is a single-player game so technically I'm good, Good Luck!\n" +
- "<The longer you fight, the stronger the enemy becomes...\n" +
- "Also, blue and black bullets can not be destroyed :) >";
+            tutorText.text = "Yawn. Am still Sleepy\n" +
+               " Hmm...I feel like I am forgetting something.. \n" +
+           "Oh Yeah! The longer it takes you to defeat an enemy, the stronger it becomes\n" +
+            "Soo... Goodluck and keep me entertained";
 
         }
 
@@ -46,10 +46,10 @@ public class Goodluck : MonoBehaviour
             bossEnemyHealth.SetActive(true);
             tutorailMinibossHealth.SetActive(false);
 
-            tutorText.text = "Yikes! That looks scary... Wait, I just remembered\n" +
-            " this is a single-player game so technically I'm good, Good Luck!\n" +
-             "<The longer you fight, the stronger the enemy becomes...\n" +
-             "Also, blue and black bullets can not be destroyed :) >";
+            tutorText.text = "Yawn. Am still Sleepy\n" +
+               " Hmm...I feel like I am forgetting something.. \n" +
+           "Oh Yeah! The longer it takes you to defeat an enemy, the stronger it becomes\n" +
+             "Soo... Good luck and keep me entertained";
 
         }
     }

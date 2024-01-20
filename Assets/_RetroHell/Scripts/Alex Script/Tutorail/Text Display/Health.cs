@@ -1,3 +1,4 @@
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 
@@ -7,10 +8,14 @@ public class Health : MonoBehaviour
     [SerializeField] GameObject frame;
     [SerializeField] GameObject tutorailPopups;
     [SerializeField] AudioSource robotAudioSource;
+    [SerializeField] GameObject invincibleWalls;
+    [SerializeField] GameObject robot;
     public Player_Control playerControl;
     private void Start()
     {
         tutorailPopups.SetActive(false);
+        robot.SetActive(false);
+        invincibleWalls.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -22,22 +27,14 @@ public class Health : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
             robotAudioSource.Play();
-            if (playerControl.playercurrentHealth <= 90)
-            {
-                tutorText.text = "Aw... poor baby! You took damage, now heal your self. Pick up the Life Essence.\n" +
-               "<It recovers 50 Health Points.>";
-            }
-            else if (playerControl.playercurrentHealth >= 90)
-            {
-                tutorText.text = "Okay, tough guy. I guess you won't be needing the Life Essence, but you should know what it does.\n" +
-              "<It recovers 50 Health Points.>";
-            }
+
+            tutorText.text = "Behind You!";
 
 
 
         }
     }
-    void OnTriggerStay(Collider other)
+    async void OnTriggerStay(Collider other)
     {
         if (other.tag == "Player")
         {
@@ -45,16 +42,10 @@ public class Health : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
 
-            if (playerControl.playercurrentHealth <= 90)
-            {
-                tutorText.text = "Aw... poor baby! You took damage, now heal your self. Pick up the Life Essence.\n" +
-               "<It recovers 50 Health Points.>";
-            }
-            else if (playerControl.playercurrentHealth >= 90)
-            {
-                tutorText.text = "Okay, tough guy. I guess you won't be needing the Life Essence, but you should know what it does.\n" +
-              "<It recovers 50 Health Points.>";
-            }
+            tutorText.text = "Behind You!";
+            await Task.Delay(4000);
+            invincibleWalls.SetActive(false);
+            robot.SetActive(true);
 
         }
     }

@@ -7,9 +7,14 @@ public class PauseSystem : MonoBehaviour
     [SerializeField] GameObject target;
     public GameObject pauseScreen;
 
+    [SerializeField] GameObject gun;
+
+
     public void Start()
     {
         Time.timeScale = 1;
+
+
         pauseScreen.SetActive(false);
     }
     public void BacktoGame()
@@ -22,6 +27,7 @@ public class PauseSystem : MonoBehaviour
         pauseScreen.SetActive(false);
         Debug.Log("Game Resumed!");
         target.SetActive(true);
+        gun.SetActive(true);
     }
 
     public void Update()
@@ -36,23 +42,15 @@ public class PauseSystem : MonoBehaviour
             Debug.Log("Game Paused!");
             gamePaused = true;
             target.SetActive(false);
+            gun.SetActive(false);
 
         }
-        /* else if (Input.GetKey(KeyCode.Escape) && gamePaused == true)
-         {
 
-             Cursor.lockState = CursorLockMode.Locked;
-             Cursor.visible = false;
-             Time.timeScale = 1;
-             pauseScreen.SetActive(false);
-             gamePaused = false;
-
-
-         }*/
     }
 
     public void Resume()
     {
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1;
@@ -60,14 +58,39 @@ public class PauseSystem : MonoBehaviour
         pauseScreen.SetActive(false);
         Debug.Log("Game Resumed!");
         target.SetActive(true);
+        gun.SetActive(true);
     }
 
     public void Restart()
     {
+
+
+        SceneManager.LoadScene(1);
+        gun.SetActive(true);
+        target.SetActive(true);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        SceneManager.LoadScene(1);
+    }
+    public void Checkpoint1()
+    {
+
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gun.SetActive(true);
         target.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+    }
+    public void Checkpoint2()
+    {
+
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gun.SetActive(true);
+        target.SetActive(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void LoadMainMenu()
@@ -76,6 +99,7 @@ public class PauseSystem : MonoBehaviour
         Cursor.visible = true;
         SceneManager.LoadScene(0);
         target.SetActive(false);
+        gun.SetActive(true);
     }
 }
 

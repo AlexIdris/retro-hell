@@ -8,11 +8,7 @@ public class SlowDownTime : MonoBehaviour
     [SerializeField] GameObject tutorailPopups;
     [SerializeField] AudioSource robotAudioSource;
 
-    private void Start()
-    {
-        tutorailPopups.SetActive(false);
 
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,8 +19,8 @@ public class SlowDownTime : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
             robotAudioSource.Play();
-            tutorText.text = "Pick up the time watch, it slows down time.\n" +
-                "<Press Shift to slow down time for 3 seconds.>";
+            tutorText.text = "Now, to complete your Arsenal, pick up the Orxic watch, and let's see what you have learned.\n" +
+                "Observe the screen if there are any complications";
         }
 
 
@@ -37,8 +33,8 @@ public class SlowDownTime : MonoBehaviour
             frame.SetActive(true);
             tutorText.gameObject.SetActive(true);
 
-            tutorText.text = "Pick up the time watch, it slows down time.\n" +
-              "<Press Shift to slow down time for 3 seconds.>";
+            tutorText.text = "Now, to complete your Arsenal, pick up the Orxic watch, and let's see what you have learned.\n" +
+                "Observe the screen if there are any complications";
         }
     }
 

@@ -15,8 +15,6 @@ public class PowerUpHealthT : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<Player_Control>();
-        audioSource.Stop();
-
         healthDisplay = player.GetComponent<HealthDisplay>();
 
     }

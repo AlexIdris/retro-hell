@@ -4,6 +4,7 @@ public class BulletPhysics : MonoBehaviour
 {
     [SerializeField] float playerBulletTimeAwake;
     [SerializeField] float awaken;
+
     public static int bulletDamage;
 
     private void Start()
@@ -51,5 +52,6 @@ public class BulletPhysics : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
 }

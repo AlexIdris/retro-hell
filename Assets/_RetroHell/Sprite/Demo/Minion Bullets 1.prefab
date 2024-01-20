@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2423324940930811884}
   - component: {fileID: 570295851881913391}
   - component: {fileID: 7948454761240778428}
-  - component: {fileID: 5364242884054654654}
   - component: {fileID: 2700267578292720448}
+  - component: {fileID: 5106990626485499842}
   m_Layer: 0
   m_Name: Minion Bullets 1
   m_TagString: EnemyBullets
@@ -135,19 +135,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5364242884054654654
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3433909382595134065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a3a55ca83d882140862bb39d6b9a9df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeAwake: 0
 --- !u!114 &2700267578292720448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,3 +147,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e4ef551db34b5a4faf2eed0145fcb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5106990626485499842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3433909382595134065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1246fd330147cce48adfde4f2e68e4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeAwake: 0
